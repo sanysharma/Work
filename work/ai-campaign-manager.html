@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Campaign Manager — Sunny Kumar</title>
+  <meta name="description" content="Case study: designing AI-native experiences while keeping humans in control. Leading Airtel's first AI initiative in its campaign platform.">
+  <meta name="theme-color" content="#0b0d10">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%235eead4'/><text x='16' y='21.5' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='%230b0d10'>SK</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Sunny Kumar, home"><span class="brand-mark">SK</span> Sunny Kumar</a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="keep" href="../index.html#work">Work</a>
+      <a href="../index.html#about">About</a>
+      <a class="cta" href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <header class="cs-hero">
+      <a class="back" href="../index.html#work">← All work</a>
+      <h1>AI Campaign Manager</h1>
+      <p class="cs-storyline">Storyline: <strong>Designing AI-native experiences while keeping humans in control.</strong></p>
+
+      <dl class="cs-meta">
+        <div><dt>Role</dt><dd>Senior Lead · owner of the Agentic AI layer</dd></div>
+        <div><dt>Team</dt><dd>Two designers, one per module</dd></div>
+        <div><dt>Platform</dt><dd>UCLM, Airtel's campaign platform</dd></div>
+        <div><dt>Status</dt><dd>Work in progress</dd></div>
+      </dl>
+
+      <div class="callout callout-accent" style="margin-top:28px">
+        <span class="label">The principle behind every module</span>
+        <p>Human defines the outcome. AI handles the execution complexity. Human approves the outcome.</p>
+      </div>
+    </header>
+
+    <div class="cs-layout">
+      <aside class="toc" aria-label="On this page">
+        <span class="label">On this page</span>
+        <ol>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#system">How it connects</a></li>
+          <li><a href="#principle">The principle</a></li>
+          <li><a href="#process">Design process</a></li>
+          <li><a href="#leading">Leading the work</a></li>
+          <li><a href="#time">Time Affinity</a></li>
+          <li><a href="#content">Content AI</a></li>
+          <li><a href="#agentic">Agentic UCLM</a></li>
+          <li><a href="#next">Status &amp; next</a></li>
+        </ol>
+      </aside>
+
+      <article class="prose">
+
+        <section id="overview">
+          <h2><span class="num">00</span>Overview</h2>
+          <p>This is the intelligence layer being built into UCLM (Unified Campaign Lifecycle Manager), and the trajectory is for it to become its own AI campaign product on top of UCLM. It isn't a fixed set of features: each module starts as its own PRD but is designed to plug into one connected system, with Agentic AI as the eventual orchestration layer.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Module</th><th>Question it answers</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Time Affinity</td><td>When should we send to this customer?</td><td><span class="badge badge-live">Handed off</span></td></tr>
+                <tr><td>Content AI</td><td>What content should we send?</td><td><span class="badge badge-wip">In progress</span></td></tr>
+                <tr><td>Date Affinity</td><td>Which day, within a recurring window?</td><td><span class="badge badge-soon">Planned</span></td></tr>
+                <tr><td>Audience</td><td>Who should we target, and how do we build that audience?</td><td><span class="badge badge-soon">Planned</span></td></tr>
+                <tr><td>Content creation</td><td>How do we build that content?</td><td><span class="badge badge-soon">Planned</span></td></tr>
+                <tr><td>Channel</td><td>Which channel works best?</td><td><span class="badge badge-soon">Planned</span></td></tr>
+                <tr><td>Agentic AI</td><td>How do all these decisions come together?</td><td><span class="badge badge-soon">POC done</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="system">
+          <h2><span class="num">01</span>How the modules connect</h2>
+          <p>Five recommendation factors (relevance, historical performance, business rules, content conflicts and guardrails) feed the Content AI decision. That joins the Time Affinity, Audience and Channel decisions, which all feed the Agentic AI orchestration layer. It plans the campaign and routes through human review before anything executes.</p>
+          <figure class="fig" data-file="images/ai/model-convergence.svg">
+            <img src="../images/ai/model-convergence.svg" alt="Five recommendation factors converging through module decisions into Agentic AI orchestration, gated by human review" loading="lazy">
+            <figcaption>Factors → module decisions → orchestration → human review → execution.</figcaption>
+          </figure>
+          <h3>From module agents to autonomous Agentic AI</h3>
+          <p>Module agents converge first into a <strong>Conversational Agentic AI</strong> (Stage 1): the growth manager states a goal in natural language, the agent plans and builds, and human review at launch is the only gate. Over time this can mature into an <strong>Autonomous Agentic AI</strong> (Stage 2, not yet built) that monitors live performance and relaunches improved configurations on its own.</p>
+          <figure class="fig" data-file="images/ai/agentic-maturity.svg">
+            <img src="../images/ai/agentic-maturity.svg" alt="Module agents converging into conversational Agentic AI, maturing toward autonomous self-optimising AI" loading="lazy">
+            <figcaption>The path from module agents to an autonomous, self-optimising layer.</figcaption>
+          </figure>
+        </section>
+
+        <section id="principle">
+          <h2><span class="num">02</span>The principle, applied</h2>
+          <div class="levels">
+            <div class="level"><span class="label">Time Affinity</span><p>The human sets goals and constraints; the model recommends the best send window; the human can always override with a manual window.</p></div>
+            <div class="level"><span class="label">Content AI</span><p>The human defines the campaign and audience; the model ranks and recommends content; the human approves before send.</p></div>
+            <div class="level"><span class="label">Agentic AI</span><p>The human states the outcome in natural language; the agent plans and assembles the campaign; the human reviews and launches.</p></div>
+          </div>
+        </section>
+
+        <section id="process">
+          <h2><span class="num">03</span>Design process</h2>
+          <p>This was the team's first AI initiative, so every open-forum discussion led to another round: diverge across possibilities, then converge on a cleaner flow for the growth manager (GM).</p>
+          <p>Product initially wanted the best possible recommendation engine regardless of UX cost: many required inputs, overwhelming transparency, and time and date bundled together. Design pushed back, arguing that <strong>an engine-first approach that overwhelms the user fails as a product regardless of model quality</strong>. Recommendation quality stayed with AI and engineering; design's job was to make that intelligence usable without asking the GM to configure all of it upfront.</p>
+          <p><strong>Benchmarking.</strong> Flows were benchmarked against MoEngage and CleverTap to calibrate how much control and transparency enterprise marketers expect. The biggest insight: show peak engagement hours from historical data as a heatmap, scoped specifically to choosing a fallback time range. Every other AI send stays inside the regulatory do-not-disturb window.</p>
+          <figure class="fig" data-file="images/ai/design-process.svg">
+            <img src="../images/ai/design-process.svg" alt="Diverge-converge design loop between product's engine-first instinct and design's push for usable UX" loading="lazy">
+            <figcaption>The diverge–converge loop used on every module. The product/design tension resolves at "converge", not before.</figcaption>
+          </figure>
+        </section>
+
+        <section id="leading">
+          <h2><span class="num">04</span>Leading the work</h2>
+          <p>As Senior Lead, I decided how the work should be structured before deciding what it should be. I split ownership: one designer owns Time Affinity, another owns Content AI, each running their own iterations with weekly reviews.</p>
+          <p>That freed me to do what a designer buried in one module can't: hold the cross-module picture, manage stakeholders across product, engineering, the AI lead and business teams, and own the Agentic AI layer that only makes sense once you can see every piece.</p>
+          <figure class="fig" data-file="images/ai/leadership-map.svg">
+            <img src="../images/ai/leadership-map.svg" alt="Leadership map showing delegation to two designers and engagement with product, engineering and business stakeholders" loading="lazy">
+            <figcaption>Delegation wasn't hands-off. Staying close to every stakeholder group surfaced gaps the original brief didn't have.</figcaption>
+          </figure>
+          <p>The clearest example is the <strong>fallback-time concept</strong>. It wasn't in the original ask; it came from engaging business stakeholders during grooming. Stakeholder input also led us to drop a separate "delivery window" control, show the behaviour heatmap <em>before</em> asking for a fallback choice, and make the fallback-versus-AI split visually clear.</p>
+
+          <h3>Steering the team's work</h3>
+          <p><strong>Resetting Time Affinity's direction.</strong> After two rounds of stakeholder review, the first direction wasn't landing. A request to switch between manual entry and AI had become a single two-way toggle, with no explanation of what each option meant and no visible reasoning, processing state or alternatives. I made the case to product for a per-module "enable AI" pattern instead of one whole-form toggle, and reassigned Time Affinity to the designer whose strengths fit edge-case-heavy work.</p>
+          <p><strong>Resolving review questions through model logic, not taste.</strong></p>
+          <ul>
+            <li>The campaign time range and the fallback time were designed as two separate steps. I pushed for one shared time-range control serving both.</li>
+            <li>With cool-down periods (say, 4 messages a week with a 2-day cool-down), does the next message fire exactly at the boundary or any day after? Date Affinity picks the day on or after the boundary. Once that was explicit, we added help text wherever a GM would otherwise have to guess.</li>
+          </ul>
+        </section>
+
+        <section id="time">
+          <h2><span class="num">05</span>Time Affinity AI</h2>
+          <p><span class="badge badge-live">Design handed off</span></p>
+          <p><strong>Problem.</strong> Campaigns are scheduled at the cohort level: one send time for everyone, regardless of individual behaviour. Every application decides timing on its own, timing experiments aren't automated the way content A/B tests are, and reporting doesn't show best-day or best-hour effects.</p>
+          <p><strong>Vision.</strong> A central scheduling intelligence service that predicts each customer's best engagement window, keeps learning, and serves recommendations through reusable APIs to any Airtel Cloud product.</p>
+          <p><strong>Phase 1.</strong> Live inside UCLM first, across Push, SMS, WhatsApp, Email, RCS, In-App and Journey channels, for one-time and recurring campaigns.</p>
+          <figure class="fig" data-file="images/ai/five-layer-architecture.svg">
+            <img src="../images/ai/five-layer-architecture.svg" alt="Time Affinity five-layer architecture from data to execution with a feedback loop" loading="lazy">
+            <figcaption>Data → Prediction → Explainability → reusable Output API → Execution in UCLM, with results feeding back.</figcaption>
+          </figure>
+          <p><strong>Why fallback ended up optional.</strong> Recurring schedules get complex fast: specific dates across months, different dates per month, fixed or varying times. After two or three iterations, the team chose to keep fallback optional so Phase 1 could ship and we could learn from real model behaviour before expanding.</p>
+        </section>
+
+        <section id="content">
+          <h2><span class="num">06</span>Content AI</h2>
+          <p><span class="badge badge-wip">In progress</span></p>
+          <p><strong>Problem.</strong> Content selection is manual and disconnected from performance. Marketers pick from intuition or past campaigns, with no systematic way to rank options by relevance, predicted performance, or fit with business rules.</p>
+          <p><strong>Vision.</strong> A layer that ranks, and eventually generates, content per customer, micro-cohort and channel, with the marketer in control of the final pick. It supports both a built-in model and bring-your-own-model for customers with their own trained models.</p>
+          <h3>Capability framework</h3>
+          <div class="model">
+            <div><span class="step">01</span><strong>Signals</strong><span>Behavioural, transactional and engagement data train the model</span></div>
+            <div><span class="step">02</span><strong>Generation</strong><span>AI-assisted drafting of content variants</span></div>
+            <div><span class="step">03</span><strong>Library</strong><span>A structured, taggable store of approved content</span></div>
+            <div><span class="step">04</span><strong>Recommendation</strong><span>Ranking by relevance, performance, rules, conflicts and guardrails</span></div>
+          </div>
+          <p><strong>Guardrails</strong> cap duplication and stop the same or conflicting offers reaching a customer too close together.</p>
+          <h3>Open design questions</h3>
+          <ul>
+            <li>How much ranking logic to expose versus a "why this?" explainer.</li>
+            <li>Where bring-your-own models plug into the same UI without a parallel flow.</li>
+            <li>How to make AI-generated drafts look clearly different from ranked existing assets.</li>
+          </ul>
+        </section>
+
+        <section id="agentic">
+          <h2><span class="num">07</span>Agentic UCLM</h2>
+          <p><span class="badge badge-soon">Parked · POC validated</span></p>
+          <p>Instead of configuring each module separately, a growth manager states the outcome they want in natural language. Agentic AI plans and assembles the campaign using every module's intelligence, then hands back to the human for review and launch.</p>
+          <div class="levels">
+            <div class="level"><span class="label">Today</span><p>Manual configuration of each module.</p></div>
+            <div class="level"><span class="label">Stage 1</span><p>Conversational assembly, with human review at launch. Proof of concept validated.</p></div>
+            <div class="level"><span class="label">Stage 2</span><p>Autonomous monitoring and relaunch. Future, not yet built.</p></div>
+          </div>
+          <p>A Beta PRD is scoped, but the work is paused until Time Affinity and Content AI ship and generate real usage data.</p>
+        </section>
+
+        <section id="next">
+          <h2><span class="num">08</span>Status &amp; what's next</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Track</th><th>Status</th><th>Next</th></tr></thead>
+              <tbody>
+                <tr><td>Time Affinity</td><td>Design handed off</td><td>Observe Phase 1 behaviour; revisit fallback and recurring scope</td></tr>
+                <tr><td>Content AI</td><td>In progress</td><td>Finalise recommendation UI; resolve bring-your-own-model plug-in points</td></tr>
+                <tr><td>Agentic AI</td><td>Parked</td><td>Resume once both modules ship and produce usage data</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout">
+            <span class="label">Questions I'm still working through</span>
+            <ul>
+              <li>What does human review look like when the agent assembles multi-module campaigns, not single recommendations?</li>
+              <li>How much ranking logic should be explainable versus abstracted away?</li>
+              <li>Should generation be synchronous or asynchronous, and what latency is acceptable?</li>
+              <li>How do we validate model quality before expanding past Phase 1?</li>
+            </ul>
+          </div>
+
+          <a class="next-cs" href="cloud-platform.html">
+            <span><span class="label">Next case study</span><strong>Airtel Cloud Platform</strong></span>
+            <span class="card-arrow">→</span>
+          </a>
+        </section>
+
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© 2026 Sunny Kumar</span>
+    <span><a href="mailto:sany.sharma09@gmail.com">sany.sharma09@gmail.com</a> · <a href="https://www.linkedin.com/in/sunny-kumar-44a5b41a/" target="_blank" rel="noopener">LinkedIn</a></span>
+  </div>
+</footer>
+
+<script src="../js/site.js"></script>
+</body>
+</html>
