@@ -1,0 +1,58 @@
+<svg viewBox="0 0 1320 940" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Seven module AI agents converge first into a conversational Agentic AI that requires human review and launch, then mature into an autonomous Agentic AI that keeps monitoring live campaign performance and relaunches improved configurations on its own.">
+<rect x="0" y="0" width="1320" height="940" fill="#FFFFFF"/>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/>
+  </marker>
+</defs>
+<text x="40" y="928" text-anchor="start" font-family="Arial, sans-serif" font-size="11.5" font-weight="700" fill="#6B7280">MODULE AI AGENTS BEING BUILT</text>
+<rect x="58.0" y="800" width="160" height="100" rx="8" fill="#F8FAFC" stroke="#059669" stroke-width="1.6"/>
+<text x="138.0" y="826" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">Time</text>
+<text x="138.0" y="843" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">affinity</text>
+<rect x="86" y="862" width="104" height="22" rx="11.0" fill="#E1F2ED" stroke="#059669" stroke-width="1.3"/><text x="138.0" y="877.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#059669">HANDED OFF</text>
+<rect x="232.0" y="800" width="160" height="100" rx="8" fill="#F8FAFC" stroke="#6B7280" stroke-width="1.6"/>
+<text x="312.0" y="826" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">Date</text>
+<text x="312.0" y="843" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">affinity</text>
+<rect x="260" y="862" width="104" height="22" rx="11.0" fill="#EDEEF0" stroke="#6B7280" stroke-width="1.3"/><text x="312.0" y="877.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#6B7280">PLANNED</text>
+<rect x="406.0" y="800" width="160" height="100" rx="8" fill="#F8FAFC" stroke="#D97706" stroke-width="1.6"/>
+<text x="486.0" y="826" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">Content</text>
+<text x="486.0" y="843" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">recommendation</text>
+<rect x="434" y="862" width="104" height="22" rx="11.0" fill="#FAEFE1" stroke="#D97706" stroke-width="1.3"/><text x="486.0" y="877.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#D97706">WIP</text>
+<rect x="580.0" y="800" width="160" height="100" rx="8" fill="#F8FAFC" stroke="#D97706" stroke-width="1.6"/>
+<text x="660.0" y="826" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">Content</text>
+<text x="660.0" y="843" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">creation</text>
+<rect x="608" y="862" width="104" height="22" rx="11.0" fill="#FAEFE1" stroke="#D97706" stroke-width="1.3"/><text x="660.0" y="877.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#D97706">WIP</text>
+<rect x="754.0" y="800" width="160" height="100" rx="8" fill="#F8FAFC" stroke="#6B7280" stroke-width="1.6"/>
+<text x="834.0" y="826" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">Audience</text>
+<text x="834.0" y="843" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">recommendation</text>
+<rect x="782" y="862" width="104" height="22" rx="11.0" fill="#EDEEF0" stroke="#6B7280" stroke-width="1.3"/><text x="834.0" y="877.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#6B7280">PLANNED</text>
+<rect x="928.0" y="800" width="160" height="100" rx="8" fill="#F8FAFC" stroke="#6B7280" stroke-width="1.6"/>
+<text x="1008.0" y="826" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">Audience</text>
+<text x="1008.0" y="843" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">creation</text>
+<rect x="956" y="862" width="104" height="22" rx="11.0" fill="#EDEEF0" stroke="#6B7280" stroke-width="1.3"/><text x="1008.0" y="877.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#6B7280">PLANNED</text>
+<rect x="1102.0" y="800" width="160" height="100" rx="8" fill="#F8FAFC" stroke="#6B7280" stroke-width="1.6"/>
+<text x="1182.0" y="826" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">Channel</text>
+<text x="1182.0" y="843" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">recommendation</text>
+<rect x="1130" y="862" width="104" height="22" rx="11.0" fill="#EDEEF0" stroke="#6B7280" stroke-width="1.3"/><text x="1182.0" y="877.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#6B7280">PLANNED</text>
+<rect x="420.0" y="610" width="480" height="90" rx="8" fill="#F8FAFC" stroke="#2563EB" stroke-width="1.6"/><text x="660.0" y="653.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2937">Conversational Agentic AI</text><text x="660.0" y="670.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" fill="#6B7280">GM states the goal in natural language; agent plans + builds</text>
+<rect x="254" y="643" width="150" height="24" rx="12.0" fill="#E5ECFD" stroke="#2563EB" stroke-width="1.3"/><text x="329.0" y="659.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#2563EB">STAGE 1 · IN PROGRESS</text>
+<line x1="138.0" y1="800" x2="660.0" y2="700" stroke="#94A3B8" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="312.0" y1="800" x2="660.0" y2="700" stroke="#94A3B8" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="486.0" y1="800" x2="660.0" y2="700" stroke="#94A3B8" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="660.0" y1="800" x2="660.0" y2="700" stroke="#94A3B8" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="834.0" y1="800" x2="660.0" y2="700" stroke="#94A3B8" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="1008.0" y1="800" x2="660.0" y2="700" stroke="#94A3B8" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="1182.0" y1="800" x2="660.0" y2="700" stroke="#94A3B8" stroke-width="1.4" marker-end="url(#arrow)"/>
+<rect x="510.0" y="500" width="300" height="66" rx="8" fill="#F8FAFC" stroke="#0F172A" stroke-width="1.6"/><text x="660.0" y="531.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Human review &amp; launch</text><text x="660.0" y="548.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">the only gate at this stage</text>
+<line x1="660.0" y1="610" x2="660.0" y2="566" stroke="#2563EB" stroke-width="1.7" marker-end="url(#arrow)"/>
+<line x1="660.0" y1="500" x2="660.0" y2="460" stroke="#0F172A" stroke-width="1.7"/>
+<rect x="400.0" y="300" width="520" height="100" rx="8" fill="#F8FAFC" stroke="#7C3AED" stroke-width="1.6"/><text x="660.0" y="348.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#1F2937">Autonomous Agentic AI</text><text x="660.0" y="365.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" fill="#6B7280">monitors live performance → improves config → relaunches, without waiting on a human each cycle</text>
+<rect x="244" y="338" width="140" height="24" rx="12.0" fill="#EFE7FD" stroke="#7C3AED" stroke-width="1.3"/><text x="314.0" y="354.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#7C3AED">STAGE 2 · FUTURE</text>
+<line x1="660.0" y1="460" x2="660.0" y2="400" stroke="#6B7280" stroke-width="1.7" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+<text x="790.0" y="430.0" text-anchor="start" font-family="Arial, sans-serif" font-size="11" font-weight="400" fill="#6B7280">maturity path, not yet built</text>
+<path d="M 920.0 330 C 1010.0 270, 1010.0 430, 920.0 370" fill="none" stroke="#7C3AED" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="1015.0" y="350" text-anchor="start" font-family="Arial, sans-serif" font-size="10.5" font-weight="400" fill="#7C3AED">performance</text>
+<text x="1015.0" y="364" text-anchor="start" font-family="Arial, sans-serif" font-size="10.5" font-weight="400" fill="#7C3AED">feedback loop</text>
+<rect x="510.0" y="140" width="300" height="60" rx="8" fill="#F8FAFC" stroke="#7C3AED" stroke-width="1.6"/><text x="660.0" y="168.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1F2937">Improved campaign</text><text x="660.0" y="185.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#6B7280">relaunched with better config</text>
+<line x1="660.0" y1="300" x2="660.0" y2="200" stroke="#7C3AED" stroke-width="1.7" marker-end="url(#arrow)"/>
+</svg>

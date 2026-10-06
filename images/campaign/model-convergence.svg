@@ -1,0 +1,49 @@
+<svg viewBox="0 0 1320 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five recommendation factors rank the best content for a customer; that decision, alongside Time Affinity, Audience and Channel module decisions, feeds up into the parked Agentic AI orchestration layer, which routes through human review before execution.">
+<rect x="0" y="0" width="1320" height="800" fill="#FFFFFF"/>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/>
+  </marker>
+</defs>
+<text x="40" y="745" text-anchor="start" font-family="Arial, sans-serif" font-size="11.5" font-weight="700" fill="#6B7280">HOW CONTENT AI DECIDES</text>
+<rect x="40" y="650" width="190" height="66" rx="8" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.4"/>
+<text x="135.0" y="690" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">Relevance</text>
+<polyline points="135.0,650 135.0,628 660.0,596" fill="none" stroke="#94A3B8" stroke-width="1.3"/>
+<rect x="254" y="650" width="190" height="66" rx="8" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.4"/>
+<text x="349.0" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">Historical</text>
+<text x="349.0" y="698" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">performance</text>
+<polyline points="349.0,650 349.0,628 660.0,596" fill="none" stroke="#94A3B8" stroke-width="1.3"/>
+<rect x="468" y="650" width="190" height="66" rx="8" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.4"/>
+<text x="563.0" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">Business</text>
+<text x="563.0" y="698" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">rules</text>
+<polyline points="563.0,650 563.0,628 660.0,596" fill="none" stroke="#94A3B8" stroke-width="1.3"/>
+<rect x="682" y="650" width="190" height="66" rx="8" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.4"/>
+<text x="777.0" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">Content</text>
+<text x="777.0" y="698" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">conflicts</text>
+<polyline points="777.0,650 777.0,628 660.0,596" fill="none" stroke="#94A3B8" stroke-width="1.3"/>
+<rect x="896" y="650" width="190" height="66" rx="8" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.4"/>
+<text x="991.0" y="690" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1F2937">Guardrails</text>
+<polyline points="991.0,650 991.0,628 660.0,596" fill="none" stroke="#94A3B8" stroke-width="1.3"/>
+<rect x="470.0" y="500" width="380" height="96" rx="8" fill="#F8FAFC" stroke="#D97706" stroke-width="1.6"/><text x="660.0" y="533.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2937">Content AI — ranked recommendation</text><text x="660.0" y="550.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">per customer / micro-cohort / channel</text>
+<rect x="612" y="562" width="96" height="24" rx="12.0" fill="#FAEFE1" stroke="#D97706" stroke-width="1.3"/><text x="660.0" y="578.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#D97706">WIP</text>
+<text x="40" y="315" text-anchor="start" font-family="Arial, sans-serif" font-size="11.5" font-weight="700" fill="#6B7280">MODULE DECISIONS</text>
+<rect x="40" y="340" width="280" height="96" rx="8" fill="#F8FAFC" stroke="#059669" stroke-width="1.6"/><text x="180.0" y="373.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2937">Time Affinity</text><text x="180.0" y="390.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">best send window</text>
+<rect x="121" y="402" width="118" height="24" rx="12.0" fill="#E1F2ED" stroke="#059669" stroke-width="1.3"/><text x="180.0" y="418.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#059669">HANDED OFF</text>
+<rect x="370" y="340" width="280" height="96" rx="8" fill="#F8FAFC" stroke="#D97706" stroke-width="1.6"/><text x="510.0" y="373.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2937">Content AI</text><text x="510.0" y="390.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">ranked content (from below)</text>
+<rect x="451" y="402" width="118" height="24" rx="12.0" fill="#FAEFE1" stroke="#D97706" stroke-width="1.3"/><text x="510.0" y="418.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#D97706">WIP</text>
+<rect x="700" y="340" width="280" height="96" rx="8" fill="#F8FAFC" stroke="#6B7280" stroke-width="1.6"/><text x="840.0" y="373.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2937">Audience</text><text x="840.0" y="390.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">who to target / build</text>
+<rect x="781" y="402" width="118" height="24" rx="12.0" fill="#EDEEF0" stroke="#6B7280" stroke-width="1.3"/><text x="840.0" y="418.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#6B7280">PLANNED</text>
+<rect x="1030" y="340" width="280" height="96" rx="8" fill="#F8FAFC" stroke="#6B7280" stroke-width="1.6"/><text x="1170.0" y="373.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2937">Channel</text><text x="1170.0" y="390.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">best channel to use</text>
+<rect x="1111" y="402" width="118" height="24" rx="12.0" fill="#EDEEF0" stroke="#6B7280" stroke-width="1.3"/><text x="1170.0" y="418.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#6B7280">PLANNED</text>
+<line x1="660.0" y1="500" x2="510.0" y2="440" stroke="#D97706" stroke-width="1.7" marker-end="url(#arrow)"/>
+<rect x="440.0" y="160" width="440" height="80" rx="8" fill="#F8FAFC" stroke="#7C3AED" stroke-width="1.6"/><text x="660.0" y="198.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1F2937">Agentic AI orchestration</text><text x="660.0" y="215.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">reads every module, plans the campaign</text>
+<rect x="324" y="188" width="100" height="24" rx="12.0" fill="#EFE7FD" stroke="#7C3AED" stroke-width="1.3"/><text x="374.0" y="204.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" fill="#7C3AED">PARKED</text>
+<line x1="180.0" y1="340" x2="660.0" y2="240" stroke="#94A3B8" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="510.0" y1="340" x2="660.0" y2="240" stroke="#94A3B8" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="840.0" y1="340" x2="660.0" y2="240" stroke="#94A3B8" stroke-width="1.4" marker-end="url(#arrow)"/>
+<line x1="1170.0" y1="340" x2="660.0" y2="240" stroke="#94A3B8" stroke-width="1.4" marker-end="url(#arrow)"/>
+<rect x="400.0" y="40" width="210" height="66" rx="8" fill="#F8FAFC" stroke="#0F172A" stroke-width="1.6"/><text x="505.0" y="71.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#0F172A">Human review</text><text x="505.0" y="88.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">why this? — approve</text>
+<rect x="710.0" y="40" width="210" height="66" rx="8" fill="#F8FAFC" stroke="#0F172A" stroke-width="1.6"/><text x="815.0" y="71.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#0F172A">Execute</text><text x="815.0" y="88.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6B7280">launch the campaign</text>
+<line x1="600.0" y1="160" x2="505.0" y2="106" stroke="#1F2937" stroke-width="1.7" marker-end="url(#arrow)"/>
+<line x1="720.0" y1="160" x2="815.0" y2="106" stroke="#1F2937" stroke-width="1.7" marker-end="url(#arrow)"/>
+</svg>
