@@ -1,228 +1,209 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Identity &amp; Access Centre — Sunny Kumar</title>
-  <meta name="description" content="Case study: designing for trust, risk and high-stakes decisions. Building Airtel Cloud's in-house IAM model from definitions up.">
-  <meta name="theme-color" content="#0b0d10">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%235eead4'/><text x='16' y='21.5' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='%230b0d10'>SK</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Access, without the headache — Sunny Kumar</title>
+<meta name="description" content="Case study: designing Airtel Cloud's in-house identity and access management, starting from definitions, not screens.">
+<meta name="theme-color" content="#2F4BD1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='16' fill='%234A6CEB'/><text x='16' y='21' font-family='sans-serif' font-size='13' font-weight='800' text-anchor='middle' fill='white'>SK</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css">
 </head>
-<body>
+<body class="theme-blue">
 
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="../index.html" aria-label="Sunny Kumar, home"><span class="brand-mark">SK</span> Sunny Kumar</a>
-    <nav class="nav-links" aria-label="Main">
-      <a class="keep" href="../index.html#work">Work</a>
-      <a href="../index.html#about">About</a>
-      <a class="cta" href="../index.html#contact">Contact</a>
-    </nav>
+<nav class="pills" aria-label="Main">
+  <a class="fl" href="../about.html">About</a>
+</nav>
+
+<header class="band" id="top" aria-labelledby="tldr">
+  <a class="back" href="../index.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Work</a>
+  <div class="band-inner">
+    <div>
+      <span class="eyebrow">03 — Case study · Jun 2026 – now</span>
+      <h1>Access, without the headache</h1>
+    </div>
+    <div class="tldr">
+      <h2 id="tldr">TL;DR</h2>
+      <div class="tldr-body">
+        <p class="tldr-lede">Deals were stalling because Airtel Cloud couldn't answer one question: who can access what? I'm designing its in-house identity and access model — starting from definitions, not screens.</p>
+        <div class="stats">
+          <div class="stat"><b>4</b><span>steps: Provision, Define, Assign, Assume</span></div>
+          <div class="stat"><b>3</b><span>research threads run in parallel</span></div>
+          <div class="stat"><b>0</b><span>PRDs to start from</span></div>
+        </div>
+        <ul>
+          <li><strong>Defined before drawing</strong> — separated Permission, Role, Permission Set and Policy, then Trust from Delegation.</li>
+          <li><strong>Designed a new hierarchy</strong> — Account → Tenant → Cell, with the Cell as the access gate, unlike AWS or GCP.</li>
+          <li><strong>Handed engineering a working prototype</strong> — permission sets, roles and grants built directly on it.</li>
+        </ul>
+        <p class="impact-note">Status: in progress · target January 2027</p>
+      </div>
+    </div>
   </div>
 </header>
 
-<main>
-  <div class="wrap">
-    <header class="cs-hero">
-      <a class="back" href="../index.html#work">← All work</a>
-      <h1>Identity &amp; Access Centre</h1>
-      <p class="cs-storyline">Storyline: <strong>I can design for trust, risk and high-stakes decisions.</strong></p>
+<main class="wrap body">
 
-      <dl class="cs-meta">
-        <div><dt>Role</dt><dd>Design lead, Senior Lead</dd></div>
-        <div><dt>Timeline</dt><dd>Jun 2026 – ongoing</dd></div>
-        <div><dt>Platform</dt><dd>Airtel Cloud console (ACP)</dd></div>
-        <div><dt>Status</dt><dd>In progress · target Jan 2027</dd></div>
-      </dl>
-    </header>
+<figure>
+  <div class="ph r-hero">[Hero — Identity &amp; Access overview page]<img src="../images/iam/hero.jpg" alt="Identity and Access Centre overview page" loading="lazy"></div>
+  <figcaption>Fig. 1 — The Identity &amp; Access Centre</figcaption>
+</figure>
 
-    <div class="cs-layout">
-      <aside class="toc" aria-label="On this page">
-        <span class="label">On this page</span>
-        <ol>
-          <li><a href="#role">My role</a></li>
-          <li><a href="#situation">Situation</a></li>
-          <li><a href="#stakes">Stakes</a></li>
-          <li><a href="#complexity">Complexity</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#intervention">Intervention</a></li>
-          <li><a href="#decisions">Key decisions</a></li>
-          <li><a href="#platform">Platform thinking</a></li>
-          <li><a href="#influence">Influence</a></li>
-          <li><a href="#outcome">Outcome</a></li>
-          <li><a href="#learned">What I learned</a></li>
-        </ol>
-      </aside>
-
-      <article class="prose">
-
-        <section id="role">
-          <h2><span class="num">00</span>My role &amp; ground</h2>
-          <p>I've led IAM design since June 2026, as a distinct engagement after handing over the wider Cloud Platform scope. The Product Manager had begun documenting requirements; from there I built the model, the information architecture and the working prototype, and I'm still leading it as dependencies move in parallel.</p>
-          <p>There was no PRD when I started, and engineering had already committed to modelling closely on AWS IAM, which shaped my earliest work directly.</p>
-        </section>
-
-        <section id="situation">
-          <h2><span class="num">01</span>Situation</h2>
-          <p>The external partner building Airtel's Cloud Management Platform had no IAM module, and that gap was costing the business. Prospective clients asked for IAM in sales pitches; without it, deals couldn't proceed.</p>
-          <p>Leadership made two decisions at once: build IAM as the priority, and build it <strong>in-house</strong> for control and speed. IAM became the first system Airtel brought back internally, not because the partner's work was bad, but because depending on a partner for identity and access was itself the risk.</p>
-        </section>
-
-        <section id="stakes">
-          <h2><span class="num">02</span>Stakes</h2>
-          <p>Deals were stalling in-pitch specifically over IAM's absence, a direct commercial cost. The committed target is January 2027. This is a large, interdependent build, not a scoped feature.</p>
-        </section>
-
-        <section id="complexity">
-          <h2><span class="num">03</span>Complexity</h2>
-          <p>IAM has to reconcile more concepts than most modules ever will:</p>
-          <div class="pipeline">
-            <span>Identities</span><span>Groups</span><span>Accounts &amp; Cells</span><span>Roles</span><span>Permission sets</span><span>Policies</span><span>Workloads</span><span>Service identities</span><span>Identity providers</span><span>Resource access</span><span>Trust</span><span>Delegation</span><span>Conditions</span><span>Governance</span>
-          </div>
-          <p>The challenge was never any one of these. It was building <strong>one coherent mental model across all of them</strong>, from a standing start, while a legacy access model was the only thing customers had.</p>
-        </section>
-
-        <section id="research">
-          <h2><span class="num">04</span>Research &amp; discovery</h2>
-          <p>Three research threads ran in parallel, each answering a different question.</p>
-
-          <h3>What does the closest reference actually do?</h3>
-          <p>A screen-by-screen audit of AWS IAM (Permission Sets, Policies, Roles and their creation flows), since engineering had committed to an AWS-adjacent approach and there was no PRD to work from instead.</p>
-
-          <h3>What does good multi-cloud practice look like?</h3>
-          <p>Airtel's own infrastructure runs on both GCP and AWS, so an AWS-only study wasn't enough. I sought out a multi-cloud IAM practitioner on another internal team, who pushed the thinking further: a provider-agnostic identity model, a unified cloud-connector strategy, org-level guardrails, and just-in-time privileged access as a roadmap capability.</p>
-
-          <h3>What's the baseline we're replacing?</h3>
-          <p>The colleague who manages today's access model walked me through how fragmented it is: identity split across three systems, each needing synced copies of the same user-to-tenant mapping, with Super Admin sitting outside Cell-based scoping as a structural shortcut the new model couldn't inherit.</p>
-
-          <p>A fourth input was deliberately not adopted. The external partner was building its own IAM and gave a walkthrough. I mined it for good ideas without intending to adopt it; staying independent was the point.</p>
-
-          <figure class="fig" data-file="images/iam/access-analyzer.jpg">
-            <img src="../images/iam/access-analyzer.jpg" alt="Access Analyzer explaining a denied access decision" loading="lazy">
-            <figcaption>Access Analyzer → Explain: showing why access was denied.</figcaption>
-          </figure>
-
-          <div class="callout">
-            <span class="label">What I uncovered</span>
-            <ul>
-              <li>The legacy model's core flaw wasn't a missing feature. <strong>Super Admin worked outside the Cell-scoping model entirely</strong>, an inconsistency baked into the system IAM had to replace.</li>
-              <li>AWS has no separate module for Conditions; they're set inline. That <strong>contradicted what Product wanted</strong> and became a real disagreement (see Key decisions).</li>
-              <li>Coupling identity too tightly to AWS-specific constructs would be a mistake <strong>Airtel's multi-cloud reality couldn't afford</strong>.</li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="intervention">
-          <h2><span class="num">05</span>My intervention</h2>
-          <p>Rather than starting from screens, I started from <strong>definitions</strong>, separating concepts that get conflated everywhere else: Permission vs. Role vs. Permission Set vs. Policy, and later Trust vs. Delegation.</p>
-          <p>The core model became the spine of the whole module:</p>
-          <div class="model">
-            <div><span class="step">01</span><strong>Provision</strong><span>Super Admin creates a Tenant Admin and dedicates a Cell</span></div>
-            <div><span class="step">02</span><strong>Define</strong><span>Roles, permission sets and conditions describe what's allowed</span></div>
-            <div><span class="step">03</span><strong>Assign</strong><span>Users and groups get roles, scoped to Cells</span></div>
-            <div><span class="step">04</span><strong>Assume</strong><span>A user takes on a role to act, and every decision is traceable</span></div>
-          </div>
-          <p>No Cell means no console access, regardless of role. Once a Tenant Admin has access, they can create Cells and users themselves. The <strong>Account → Tenant → Cell</strong> hierarchy, with Cell as the access gate, is a genuine structural divergence from both AWS and GCP; neither has a direct equivalent.</p>
-          <figure class="fig" data-file="images/iam/user-to-role-flow.gif">
-            <img src="../images/iam/user-to-role-flow.gif" alt="User creation to role assignment flow" loading="lazy">
-            <figcaption>User creation through role assignment.</figcaption>
-          </figure>
-        </section>
-
-        <section id="decisions">
-          <h2><span class="num">06</span>Key decisions</h2>
-          <ul>
-            <li><strong>Conditions: a real disagreement, worked through openly.</strong> I put five clarifying questions to the Product Manager, including why Conditions needed their own module when AWS handles them inline. His answer was cognitive load, since one condition can apply to many roles, and he was open to authoring them inline too. The same thread settled that policies stay bundled into permission sets, there are no customer inline policies, and resource policies are managed separately.</li>
-            <li><strong>Split Trust from Delegation.</strong> The first design treated them as one module, weighted toward Trust. When Product flagged that Delegation was being treated as a variant, I reworked it into two genuinely separate flows.</li>
-            <li><strong>One Overview page, not two.</strong> I first built separate Admin and Cloud User experiences. Review pushed toward one page, and the answer was a single page trimmed by persona.</li>
-            <li><strong>Corrected myself before anyone else did.</strong> I proposed a tree to show a user's Accounts &amp; Cells, then realised a tree breaks down when search must show matched accounts and cells together, and moved to an expandable-row list.</li>
-            <li><strong>Adopted "Decision Trace" as explainability language, on my own terms.</strong> An AI review surfaced the framing after the fact; I changed its sequence before adopting it.</li>
-          </ul>
-          <div class="fig-pair">
-            <figure class="fig" data-file="images/iam/trust-vs-delegation.gif">
-              <img src="../images/iam/trust-vs-delegation.gif" alt="Trust and Delegation as two separate flows" loading="lazy">
-              <figcaption>Trust vs. Delegation as two flows.</figcaption>
-            </figure>
-            <figure class="fig" data-file="images/iam/conditions-flow.gif">
-              <img src="../images/iam/conditions-flow.gif" alt="Condition creation and association flow" loading="lazy">
-              <figcaption>Creating and associating Conditions.</figcaption>
-            </figure>
-          </div>
-        </section>
-
-        <section id="platform">
-          <h2><span class="num">07</span>From UX fixes to platform thinking</h2>
-          <div class="levels">
-            <div class="level"><span class="label">Screens</span><p>Email as the primary identifier, "Add User" over "Create User", listing columns reordered.</p></div>
-            <div class="level"><span class="label">Flows</span><p>Full-page user creation; Trust and Delegation as real flows; a login flow with no redirect for non-root users and support for multiple sign-in providers.</p></div>
-            <div class="level"><span class="label">Platform</span><p>Provision → Define → Assign → Assume and Account → Tenant → Cell applied across every domain, with Decision Trace as a cross-cutting explainability layer.</p></div>
-            <div class="level"><span class="label">Ecosystem</span><p>IAM as the mechanism by which Airtel takes control back from an external partner, one system at a time.</p></div>
-          </div>
-        </section>
-
-        <section id="influence">
-          <h2><span class="num">08</span>Influence &amp; trade-offs</h2>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Who</th><th>What I did</th><th>What resulted</th></tr></thead>
-              <tbody>
-                <tr><td>Engineering</td><td>Handed over a prototype with finalised permission sets, roles and grants</td><td>Built directly on it</td></tr>
-                <tr><td>A designer on my team</td><td>Recommended engineering reuse her existing components instead of rebuilding</td><td>Freed her capacity: a resourcing call, not only a design one</td></tr>
-                <tr><td>My own method</td><td>Shifted to AI-directed, surgical prototyping once Cloudscape was mandated</td><td>Respected the platform's micro-frontend boundaries, where careless changes were costly</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <figure class="fig" data-file="images/iam/gemini-cli-build.png">
-            <img src="../images/iam/gemini-cli-build.png" alt="Gemini CLI build log used for AI-directed prototyping" loading="lazy">
-            <figcaption>AI-directed prototyping with Gemini CLI against the Cloudscape design system.</figcaption>
-          </figure>
-        </section>
-
-        <section id="outcome">
-          <h2><span class="num">09</span>Outcome</h2>
-          <p>Not yet live. A prototype with finalised flows is with engineering; the Product Manager's formal review is pending. I keep "decided in review" and "shipped" as separate claims.</p>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Status</th><th>Work</th></tr></thead>
-              <tbody>
-                <tr><td>Done</td><td>Login with multi-channel authentication; role selection; user creation; Users/Workloads split; common Overview page; standardised Disable/Suspend; Conditions elevated in the navigation</td></tr>
-                <tr><td>In progress</td><td>Permissions and access-control flows; Tenant Admin and Cell creation flows; no-role-assigned behaviour; Delegation flow; visual design spec</td></tr>
-                <tr><td>Target</td><td>January 2027</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="learned">
-          <h2><span class="num">10</span>What this taught me</h2>
-          <div class="callout callout-accent">
-            <p>The job isn't avoiding AI-assisted thinking. It's knowing precisely which parts of the output are actually yours.</p>
-          </div>
-          <p>When an AI handed back a clean "Decision Trace" framing after the fact, the easy paths were to reject it as not mine or adopt it wholesale. Neither was honest. Changing its sequence before adopting it was the real test of whether I understood the model well enough to improve on someone else's articulation of it.</p>
-          <p>The second lesson was about role change without loss of ownership. Once my hands-on production scope shrank, most of the leverage came from review, decisions and AI-directed execution: the Conditions synthesis, the Trust/Delegation split, the tree-to-list call. None of it required drawing every pixel.</p>
-
-          <a class="next-cs" href="ai-campaign-manager.html">
-            <span><span class="label">Next case study</span><strong>AI Campaign Manager</strong></span>
-            <span class="card-arrow">→</span>
-          </a>
-        </section>
-
-      </article>
-    </div>
+<section class="facts">
+  <div>
+    <span class="label">The project</span>
+    <p>Identity and access management (IAM) for the Airtel Cloud console: who can sign in, what they can do, and where. The first system Airtel brought in-house from its external platform partner.</p>
   </div>
+  <div>
+    <span class="label">My role</span>
+    <p>Design lead. I built the model, the information architecture and the working prototype, working directly with product and engineering.</p>
+  </div>
+  <div>
+    <span class="label">Title · Timeline</span>
+    <p>Senior Lead Product Designer, Airtel<br>Jun 2026 – ongoing</p>
+  </div>
+</section>
+
+<section class="wide-sec">
+  <span class="kicker">Design process</span>
+  <h2>How I worked</h2>
+  <p class="intro">With no PRD, I started from references and definitions, then let a working prototype carry the decisions.</p>
+  <ol class="process">
+    <li><b>Audit</b><span>Screen-by-screen study of AWS IAM</span></li>
+    <li><b>Consult</b><span>A multi-cloud IAM practitioner inside Airtel</span></li>
+    <li><b>Map</b><span>The legacy access model and its shortcuts</span></li>
+    <li><b>Define</b><span>Agreed names and relationships before any screen</span></li>
+    <li><b>Prototype</b><span>AI-directed prototyping on the Cloudscape system</span></li>
+    <li><b>Review</b><span>Decisions worked through with product and engineering</span></li>
+  </ol>
+</section>
+
+
+<section class="narrow sec">
+  <h2>Why identity and access?</h2>
+  <p>Prospective clients asked for IAM in sales pitches, and without it deals couldn't proceed. Leadership decided to build it as the priority, and to build it in-house: depending on a partner for identity and access was itself the risk.</p>
+  <p>IAM has to reconcile more concepts than almost any other module — identities, groups, accounts, roles, permission sets, policies, workloads, identity providers, trust, delegation, conditions and governance — while customers still relied on a fragmented legacy model.</p>
+</section>
+
+<section class="grid-2 gap-fig">
+  <figure>
+    <div class="ph r-43">[AWS IAM audit — screen-by-screen]<img src="../images/iam/aws-audit.png" alt="Screen-by-screen audit of AWS IAM" loading="lazy"></div>
+    <figcaption>Fig. 2 — Auditing the closest reference, since engineering had committed to an AWS-like approach.</figcaption>
+  </figure>
+  <figure>
+    <div class="ph r-43">[Legacy access model, mapped]<img src="../images/iam/legacy-model.png" alt="Map of the legacy access model across three systems" loading="lazy"></div>
+    <figcaption>Fig. 3 — The before state: identity split across three systems, with Super Admin outside the scoping model entirely.</figcaption>
+  </figure>
+</section>
+
+<section class="narrow sec">
+  <h2>The problem: one mental model for everything</h2>
+  <p>The challenge was never a single concept. It was building one coherent model across all of them, from a standing start, with no PRD. Three research threads fed it: an audit of AWS IAM, a multi-cloud IAM practitioner inside Airtel who pushed for a provider-agnostic model, and a walkthrough of the legacy system it would replace.</p>
+  <blockquote>“Before drawing a single screen, I wrote definitions.”</blockquote>
+</section>
+
+<section class="narrow sec">
+  <h2>Project goals</h2>
+  <ul>
+    <li>Unblock enterprise deals that stalled on missing IAM</li>
+    <li>Replace a fragmented legacy model with one consistent, scoped one</li>
+    <li>Stay provider-agnostic, because Airtel's own infrastructure spans AWS and GCP</li>
+  </ul>
+</section>
+
+<section class="narrow sec tight">
+  <h2>Improvement 1: A model before screens</h2>
+  <p>The core model became the spine of the whole module:</p>
+  <div class="steps">
+    <div><b>Provision</b><span>Super Admin creates a Tenant Admin and dedicates a Cell</span></div>
+    <div><b>Define</b><span>Roles, permission sets and conditions describe what's allowed</span></div>
+    <div><b>Assign</b><span>Users and groups get roles, scoped to Cells</span></div>
+    <div><b>Assume</b><span>A user takes on a role to act; every decision is traceable</span></div>
+  </div>
+  <p>No Cell means no console access, regardless of role. That Account → Tenant → Cell hierarchy is a genuine divergence from both AWS and GCP.</p>
+</section>
+
+<figure class="gap-fig">
+  <div class="ph r-wide">[User creation through role assignment]<img src="../images/iam/user-to-role-flow.gif" alt="User creation through role assignment flow" loading="lazy"></div>
+  <figcaption>Fig. 4 — From adding a user to assigning a role.</figcaption>
+</figure>
+
+<section class="narrow sec tight">
+  <h2>Improvement 2: Decisions worked through, not imposed</h2>
+  <p><strong>Conditions.</strong> AWS sets conditions inline; product wanted a separate module. I put five questions to the product manager; his answer was cognitive load, since one condition can apply to many roles, and he was open to inline authoring too. We kept both paths.</p>
+  <p><strong>Trust and Delegation.</strong> My first design treated them as one module. When product flagged that Delegation was being treated as a variant, I split them into two separate flows.</p>
+  <p><strong>Catching my own mistake.</strong> I proposed a tree to show a user's accounts and cells, then realised it breaks when search must show matches together, and moved to expandable rows before anyone else flagged it.</p>
+  <h3>Working method</h3>
+  <p>Once the Cloudscape design system was mandated, I shifted to AI-directed, surgical prototyping, which respected the platform's micro-frontend boundaries.</p>
+</section>
+
+<section class="grid-3 gap-fig">
+  <figure>
+    <div class="ph r-34">[Trust vs Delegation]<img src="../images/iam/trust-vs-delegation.gif" alt="Trust and Delegation as two separate flows" loading="lazy"></div>
+    <figcaption>Fig. 5 — Trust and Delegation</figcaption>
+  </figure>
+  <figure>
+    <div class="ph r-34">[Conditions flow]<img src="../images/iam/conditions-flow.gif" alt="Creating and associating conditions" loading="lazy"></div>
+    <figcaption>Fig. 6 — Conditions</figcaption>
+  </figure>
+  <figure>
+    <div class="ph r-34">[Access explained: why access was denied]<img src="../images/iam/access-analyzer.jpg" alt="Explanation of why access was denied" loading="lazy"></div>
+    <figcaption>Fig. 7 — Decision trace</figcaption>
+  </figure>
+</section>
+
+<section class="narrow sec">
+  <span class="kicker">Bottlenecks</span>
+  <h2>Designing while the ground moved</h2>
+  <p>IAM touches almost every part of the console, so the constraints came from everywhere:</p>
+  <div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>No PRD, and engineering had already committed to an AWS-like model</b><p>I audited AWS IAM closely, then pushed for a provider-agnostic model so the design wasn't locked to one cloud.</p></div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Dependencies elsewhere kept moving</b><p>I designed the model first, so screens could change without the concepts changing underneath them.</p></div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>A mandated design system and micro-frontend boundaries</b><p>I moved to surgical, AI-directed prototyping, where careless changes across modules were costly.</p></div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>The legacy model had shortcuts the new one couldn't inherit</b><p>Super Admin sat outside Cell scoping; the new hierarchy made the Cell the access gate for everyone.</p></div>
+  </div>
+</section>
+
+<section class="wide-sec">
+  <span class="kicker">Trade-offs</span>
+  <h2>What I gave up, on purpose</h2>
+  <p class="intro">Every simplification in IAM gives up some flexibility. These were the ones worth making.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Decision</th><th>What I gave up</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Build in-house, not the partner's IAM</td><td>Speed from reusing existing work</td><td>Control over identity was the point; the partner's walkthrough was mined for ideas only</td></tr>
+        <tr><td>Policies bundled into permission sets</td><td>Writing custom policies from scratch</td><td>Far less room for error; enough flexibility for now</td></tr>
+        <tr><td>No customer inline policies</td><td>Fine-grained one-off rules</td><td>Keeps access auditable and explainable</td></tr>
+        <tr><td>Conditions authored in both places</td><td>A single, simpler entry point</td><td>One condition applies to many roles, but people also expect it inline</td></tr>
+        <tr><td>One Overview page trimmed by persona</td><td>Two tailored pages</td><td>One source of truth, still relevant to admins and users</td></tr>
+        <tr><td>Expandable rows instead of a tree</td><td>A more visual hierarchy</td><td>Trees break when search must show matched accounts and cells together</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="narrow sec">
+  <span class="kicker">Impact</span>
+  <h2>The impact</h2>
+  <div class="metrics">
+    <div><b>Done</b><span>Login, role selection, user creation</span></div>
+    <div><b>WIP</b><span>Permissions &amp; access-control flows</span></div>
+    <div><b>Jan ’27</b><span>Target launch</span></div>
+  </div>
+  <p>Not yet live. Engineering is building on a prototype with finalised permission sets, roles and grants; the formal product review is pending. I keep "decided in review" and "shipped" as separate claims.</p>
+  <p>What I learned: once my hands-on scope shrank, most of the leverage came from review, decisions and AI-directed execution. The job isn't avoiding AI-assisted thinking — it's knowing precisely which parts of the output are yours.</p>
+</section>
+
+<a class="next" href="ai-campaign-manager.html#top">
+  <span class="label">Next — 01</span>
+  <span class="big">Campaigns, <i>now with a brain</i> →</span>
+</a>
+
 </main>
-
-<footer class="footer">
-  <div class="wrap">
-    <span>© 2026 Sunny Kumar</span>
-    <span><a href="mailto:sany.sharma09@gmail.com">sany.sharma09@gmail.com</a> · <a href="https://www.linkedin.com/in/sunny-kumar-44a5b41a/" target="_blank" rel="noopener">LinkedIn</a></span>
-  </div>
-</footer>
-
 <script src="../js/site.js"></script>
 </body>
 </html>
