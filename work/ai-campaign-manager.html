@@ -1,227 +1,334 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Campaign Manager — Sunny Kumar</title>
-  <meta name="description" content="Case study: designing AI-native experiences while keeping humans in control. Leading Airtel's first AI initiative in its campaign platform.">
-  <meta name="theme-color" content="#0b0d10">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%235eead4'/><text x='16' y='21.5' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='%230b0d10'>SK</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campaigns, now with a brain — Sunny Kumar</title>
+<meta name="description" content="Three years, one product: how I took Airtel's campaign platform from a tool that leaned on Airtel's ops teams, to a mostly self-serve one, to one unified platform, and now an AI-native one where a person approves every outcome.">
+<meta name="theme-color" content="#5B45C2">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='16' fill='%234A6CEB'/><text x='16' y='21' font-family='sans-serif' font-size='13' font-weight='800' text-anchor='middle' fill='white'>SK</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css">
 </head>
-<body>
+<body class="theme-violet">
 
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="../index.html" aria-label="Sunny Kumar, home"><span class="brand-mark">SK</span> Sunny Kumar</a>
-    <nav class="nav-links" aria-label="Main">
-      <a class="keep" href="../index.html#work">Work</a>
-      <a href="../index.html#about">About</a>
-      <a class="cta" href="../index.html#contact">Contact</a>
-    </nav>
+<nav class="pills" aria-label="Main">
+  <a class="fl" href="../about.html">About</a>
+</nav>
+
+<header class="band" id="top" aria-labelledby="tldr">
+  <a class="back" href="../index.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Work</a>
+  <div class="band-inner">
+    <div>
+      <span class="eyebrow">01 — Case study · Oct 2023 – now · three years, one product</span>
+      <h1>Campaigns, now with a brain</h1>
+    </div>
+    <div class="tldr">
+      <h2 id="tldr">TL;DR</h2>
+      <div class="tldr-body">
+        <p class="tldr-lede">To run one campaign across SMS, WhatsApp and email, an Airtel enterprise team needed five tools. Over three years I took the platform from a tool that leaned on Airtel's ops teams for almost every step, to a mostly self-serve one, to one unified platform, and now an AI-native one — where AI plans and a person approves.</p>
+        <div class="stats">
+          <div class="stat"><b>3 yrs</b><span>one product, five stages of maturity</span></div>
+          <div class="stat"><b>5 → 1</b><span>campaign tools unified into UCLM</span></div>
+          <div class="stat"><b>7</b><span>teams aligned across four rounds</span></div>
+          <div class="stat"><b>13</b><span>user interviews shaping the roadmap</span></div>
+        </div>
+        <ul>
+          <li><strong>Made IQ Reach self-serve</strong> — step by step, from reporting to onboarding and payments, so clients stopped depending on ops; plus its most logic-heavy flows, then IQ Conduit for a business line with a ~US$65M revenue target.</li>
+          <li><strong>Unified the tools</strong> — led design for UCLM, which was sold to an internal client before build, shipped Phase 1, and is rolling out in Africa.</li>
+          <li><strong>Added intelligence</strong> — leading Airtel's first AI initiative in campaigns: Time Affinity handed off, Content AI in design, an agentic builder validated.</li>
+        </ul>
+        <p class="impact-note">Impact: [headline adoption metric — to be added after Phase 1 data]</p>
+      </div>
+    </div>
   </div>
 </header>
 
-<main>
-  <div class="wrap">
-    <header class="cs-hero">
-      <a class="back" href="../index.html#work">← All work</a>
-      <h1>AI Campaign Manager</h1>
-      <p class="cs-storyline">Storyline: <strong>Designing AI-native experiences while keeping humans in control.</strong></p>
+<main class="wrap body" style="padding-top: 0;">
 
-      <dl class="cs-meta">
-        <div><dt>Role</dt><dd>Senior Lead · owner of the Agentic AI layer</dd></div>
-        <div><dt>Team</dt><dd>Two designers, one per module</dd></div>
-        <div><dt>Platform</dt><dd>UCLM, Airtel's campaign platform</dd></div>
-        <div><dt>Status</dt><dd>Work in progress</dd></div>
-      </dl>
+<section class="facts">
+  <div>
+    <span class="label">The product</span>
+    <p>Airtel's enterprise campaign platform: IQ Reach → UCLM (Unified Campaign Lifecycle Manager) → an AI-powered campaign manager heading towards SaaS.</p>
+  </div>
+  <div>
+    <span class="label">My role</span>
+    <p>Design lead across all three stages. I set direction, ran research and alignment, and led a team of two designers on the AI modules — using AI tools to prototype and execute faster.</p>
+  </div>
+  <div>
+    <span class="label">Title · Timeline</span>
+    <p>Senior Lead Product Designer, Airtel<br>Oct 2023 – now</p>
+  </div>
+</section>
 
-      <div class="callout callout-accent" style="margin-top:28px">
-        <span class="label">The principle behind every module</span>
-        <p>Human defines the outcome. AI handles the execution complexity. Human approves the outcome.</p>
-      </div>
-    </header>
+<!-- PROBLEM -->
+<section class="narrow sec">
+  <span class="kicker">The problem</span>
+  <h2>Five tools, one marketer, one campaign</h2>
+  <p>Airtel's campaign business had grown tool by tool: a push tool, a pull tool, an audience manager, a planner and a third-party engagement platform for WhatsApp, RCS and email. Each had its own owners, roadmap, data and definition of a "campaign".</p>
+  <p>The company's own pre-read for unification named the cost: <strong>fragmented operations, multiple teams, multiple tools, multi-channel complexity, operational dependency and no single view</strong> of how campaigns performed.</p>
+  <blockquote>“The organisation was structured around products. Customers were trying to run a campaign.”</blockquote>
+</section>
 
-    <div class="cs-layout">
-      <aside class="toc" aria-label="On this page">
-        <span class="label">On this page</span>
-        <ol>
-          <li><a href="#overview">Overview</a></li>
-          <li><a href="#system">How it connects</a></li>
-          <li><a href="#principle">The principle</a></li>
-          <li><a href="#process">Design process</a></li>
-          <li><a href="#leading">Leading the work</a></li>
-          <li><a href="#time">Time Affinity</a></li>
-          <li><a href="#content">Content AI</a></li>
-          <li><a href="#agentic">Agentic UCLM</a></li>
-          <li><a href="#next">Status &amp; next</a></li>
-        </ol>
-      </aside>
+<!-- PROCESS -->
+<section class="wide-sec">
+  <h2>How I worked</h2>
+  <p class="intro">The same loop on every stage, from the first reporting fix to the AI modules. Each pass ended with something real people could react to.</p>
+  <ol class="process">
+    <li><b>Discover</b><span>13 interviews, support and ops pain, the business pre-read</span></li>
+    <li><b>Benchmark</b><span>How MoEngage and CleverTap handle campaigns, scheduling and AI</span></li>
+    <li><b>Analyse</b><span>Synthesise into problems, priorities and "how might we" questions</span></li>
+    <li><b>Prototype</b><span>Clickable prototypes, built fast with AI tools</span></li>
+    <li><b>Align</b><span>Four rounds, from leadership to tech leads</span></li>
+    <li><b>Ship &amp; learn</b><span>Phase by phase, with a post-launch study</span></li>
+  </ol>
+</section>
 
-      <article class="prose">
+<!-- RESEARCH -->
+<section class="wide-sec">
+  <span class="kicker">Research</span>
+  <h2>What 13 interviews told us</h2>
+  <p class="intro">I spoke with the people running campaigns every day — growth and campaign managers — and with the teams supporting them. Separately, interviews on the existing audience-creation journey surfaced <strong>3 critical and 5 high-priority issues</strong>: a UI refresh would not fix them; they needed structural change.</p>
+  <div class="cards">
+    <div class="card"><span class="num">01</span><h3>People dropped off while creating campaigns</h3><p>Too many steps, split across tools, before a campaign could go live.</p><span class="so">→ One guided campaign builder</span></div>
+    <div class="card"><span class="num">02</span><h3>Choosing an audience was the least-liked step</h3><p>Rules were hard to build and harder to check before sending.</p><span class="so">→ Audience rebuilt as part of the campaign, not a separate tool</span></div>
+    <div class="card"><span class="num">03</span><h3>Rich formats confused people</h3><p>WhatsApp carousels and channel set-up needed help from other teams.</p><span class="so">→ Channel settings and templates in one place</span></div>
+    <div class="card"><span class="num">04</span><h3>No way to test before launch</h3><p>Marketers sent campaigns without seeing what customers would get.</p><span class="so">→ Preview and test steps before launch</span></div>
+    <div class="card"><span class="num">05</span><h3>No single view of results</h3><p>Reporting lived in each tool, so nobody could compare channels.</p><span class="so">→ Reporting first, then unified reporting</span></div>
+    <div class="card"><span class="num">06</span><h3>Every task leaned on ops</h3><p>Onboarding, payments and requests ran through Airtel teams.</p><span class="so">→ Wallet, digital KYC and a request centre</span></div>
+  </div>
+</section>
 
-        <section id="overview">
-          <h2><span class="num">00</span>Overview</h2>
-          <p>This is the intelligence layer being built into UCLM (Unified Campaign Lifecycle Manager), and the trajectory is for it to become its own AI campaign product on top of UCLM. It isn't a fixed set of features: each module starts as its own PRD but is designed to plug into one connected system, with Agentic AI as the eventual orchestration layer.</p>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Module</th><th>Question it answers</th><th>Status</th></tr></thead>
-              <tbody>
-                <tr><td>Time Affinity</td><td>When should we send to this customer?</td><td><span class="badge badge-live">Handed off</span></td></tr>
-                <tr><td>Content AI</td><td>What content should we send?</td><td><span class="badge badge-wip">In progress</span></td></tr>
-                <tr><td>Date Affinity</td><td>Which day, within a recurring window?</td><td><span class="badge badge-soon">Planned</span></td></tr>
-                <tr><td>Audience</td><td>Who should we target, and how do we build that audience?</td><td><span class="badge badge-soon">Planned</span></td></tr>
-                <tr><td>Content creation</td><td>How do we build that content?</td><td><span class="badge badge-soon">Planned</span></td></tr>
-                <tr><td>Channel</td><td>Which channel works best?</td><td><span class="badge badge-soon">Planned</span></td></tr>
-                <tr><td>Agentic AI</td><td>How do all these decisions come together?</td><td><span class="badge badge-soon">POC done</span></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="system">
-          <h2><span class="num">01</span>How the modules connect</h2>
-          <p>Five recommendation factors (relevance, historical performance, business rules, content conflicts and guardrails) feed the Content AI decision. That joins the Time Affinity, Audience and Channel decisions, which all feed the Agentic AI orchestration layer. It plans the campaign and routes through human review before anything executes.</p>
-          <figure class="fig" data-file="images/ai/model-convergence.svg">
-            <img src="../images/ai/model-convergence.svg" alt="Five recommendation factors converging through module decisions into Agentic AI orchestration, gated by human review" loading="lazy">
-            <figcaption>Factors → module decisions → orchestration → human review → execution.</figcaption>
-          </figure>
-          <h3>From module agents to autonomous Agentic AI</h3>
-          <p>Module agents converge first into a <strong>Conversational Agentic AI</strong> (Stage 1): the growth manager states a goal in natural language, the agent plans and builds, and human review at launch is the only gate. Over time this can mature into an <strong>Autonomous Agentic AI</strong> (Stage 2, not yet built) that monitors live performance and relaunches improved configurations on its own.</p>
-          <figure class="fig" data-file="images/ai/agentic-maturity.svg">
-            <img src="../images/ai/agentic-maturity.svg" alt="Module agents converging into conversational Agentic AI, maturing toward autonomous self-optimising AI" loading="lazy">
-            <figcaption>The path from module agents to an autonomous, self-optimising layer.</figcaption>
-          </figure>
-        </section>
-
-        <section id="principle">
-          <h2><span class="num">02</span>The principle, applied</h2>
-          <div class="levels">
-            <div class="level"><span class="label">Time Affinity</span><p>The human sets goals and constraints; the model recommends the best send window; the human can always override with a manual window.</p></div>
-            <div class="level"><span class="label">Content AI</span><p>The human defines the campaign and audience; the model ranks and recommends content; the human approves before send.</p></div>
-            <div class="level"><span class="label">Agentic AI</span><p>The human states the outcome in natural language; the agent plans and assembles the campaign; the human reviews and launches.</p></div>
-          </div>
-        </section>
-
-        <section id="process">
-          <h2><span class="num">03</span>Design process</h2>
-          <p>This was the team's first AI initiative, so every open-forum discussion led to another round: diverge across possibilities, then converge on a cleaner flow for the growth manager (GM).</p>
-          <p>Product initially wanted the best possible recommendation engine regardless of UX cost: many required inputs, overwhelming transparency, and time and date bundled together. Design pushed back, arguing that <strong>an engine-first approach that overwhelms the user fails as a product regardless of model quality</strong>. Recommendation quality stayed with AI and engineering; design's job was to make that intelligence usable without asking the GM to configure all of it upfront.</p>
-          <p><strong>Benchmarking.</strong> Flows were benchmarked against MoEngage and CleverTap to calibrate how much control and transparency enterprise marketers expect. The biggest insight: show peak engagement hours from historical data as a heatmap, scoped specifically to choosing a fallback time range. Every other AI send stays inside the regulatory do-not-disturb window.</p>
-          <figure class="fig" data-file="images/ai/design-process.svg">
-            <img src="../images/ai/design-process.svg" alt="Diverge-converge design loop between product's engine-first instinct and design's push for usable UX" loading="lazy">
-            <figcaption>The diverge–converge loop used on every module. The product/design tension resolves at "converge", not before.</figcaption>
-          </figure>
-        </section>
-
-        <section id="leading">
-          <h2><span class="num">04</span>Leading the work</h2>
-          <p>As Senior Lead, I decided how the work should be structured before deciding what it should be. I split ownership: one designer owns Time Affinity, another owns Content AI, each running their own iterations with weekly reviews.</p>
-          <p>That freed me to do what a designer buried in one module can't: hold the cross-module picture, manage stakeholders across product, engineering, the AI lead and business teams, and own the Agentic AI layer that only makes sense once you can see every piece.</p>
-          <figure class="fig" data-file="images/ai/leadership-map.svg">
-            <img src="../images/ai/leadership-map.svg" alt="Leadership map showing delegation to two designers and engagement with product, engineering and business stakeholders" loading="lazy">
-            <figcaption>Delegation wasn't hands-off. Staying close to every stakeholder group surfaced gaps the original brief didn't have.</figcaption>
-          </figure>
-          <p>The clearest example is the <strong>fallback-time concept</strong>. It wasn't in the original ask; it came from engaging business stakeholders during grooming. Stakeholder input also led us to drop a separate "delivery window" control, show the behaviour heatmap <em>before</em> asking for a fallback choice, and make the fallback-versus-AI split visually clear.</p>
-
-          <h3>Steering the team's work</h3>
-          <p><strong>Resetting Time Affinity's direction.</strong> After two rounds of stakeholder review, the first direction wasn't landing. A request to switch between manual entry and AI had become a single two-way toggle, with no explanation of what each option meant and no visible reasoning, processing state or alternatives. I made the case to product for a per-module "enable AI" pattern instead of one whole-form toggle, and reassigned Time Affinity to the designer whose strengths fit edge-case-heavy work.</p>
-          <p><strong>Resolving review questions through model logic, not taste.</strong></p>
-          <ul>
-            <li>The campaign time range and the fallback time were designed as two separate steps. I pushed for one shared time-range control serving both.</li>
-            <li>With cool-down periods (say, 4 messages a week with a 2-day cool-down), does the next message fire exactly at the boundary or any day after? Date Affinity picks the day on or after the boundary. Once that was explicit, we added help text wherever a GM would otherwise have to guess.</li>
-          </ul>
-        </section>
-
-        <section id="time">
-          <h2><span class="num">05</span>Time Affinity AI</h2>
-          <p><span class="badge badge-live">Design handed off</span></p>
-          <p><strong>Problem.</strong> Campaigns are scheduled at the cohort level: one send time for everyone, regardless of individual behaviour. Every application decides timing on its own, timing experiments aren't automated the way content A/B tests are, and reporting doesn't show best-day or best-hour effects.</p>
-          <p><strong>Vision.</strong> A central scheduling intelligence service that predicts each customer's best engagement window, keeps learning, and serves recommendations through reusable APIs to any Airtel Cloud product.</p>
-          <p><strong>Phase 1.</strong> Live inside UCLM first, across Push, SMS, WhatsApp, Email, RCS, In-App and Journey channels, for one-time and recurring campaigns.</p>
-          <figure class="fig" data-file="images/ai/five-layer-architecture.svg">
-            <img src="../images/ai/five-layer-architecture.svg" alt="Time Affinity five-layer architecture from data to execution with a feedback loop" loading="lazy">
-            <figcaption>Data → Prediction → Explainability → reusable Output API → Execution in UCLM, with results feeding back.</figcaption>
-          </figure>
-          <p><strong>Why fallback ended up optional.</strong> Recurring schedules get complex fast: specific dates across months, different dates per month, fixed or varying times. After two or three iterations, the team chose to keep fallback optional so Phase 1 could ship and we could learn from real model behaviour before expanding.</p>
-        </section>
-
-        <section id="content">
-          <h2><span class="num">06</span>Content AI</h2>
-          <p><span class="badge badge-wip">In progress</span></p>
-          <p><strong>Problem.</strong> Content selection is manual and disconnected from performance. Marketers pick from intuition or past campaigns, with no systematic way to rank options by relevance, predicted performance, or fit with business rules.</p>
-          <p><strong>Vision.</strong> A layer that ranks, and eventually generates, content per customer, micro-cohort and channel, with the marketer in control of the final pick. It supports both a built-in model and bring-your-own-model for customers with their own trained models.</p>
-          <h3>Capability framework</h3>
-          <div class="model">
-            <div><span class="step">01</span><strong>Signals</strong><span>Behavioural, transactional and engagement data train the model</span></div>
-            <div><span class="step">02</span><strong>Generation</strong><span>AI-assisted drafting of content variants</span></div>
-            <div><span class="step">03</span><strong>Library</strong><span>A structured, taggable store of approved content</span></div>
-            <div><span class="step">04</span><strong>Recommendation</strong><span>Ranking by relevance, performance, rules, conflicts and guardrails</span></div>
-          </div>
-          <p><strong>Guardrails</strong> cap duplication and stop the same or conflicting offers reaching a customer too close together.</p>
-          <h3>Open design questions</h3>
-          <ul>
-            <li>How much ranking logic to expose versus a "why this?" explainer.</li>
-            <li>Where bring-your-own models plug into the same UI without a parallel flow.</li>
-            <li>How to make AI-generated drafts look clearly different from ranked existing assets.</li>
-          </ul>
-        </section>
-
-        <section id="agentic">
-          <h2><span class="num">07</span>Agentic UCLM</h2>
-          <p><span class="badge badge-soon">Parked · POC validated</span></p>
-          <p>Instead of configuring each module separately, a growth manager states the outcome they want in natural language. Agentic AI plans and assembles the campaign using every module's intelligence, then hands back to the human for review and launch.</p>
-          <div class="levels">
-            <div class="level"><span class="label">Today</span><p>Manual configuration of each module.</p></div>
-            <div class="level"><span class="label">Stage 1</span><p>Conversational assembly, with human review at launch. Proof of concept validated.</p></div>
-            <div class="level"><span class="label">Stage 2</span><p>Autonomous monitoring and relaunch. Future, not yet built.</p></div>
-          </div>
-          <p>A Beta PRD is scoped, but the work is paused until Time Affinity and Content AI ship and generate real usage data.</p>
-        </section>
-
-        <section id="next">
-          <h2><span class="num">08</span>Status &amp; what's next</h2>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Track</th><th>Status</th><th>Next</th></tr></thead>
-              <tbody>
-                <tr><td>Time Affinity</td><td>Design handed off</td><td>Observe Phase 1 behaviour; revisit fallback and recurring scope</td></tr>
-                <tr><td>Content AI</td><td>In progress</td><td>Finalise recommendation UI; resolve bring-your-own-model plug-in points</td></tr>
-                <tr><td>Agentic AI</td><td>Parked</td><td>Resume once both modules ship and produce usage data</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="callout">
-            <span class="label">Questions I'm still working through</span>
-            <ul>
-              <li>What does human review look like when the agent assembles multi-module campaigns, not single recommendations?</li>
-              <li>How much ranking logic should be explainable versus abstracted away?</li>
-              <li>Should generation be synchronous or asynchronous, and what latency is acceptable?</li>
-              <li>How do we validate model quality before expanding past Phase 1?</li>
-            </ul>
-          </div>
-
-          <a class="next-cs" href="cloud-platform.html">
-            <span><span class="label">Next case study</span><strong>Airtel Cloud Platform</strong></span>
-            <span class="card-arrow">→</span>
-          </a>
-        </section>
-
-      </article>
+<!-- BENCHMARK + ANALYSIS -->
+<section class="wide-sec">
+  <div class="split">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <span class="kicker">Benchmarking</span>
+      <h2 style="margin:0;font-weight:800;font-size:clamp(28px,2.8vw,40px);line-height:1.08;letter-spacing:-0.03em;">What the leaders do</h2>
+      <p style="margin:0;">I benchmarked MoEngage and CleverTap on campaign creation, scheduling and AI-assisted content, to calibrate how much control enterprise marketers expect before detail turns into overload. [Add any other platforms you reviewed.]</p>
+      <ul style="margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:10px;">
+        <li>Channels are <strong>steps of one campaign</strong>, not separate products.</li>
+        <li>Self-serve onboarding and payments are <strong>table stakes</strong>.</li>
+        <li>Marketers trust AI when they can <strong>see the evidence</strong> — which led us to show peak engagement hours before asking for a fallback send time.</li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <span class="kicker">Analysis</span>
+      <h2 style="margin:0;font-weight:800;font-size:clamp(28px,2.8vw,40px);line-height:1.08;letter-spacing:-0.03em;">How might we…</h2>
+      <ul style="margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:10px;">
+        <li>…let one marketer run any channel from one place?</li>
+        <li>…turn a long-wanted idea into something engineering commits to?</li>
+        <li>…adapt one platform to different markets without forking it?</li>
+        <li>…let AI handle the complexity while the marketer stays in control?</li>
+      </ul>
     </div>
   </div>
-</main>
+</section>
 
-<footer class="footer">
-  <div class="wrap">
-    <span>© 2026 Sunny Kumar</span>
-    <span><a href="mailto:sany.sharma09@gmail.com">sany.sharma09@gmail.com</a> · <a href="https://www.linkedin.com/in/sunny-kumar-44a5b41a/" target="_blank" rel="noopener">LinkedIn</a></span>
+<div class="gap-fig">
+  <figure>
+    <img class="diagram" src="../images/campaign/design-process.svg" alt="Design loop: an open forum diverges into explorations on AI autonomy, transparency and input model; product pulls toward the strongest engine, design toward a flow the growth manager can use; they converge, are benchmarked against MoEngage and CleverTap, and become a refined flow that the next module repeats" loading="lazy">
+    <figcaption>Fig. 1 — The diverge–converge loop on every AI module. Product pulled toward the strongest engine, design toward a flow growth managers could use; the tension resolved at "converge", not before.</figcaption>
+  </figure>
+</div>
+
+<section class="principle" style="padding-top: 0;">
+  <p class="label" style="margin-bottom: 16px;">The principle behind every AI module</p>
+  <p class="big">Human defines the outcome. AI handles the execution complexity. <em>Human approves the outcome.</em></p>
+</section>
+
+<!-- JOURNEY -->
+<section class="narrow sec" style="padding-bottom: clamp(48px, 6vw, 80px);">
+  <span class="kicker">Three years</span>
+  <h2>How the platform evolved</h2>
+  <p>Six stages. Each one solved the problem the last one exposed.</p>
+</section>
+
+<section class="chapters">
+  <article class="chapter">
+    <div class="n"><b>1</b><span class="label">IQ Reach · from Oct 2023</span></div>
+    <div class="c">
+      <h3>From ops-dependent to mostly self-serve</h3>
+      <p>When I started, IQ Reach wasn't self-serve: onboarding, payments, requests and even understanding results ran through Airtel's ops and sales teams. Clients couldn't see how their campaigns performed — their top request. Rather than pitch a rebuild, I proposed we climb one rung at a time: <strong>reporting</strong> for every channel first, then <strong>self-serve</strong> (wallet, digital KYC, a request centre), then <strong>retention</strong> (milestones and price slabs that reward volume), then <strong>scale</strong> (agentic and live-agent features, simpler campaign steps, an overview dashboard). Over time, most of what clients needed became something they could do on their own.</p>
+      <p>I took on the most logic-heavy flows myself: campaign creation, reporting, media and template centres, and DND and blacklist settings.</p>
+    </div>
+  </article>
+  <figure>
+    <div class="ph r-wide">[IQ Reach: reporting and campaign creation]<img src="../images/campaign/iq-reach.jpg" alt="IQ Reach reporting and campaign creation screens" loading="lazy"></div>
+    <figcaption>Fig. 2 — IQ Reach: reporting and campaign creation</figcaption>
+  </figure>
+
+  <article class="chapter">
+    <div class="n"><b>2</b><span class="label">Two bets · to May 2025</span></div>
+    <div class="c">
+      <h3>One shipped. One didn't — and taught me why</h3>
+      <p><strong>IQ Conduit</strong> shipped: security-sensitive enterprises wanted to use other providers inside their own environment, so we designed vendor registration and traffic management for a business line with a ~US$65M revenue target.</p>
+      <p><strong>Unifying IQ with DLT</strong>, Airtel's compliance platform, didn't. I built a full design strategy; it never found a sponsor. The case was strong on engineering and weak on business ownership. DLT instead grew into its own trust-services product — consent, complaints, business name display and Spam Shield, which I designed hands-on.</p>
+    </div>
+  </article>
+
+  <article class="chapter">
+    <div class="n"><b>3</b><span class="label">UCLM · from June 2025</span></div>
+    <div class="c">
+      <h3>A customer made the case</h3>
+      <p>One campaign tool had been wanted for years, but engineering never saw enough impact to commit. What changed was a sale: the UCLM concept was sold to an internal client before build. With a paying owner, unification became a commitment.</p>
+      <p>I led design for UCLM — one experience for campaign creation, audiences, journeys, reporting, assets and every channel — and co-built Audience Manager from scratch. Phase 1 shipped <strong>9 capabilities</strong>; <strong>8 more</strong> are scoped for Phase 2.</p>
+    </div>
+  </article>
+  <figure>
+    <div class="ph r-wide">[UCLM: before (five tools) and after (one lifecycle)]<img src="../images/campaign/uclm.jpg" alt="Before and after: five tools versus one campaign lifecycle" loading="lazy"></div>
+    <figcaption>Fig. 3 — From five tools to one lifecycle: audience → campaign → channel → execution → reporting</figcaption>
+  </figure>
+
+  <article class="chapter">
+    <div class="n"><b>4</b><span class="label">Africa · from Feb 2026</span></div>
+    <div class="c">
+      <h3>Configure, don't fork</h3>
+      <p>Taking UCLM to Africa showed which of our rules were really India's rules. No DLT, so template approval and sender IDs went away; USSD came back as a channel; payment risk pushed us toward prepaid. The deal closed on our final designs.</p>
+      <p>Instead of an Africa version, we made <strong>compliance and billing configurable per market</strong>. One product, switched on per country — the step that makes SaaS possible.</p>
+    </div>
+  </article>
+
+  <article class="chapter">
+    <div class="n"><b>5</b><span class="label">Module intelligence · handed off &amp; in design</span></div>
+    <div class="c">
+      <h3>AI that answers one question well</h3>
+      <p><strong>Time Affinity</strong> predicts when each customer is most likely to engage. <strong>Content AI</strong> ranks content on relevance, past performance, business rules, conflicts and guardrails, with a path for clients to bring their own models.</p>
+    </div>
+  </article>
+  <figure>
+    <img class="diagram" src="../images/campaign/model-convergence.svg" alt="Five factors — relevance, historical performance, business rules, content conflicts and guardrails — feed Content AI; with Time Affinity, Audience and Channel decisions they feed Agentic AI orchestration, which routes through human review before execution" loading="lazy">
+    <figcaption>Fig. 4 — How the modules connect: each answers one question, and all of them feed one orchestration layer that a person reviews.</figcaption>
+  </figure>
+  <figure>
+    <img class="diagram" src="../images/campaign/five-layer-architecture.svg" alt="Time Affinity architecture: data layer, prediction layer, reasoning and explainability layer, output API and execution layer, with campaign results feeding back into the data" loading="lazy">
+    <figcaption>Fig. 5 — Time Affinity in five layers. The reasoning layer is what lets a marketer see why a time was chosen.</figcaption>
+  </figure>
+
+  <article class="chapter">
+    <div class="n"><b class="dim">6</b><span class="label">Agentic · POC validated, Beta scoped</span></div>
+    <div class="c">
+      <h3>State the goal, review the plan</h3>
+      <p>The growth manager describes the outcome in plain language. The agent assembles the campaign from every module and hands it back for review and launch. Next: an agent that watches live performance and relaunches better versions — and the open question of where the human still steps in.</p>
+    </div>
+  </article>
+  <figure>
+    <img class="diagram" src="../images/campaign/agentic-maturity.svg" alt="Module AI agents converge into a conversational Agentic AI gated by human review and launch, maturing toward an autonomous agent that monitors performance and relaunches improved campaigns" loading="lazy">
+    <figcaption>Fig. 6 — From module agents to a conversational agent (in progress) and, later, an autonomous one. Human review is the gate at every stage.</figcaption>
+  </figure>
+</section>
+
+<!-- ALIGNMENT -->
+<section class="narrow sec">
+  <span class="kicker">Alignment</span>
+  <h2>Four rounds from vision to build</h2>
+  <p>A sale settled sponsorship, not agreement. Seven groups — product, engineering, analytics, infrastructure, channel teams, RCS and reporting — had to agree what "one platform" meant.</p>
+  <ol class="rounds">
+    <li><b>Vision, with a prototype</b><span>I moderated a session with leadership and the client. Reacting to something real moved talk from "whether" to "how".</span></li>
+    <li><b>Insight, with product</b><span>Deeper findings; product added the technical side. One story, told together.</span></li>
+    <li><b>Closure, with every function</b><span>Workshops plus recurring deep dives on two or three modules at a time.</span></li>
+    <li><b>Commitment, with tech leads</b><span>A final presentation, and the work entered development.</span></li>
+  </ol>
+</section>
+
+<!-- BOTTLENECKS -->
+<section class="narrow sec">
+  <span class="kicker">Bottlenecks</span>
+  <h2>The hardest UX problems weren't UX problems</h2>
+  <p>They were platform dependencies and alignment. What slowed us down, and how design responded:</p>
+  <div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Push notifications weren't ready for Phase 1</b><p>We kept deep-linking in Phase 1 and moved full push to Phase 2, so launch didn't wait.</p></div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Reporting couldn't be validated without real campaign data</b><p>We designed against agreed metric definitions and planned validation after first live campaigns.</p></div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Audience processing delays held up campaign launch</b><p>[Add how the flow handled processing states, e.g. clear status and notifications.]</p></div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>RCS depended on another team's integration</b><p>RCS moved to Phase 2 so the core channels could ship on time.</p></div>
   </div>
-</footer>
+</section>
 
+<!-- TRADE-OFFS -->
+<section class="wide-sec">
+  <span class="kicker">Trade-offs</span>
+  <h2>What we gave up, on purpose</h2>
+  <p class="intro">Every phase was a choice about what not to do yet.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Decision</th><th>What we gave up</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Reporting before new features</td><td>Visible new features in year one</td><td>Clients' top ask; visibility earned trust for everything after</td></tr>
+        <tr><td>Phase 1 = 9 capabilities, Phase 2 = 8</td><td>Orchestration, goals, voice, RCS and push at launch</td><td>Ship the core lifecycle first; learn from real use</td></tr>
+        <tr><td>Configurable markets, not a fork</td><td>A faster one-off build for Africa</td><td>One product to maintain; repeatable for new markets and SaaS</td></tr>
+        <tr><td>Usable AI over the most powerful engine</td><td>Some inputs and model detail upfront</td><td>An engine that overwhelms its user fails as a product</td></tr>
+        <tr><td>Per-step AI switch, not one manual-vs-AI toggle</td><td>A simpler-looking form</td><td>Marketers need to see and override AI step by step</td></tr>
+        <tr><td>Optional fallback window for recurring campaigns</td><td>Full control over complex recurring schedules</td><td>Let Phase 1 ship and learn from real model behaviour</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- LEADING -->
+<section class="narrow sec">
+  <span class="kicker">Leadership</span>
+  <h2>Leading the work</h2>
+  <p><strong>Structure before screens.</strong> For the AI work, two designers own the modules — one Time Affinity, one Content AI — with weekly reviews. I hold the connecting agentic layer and the stakeholder picture across product, engineering, the AI lead and business teams. AI tools handle much of my own execution, which keeps my time on decisions and alignment.</p>
+  <p><strong>Steering, not rubber-stamping.</strong> When Time Affinity's direction wasn't landing after two reviews — a bare manual-vs-AI toggle with no reasoning shown — I made the case for per-step AI switches and moved the module to the designer best suited to its edge cases.</p>
+  <p><strong>Listening beyond the brief.</strong> Staying close to business teams surfaced the fallback send-time concept, which wasn't in the original ask.</p>
+  <p><strong>Sharing the playbook.</strong> After Phase 1, I ran a session with the wider design team on our process and results; it became a joint brainstorm for another designer's field-staff incentive journey.</p>
+</section>
+
+<div class="gap-fig">
+  <figure>
+    <img class="diagram" src="../images/campaign/leadership-map.svg" alt="Leadership map: the lead designer delegates Time Affinity and Content AI to two designers with weekly reviews, and works directly with engineering, product and AI lead, business teams and competitive benchmarking" loading="lazy">
+    <figcaption>Fig. 7 — Leading from the centre: two designers own modules; I hold the connecting layer and every stakeholder relationship.</figcaption>
+  </figure>
+</div>
+
+<!-- IMPACT -->
+<section class="narrow sec">
+  <span class="kicker">Impact</span>
+  <h2>Where it stands</h2>
+  <div class="metrics">
+    <div><b>9</b><span>Phase 1 capabilities shipped</span></div>
+    <div><b>2</b><span>markets: India, and Africa rolling out</span></div>
+    <div><b>[00%]</b><span>[Adoption or campaign-time metric — confirming]</span></div>
+  </div>
+  <ul>
+    <li>UCLM sold to an internal client before build; Phase 1 live.</li>
+    <li>Africa deal closed on final designs; compliance and billing configurable per market.</li>
+    <li>Time Affinity handed off; Content AI in design; agentic proof of concept validated.</li>
+    <li>Next: UCLM as SaaS that works with any client's existing channel provider.</li>
+  </ul>
+</section>
+
+<!-- LESSONS -->
+<section class="wide-sec">
+  <span class="kicker">What I learned</span>
+  <h2>Three years, six lessons</h2>
+  <ol class="lessons">
+    <li><b>Fix the foundation first</b><span>Reporting earned the trust for everything after.</span></li>
+    <li><b>Platforms get built when someone pays</b><span>The unsponsored DLT bet taught it; the internal client proved it.</span></li>
+    <li><b>Show, don't pitch</b><span>A prototype gets people discussing how, not whether.</span></li>
+    <li><b>Alignment is a sequence</b><span>Vision, product, every function, then tech leads.</span></li>
+    <li><b>Configure, don't fork</b><span>Market rules are settings, not product.</span></li>
+    <li><b>With AI, usable beats smart</b><span>Control and visible reasoning earn trust.</span></li>
+  </ol>
+</section>
+
+<section class="narrow sec">
+  <h2>Still open</h2>
+  <ul>
+    <li>How much of the ranking logic should a marketer see, and how much stays behind a "why this?"</li>
+    <li>What human review looks like once the agent assembles multi-module campaigns.</li>
+    <li>How to prove model quality before expanding past Phase 1.</li>
+  </ul>
+</section>
+
+<a class="next" href="cloud-platform.html#top">
+  <span class="label">Next — 02</span>
+  <span class="big">Cloud, <i>minus the chaos</i> →</span>
+</a>
+
+</main>
 <script src="../js/site.js"></script>
 </body>
 </html>
