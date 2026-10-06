@@ -1,36 +1,45 @@
-// Small enhancements: scroll reveal, active TOC link, missing-image placeholders.
-document.documentElement.classList.add('js');
-
-// Show a labelled placeholder for any figure image that hasn't been added yet
-document.querySelectorAll('.fig img').forEach(function (img) {
-  function markMissing() { img.closest('.fig').classList.add('missing'); }
-  if (img.complete && img.naturalWidth === 0) markMissing();
-  img.addEventListener('error', markMissing);
+// Show the labelled grey placeholder until the real image file is added.
+document.querySelectorAll('.ph img').forEach(function (img) {
+  function drop() { img.remove(); }
+  if (img.complete && img.naturalWidth === 0) drop();
+  img.addEventListener('error', drop);
+});
+// Same for videos (screen recordings)
+document.querySelectorAll('.ph video').forEach(function (v) {
+  v.addEventListener('error', function () { v.remove(); }, true);
+  var src = v.querySelector('source');
+  if (src) src.addEventListener('error', function () { v.remove(); });
 });
 
-if ('IntersectionObserver' in window) {
-  var revealObs = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); }
-    });
-  }, { rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
-
-  var tocLinks = document.querySelectorAll('.toc a');
-  if (tocLinks.length) {
-    var map = {};
-    tocLinks.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
-    var tocObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          tocLinks.forEach(function (a) { a.classList.remove('active'); });
-          var link = map[e.target.id];
-          if (link) link.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-30% 0px -60% 0px' });
-    document.querySelectorAll('.prose section[id]').forEach(function (s) { tocObs.observe(s); });
+// Opening a page (e.g. "Next case study") always starts at the top.
+// Back/forward still returns you to where you were.
+(function () {
+  var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+  var isBackForward = nav && nav.type === 'back_forward';
+  if (!isBackForward) {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+    window.addEventListener('load', function () { window.scrollTo(0, 0); });
   }
-} else {
-  document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
-}
+})();
+
+// Inside the Claude preview, file downloads go through the viewer's save prompt.
+// On the real site (GitHub Pages) window.claude doesn't exist, so links work normally.
+(function () {
+  var c = window.claude;
+  if (!c || typeof c.use !== 'function') return;
+  var dlReady = c.use('downloads');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[download]');
+    if (!a) return;
+    e.preventDefault();
+    var name = a.getAttribute('download') || a.href.split('/').pop();
+    dlReady.then(function (dl) {
+      if (!dl) { window.open(a.href, '_blank', 'noopener'); return; }
+      return fetch(a.href).then(function (r) { return r.blob(); })
+        .then(function (blob) { return dl.save({ filename: name, data: blob }); });
+    }).catch(function (err) {
+      if (!err || (err.code !== 'declined' && err.code !== 'rate_limited')) window.open(a.href, '_blank', 'noopener');
+    });
+  });
+})();
