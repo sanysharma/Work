@@ -30,17 +30,17 @@
       <div class="tldr-body">
         <p class="tldr-lede">To run one campaign across SMS, WhatsApp and email, an Airtel enterprise team needed five tools. Over three years I took the platform from a tool that leaned on Airtel's ops teams for almost every step, to a mostly self-serve one, to one unified platform, and now an AI-native one — where AI plans and a person approves.</p>
         <div class="stats">
-          <div class="stat"><b>3 yrs</b><span>one product, five stages of maturity</span></div>
           <div class="stat"><b>5 → 1</b><span>campaign tools unified into UCLM</span></div>
-          <div class="stat"><b>7</b><span>teams aligned across four rounds</span></div>
-          <div class="stat"><b>13</b><span>user interviews shaping the roadmap</span></div>
+          <div class="stat"><b>300+</b><span>campaigns since Phase 1, reaching 15 crore (150M) users</span></div>
+          <div class="stat"><b>83%</b><span>less time to build a campaign: 30+ min → under 5</span></div>
+          <div class="stat"><b>₹7 Cr</b><span>initial revenue (~US$0.74M)</span></div>
         </div>
         <ul>
           <li><strong>Made IQ Reach self-serve</strong> — step by step, from reporting to onboarding and payments, so clients stopped depending on ops; plus its most logic-heavy flows, then IQ Conduit for a business line with a ~US$65M revenue target.</li>
           <li><strong>Unified the tools</strong> — led design for UCLM, which was sold to an internal client before build, shipped Phase 1, and is rolling out in Africa.</li>
           <li><strong>Added intelligence</strong> — leading Airtel's first AI initiative in campaigns: Time Affinity handed off, Content AI in design, an agentic builder validated.</li>
         </ul>
-        <p class="impact-note">Impact: [headline adoption metric — to be added after Phase 1 data]</p>
+        <p class="impact-note">Early impact after Phase 1, collected 13 Oct 2026. US$ at ~₹95.</p>
       </div>
     </div>
   </div>
@@ -77,7 +77,7 @@
   <h2>How I worked</h2>
   <p class="intro">The same loop on every stage, from the first reporting fix to the AI modules. Each pass ended with something real people could react to.</p>
   <ol class="process">
-    <li><b>Discover</b><span>13 interviews, support and ops pain, the business pre-read</span></li>
+    <li><b>Discover</b><span>A 2023 funnel analysis, 13 interviews, support and ops pain, the business pre-read</span></li>
     <li><b>Benchmark</b><span>How MoEngage and CleverTap handle campaigns, scheduling and AI</span></li>
     <li><b>Analyse</b><span>Synthesise into problems, priorities and "how might we" questions</span></li>
     <li><b>Prototype</b><span>Clickable prototypes, built fast with AI tools</span></li>
@@ -153,11 +153,37 @@
       <h3>From ops-dependent to mostly self-serve</h3>
       <p>When I started, IQ Reach wasn't self-serve: onboarding, payments, requests and even understanding results ran through Airtel's ops and sales teams. Clients couldn't see how their campaigns performed — their top request. Rather than pitch a rebuild, I proposed we climb one rung at a time: <strong>reporting</strong> for every channel first, then <strong>self-serve</strong> (wallet, digital KYC, a request centre), then <strong>retention</strong> (milestones and price slabs that reward volume), then <strong>scale</strong> (agentic and live-agent features, simpler campaign steps, an overview dashboard). Over time, most of what clients needed became something they could do on their own.</p>
       <p>I took on the most logic-heavy flows myself: campaign creation, reporting, media and template centres, and DND and blacklist settings.</p>
+      <p><strong>The order came from data.</strong> When I joined, a 2023 customer-journey analysis of IQ Reach, built from funnel data and Hotjar session recordings, showed where customers were getting stuck. Only <strong>9 in every 100</strong> customers who signed up ever launched a campaign. That set the order of the first fixes.</p>
     </div>
   </article>
   <figure>
+    <div class="chart-card">
+      <h3>IQ Reach customers by the furthest stage they reached, 2023</h3>
+      <ol class="bars" aria-label="Share of IQ Reach customers by furthest stage reached, 2023">
+        <li title="Signed up only: 51% of customers"><span class="bl">Signed up, went no further</span><span class="track"><span class="fill" style="--v:51%"></span></span><span class="val">51%</span></li>
+        <li title="KYC and recharge done, no campaign: 40% of customers"><span class="bl">Did KYC and recharged, never launched a campaign</span><span class="track"><span class="fill" style="--v:40%"></span></span><span class="val">40%</span></li>
+        <li title="Created a campaign: 6% of customers"><span class="bl">Launched a campaign</span><span class="track"><span class="fill" style="--v:6%"></span></span><span class="val">6%</span></li>
+        <li title="Super users: 3% of customers"><span class="bl">Super users: 3+ campaigns, ₹1,000+ recharged</span><span class="track"><span class="fill" style="--v:3%"></span></span><span class="val">3%</span></li>
+      </ol>
+    </div>
+    <figcaption>Fig. 2 — The 2023 customer-journey analysis. 91% of customers never launched a campaign.</figcaption>
+  </figure>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Where</th><th>What the data showed</th><th>What it led to</th></tr></thead>
+      <tbody>
+        <tr><td>KYC</td><td>~52% dropped off before KYC. Verifications sat pending, and 42 customers never came back after a rejection.</td><td>A digital KYC journey</td></tr>
+        <tr><td>Channel set-up</td><td>The biggest drop in campaign creation was the first step: connecting a WhatsApp Business account.</td><td>Channel onboarding and settings in one place</td></tr>
+        <tr><td>Templates</td><td>Conversion fell from 73% to 48% once someone chose to create a new template.</td><td>Template and media centres</td></tr>
+        <tr><td>Audience</td><td>Airtel's ready-made ads audience converted at 55%, against 45% for customers' own uploaded lists.</td><td>Audience built into the campaign, later rebuilt in UCLM</td></tr>
+        <tr><td>Scheduling</td><td>Changing the send time threw errors until the second or third try, and a blank campaign name blocked moving on.</td><td>Simpler, fewer campaign steps</td></tr>
+        <tr><td>Pay &amp; submit</td><td>Only 13% submitted at the last step. Customers short of credit had no way to recharge there.</td><td>A wallet, so credit is topped up inside the product</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <figure>
     <div class="ph r-wide">[IQ Reach: reporting and campaign creation]<img src="../images/campaign/iq-reach.jpg" alt="IQ Reach reporting and campaign creation screens" loading="lazy"></div>
-    <figcaption>Fig. 2 — IQ Reach: reporting and campaign creation</figcaption>
+    <figcaption>Fig. 3 — IQ Reach: reporting and campaign creation</figcaption>
   </figure>
 
   <article class="chapter">
@@ -175,11 +201,12 @@
       <h3>A customer made the case</h3>
       <p>One campaign tool had been wanted for years, but engineering never saw enough impact to commit. What changed was a sale: the UCLM concept was sold to an internal client before build. With a paying owner, unification became a commitment.</p>
       <p>I led design for UCLM — one experience for campaign creation, audiences, journeys, reporting, assets and every channel — and co-built Audience Manager from scratch. Phase 1 shipped <strong>9 capabilities</strong>; <strong>8 more</strong> are scoped for Phase 2.</p>
+      <p>Building a campaign used to take <strong>30+ minutes</strong> across tools. In UCLM it takes <strong>under 5</strong>. Since Phase 1, teams have run <strong>300+ campaigns</strong> across five channels, each reaching around <strong>5 lakh (500,000) people</strong> on average.</p>
     </div>
   </article>
   <figure>
     <div class="ph r-wide">[UCLM: before (five tools) and after (one lifecycle)]<img src="../images/campaign/uclm.jpg" alt="Before and after: five tools versus one campaign lifecycle" loading="lazy"></div>
-    <figcaption>Fig. 3 — From five tools to one lifecycle: audience → campaign → channel → execution → reporting</figcaption>
+    <figcaption>Fig. 4 — From five tools to one lifecycle: audience → campaign → channel → execution → reporting</figcaption>
   </figure>
 
   <article class="chapter">
@@ -200,11 +227,11 @@
   </article>
   <figure>
     <img class="diagram" src="../images/campaign/model-convergence.svg" alt="Five factors — relevance, historical performance, business rules, content conflicts and guardrails — feed Content AI; with Time Affinity, Audience and Channel decisions they feed Agentic AI orchestration, which routes through human review before execution" loading="lazy">
-    <figcaption>Fig. 4 — How the modules connect: each answers one question, and all of them feed one orchestration layer that a person reviews.</figcaption>
+    <figcaption>Fig. 5 — How the modules connect: each answers one question, and all of them feed one orchestration layer that a person reviews.</figcaption>
   </figure>
   <figure>
     <img class="diagram" src="../images/campaign/five-layer-architecture.svg" alt="Time Affinity architecture: data layer, prediction layer, reasoning and explainability layer, output API and execution layer, with campaign results feeding back into the data" loading="lazy">
-    <figcaption>Fig. 5 — Time Affinity in five layers. The reasoning layer is what lets a marketer see why a time was chosen.</figcaption>
+    <figcaption>Fig. 6 — Time Affinity in five layers. The reasoning layer is what lets a marketer see why a time was chosen.</figcaption>
   </figure>
 
   <article class="chapter">
@@ -216,20 +243,20 @@
   </article>
   <figure>
     <img class="diagram" src="../images/campaign/agentic-maturity.svg" alt="Module AI agents converge into a conversational Agentic AI gated by human review and launch, maturing toward an autonomous agent that monitors performance and relaunches improved campaigns" loading="lazy">
-    <figcaption>Fig. 6 — From module agents to a conversational agent (in progress) and, later, an autonomous one. Human review is the gate at every stage.</figcaption>
+    <figcaption>Fig. 7 — From module agents to a conversational agent (in progress) and, later, an autonomous one. Human review is the gate at every stage.</figcaption>
   </figure>
 </section>
 
 <!-- ALIGNMENT -->
 <section class="narrow sec">
   <span class="kicker">Alignment</span>
-  <h2>Four rounds from vision to build</h2>
-  <p>A sale settled sponsorship, not agreement. Seven groups — product, engineering, analytics, infrastructure, channel teams, RCS and reporting — had to agree what "one platform" meant.</p>
+  <h2>Four rounds with senior leadership</h2>
+  <p>A sale settled sponsorship, not agreement. Seven groups — product, engineering, analytics, infrastructure, channel teams, RCS and reporting — had to agree what "one platform" meant. <strong>Four rounds with senior leadership finalised UCLM's vision, strategy and direction.</strong> How we got there:</p>
   <ol class="rounds">
-    <li><b>Vision, with a prototype</b><span>I moderated a session with leadership and the client. Reacting to something real moved talk from "whether" to "how".</span></li>
-    <li><b>Insight, with product</b><span>Deeper findings; product added the technical side. One story, told together.</span></li>
-    <li><b>Closure, with every function</b><span>Workshops plus recurring deep dives on two or three modules at a time.</span></li>
-    <li><b>Commitment, with tech leads</b><span>A final presentation, and the work entered development.</span></li>
+    <li><b>Start with a prototype</b><span>I moderated the first session around a clickable prototype. Reacting to something real moved talk from "whether" to "how": data pipelines, dashboard metrics, phases and joined-up journeys.</span></li>
+    <li><b>Tell one story with product</b><span>I came back with deeper findings, and product added the technical side.</span></li>
+    <li><b>Close the details with every function</b><span>Workshops with every team, plus recurring deep dives on two or three modules at a time.</span></li>
+    <li><b>Commit with tech leads</b><span>A final review with tech leads, and the work entered development.</span></li>
   </ol>
 </section>
 
@@ -279,21 +306,57 @@
 <div class="gap-fig">
   <figure>
     <img class="diagram" src="../images/campaign/leadership-map.svg" alt="Leadership map: the lead designer delegates Time Affinity and Content AI to two designers with weekly reviews, and works directly with engineering, product and AI lead, business teams and competitive benchmarking" loading="lazy">
-    <figcaption>Fig. 7 — Leading from the centre: two designers own modules; I hold the connecting layer and every stakeholder relationship.</figcaption>
+    <figcaption>Fig. 8 — Leading from the centre: two designers own modules; I hold the connecting layer and every stakeholder relationship.</figcaption>
   </figure>
 </div>
 
 <!-- IMPACT -->
 <section class="narrow sec">
   <span class="kicker">Impact</span>
-  <h2>Where it stands</h2>
+  <h2>Early impact after Phase 1</h2>
+  <p>Collected 13 October 2026, since the first UCLM campaigns went out in August. US$ figures at ~₹95 to the dollar.</p>
   <div class="metrics">
-    <div><b>9</b><span>Phase 1 capabilities shipped</span></div>
-    <div><b>2</b><span>markets: India, and Africa rolling out</span></div>
-    <div><b>[00%]</b><span>[Adoption or campaign-time metric — confirming]</span></div>
+    <div><b>300+</b><span>campaigns run across five channels</span></div>
+    <div><b>15 Cr</b><span>users reached (150 million)</span></div>
+    <div><b>83%</b><span>less time to build a campaign: 30+ minutes → under 5</span></div>
+    <div><b>5 lakh</b><span>people targeted per campaign on average (500,000)</span></div>
+    <div><b>₹7 Cr</b><span>initial revenue from an internal client (~US$0.74M)</span></div>
+    <div><b>₹25 Cr</b><span>revenue target from SaaS alone (~US$2.6M)</span></div>
   </div>
+</section>
+
+<section class="wide-sec">
+  <figure>
+    <div class="chart-card">
+      <h3>UCLM campaigns per month</h3>
+      <ol class="bars" aria-label="UCLM campaigns per month, August to October 2026">
+        <li title="August 2026: 130 campaigns"><span class="bl">August</span><span class="track"><span class="fill" style="--v:100%"></span></span><span class="val">130</span></li>
+        <li title="September 2026: 110 campaigns"><span class="bl">September</span><span class="track"><span class="fill" style="--v:84.6%"></span></span><span class="val">110</span></li>
+        <li title="October 2026, month to date: 109 campaigns"><span class="bl">October, month to date</span><span class="track"><span class="fill" style="--v:83.8%"></span></span><span class="val">109</span></li>
+      </ol>
+    </div>
+    <figcaption>Fig. 9 — Campaigns per month since Phase 1 launched. October counts run to mid-month.</figcaption>
+  </figure>
+  <div class="table-wrap" style="margin-top: 32px;">
+    <table>
+      <thead><tr><th>Channel</th><th>August</th><th>September</th><th>October (to date)</th></tr></thead>
+      <tbody>
+        <tr><td>In-app ads</td><td>110</td><td>63</td><td>59</td></tr>
+        <tr><td>SMS</td><td>—</td><td>43</td><td>45 <span class="pill-badge">36 one-time · 8 periodic · 1 event-triggered</span></td></tr>
+        <tr><td>RCS</td><td>20</td><td>—</td><td>—</td></tr>
+        <tr><td>Push notifications</td><td>—</td><td>4</td><td>4 <span class="pill-badge">2 one-time · 2 event-triggered</span></td></tr>
+        <tr><td>WhatsApp</td><td>—</td><td>—</td><td>1</td></tr>
+        <tr><td>Total</td><td>130</td><td>110</td><td>109</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="intro" style="margin-top: 24px;">October brought the first periodic and event-triggered campaigns: teams are moving from one-off sends to campaigns that run themselves.</p>
+</section>
+
+<section class="narrow sec">
+  <h2>Where it stands</h2>
   <ul>
-    <li>UCLM sold to an internal client before build; Phase 1 live.</li>
+    <li>UCLM sold to an internal client before build; Phase 1 live, with ₹7 crore in initial revenue.</li>
     <li>Africa deal closed on final designs; compliance and billing configurable per market.</li>
     <li>Time Affinity handed off; Content AI in design; agentic proof of concept validated.</li>
     <li>Next: UCLM as SaaS that works with any client's existing channel provider.</li>
@@ -305,7 +368,7 @@
   <span class="kicker">What I learned</span>
   <h2>Three years, six lessons</h2>
   <ol class="lessons">
-    <li><b>Fix the foundation first</b><span>Reporting earned the trust for everything after.</span></li>
+    <li><b>Fix the foundation first</b><span>Only 9 in 100 sign-ups ever launched a campaign. Fixing that, and reporting, earned the trust for everything after.</span></li>
     <li><b>Platforms get built when someone pays</b><span>The unsponsored DLT bet taught it; the internal client proved it.</span></li>
     <li><b>Show, don't pitch</b><span>A prototype gets people discussing how, not whether.</span></li>
     <li><b>Alignment is a sequence</b><span>Vision, product, every function, then tech leads.</span></li>
