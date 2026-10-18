@@ -290,3 +290,17 @@ img.diagram { width: 100%; height: auto; background: #fff; border: 1px solid #E6
   .band-inner { max-width: none; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
   .landing main { max-width: none; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
 }
+
+/* ---------- Simple bar charts (HTML, no library) ---------- */
+.chart-card { background: #fff; border: 1px solid #E6E3DC; border-radius: 14px; padding: clamp(20px, 3vw, 32px); display: flex; flex-direction: column; gap: 20px; }
+.chart-card h3 { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.35; }
+.bars { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.bars li { display: grid; grid-template-columns: minmax(0, 17rem) minmax(0, 1fr) 4rem; gap: 16px; align-items: center; font-size: 16px; line-height: 1.35; }
+.bars .bl { color: var(--muted-2); }
+.bars .track { height: 14px; background: var(--ph); border-radius: 0 4px 4px 0; overflow: hidden; }
+.bars .fill { display: block; height: 100%; width: var(--v); min-width: 2px; background: var(--ink); border-radius: 0 4px 4px 0; }
+.bars .val { font-weight: 800; font-variant-numeric: tabular-nums; text-align: right; color: var(--ink-text); }
+@media (max-width: 600px) {
+  .bars li { grid-template-columns: minmax(0, 1fr) 3.5rem; gap: 6px 12px; }
+  .bars .bl { grid-column: 1 / -1; }
+}
