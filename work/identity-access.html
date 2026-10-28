@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Access, without the headache — Sunny Kumar</title>
 <meta name="description" content="Case study: designing Airtel Cloud's in-house identity and access management, starting from definitions, not screens.">
+<meta property="og:title" content="Access, without the headache — Sunny Kumar">
+<meta property="og:description" content="Case study: designing Airtel Cloud's in-house identity and access management, starting from definitions, not screens.">
+<meta property="og:url" content="https://www.sunnykumar.work/work/identity-access.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.sunnykumar.work/images/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#2F4BD1">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='16' fill='%234A6CEB'/><text x='16' y='21' font-family='sans-serif' font-size='13' font-weight='800' text-anchor='middle' fill='white'>SK</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +22,7 @@
 
 <nav class="pills" aria-label="Main">
   <a class="fl" href="../about.html">About</a>
+  <a class="fl dark" href="../assets/Sunny-Kumar-Resume.pdf">Resume</a>
 </nav>
 
 <header class="band" id="top" aria-labelledby="tldr">
@@ -47,10 +54,6 @@
 
 <main class="wrap body">
 
-<figure>
-  <div class="ph r-hero">[Hero — Identity &amp; Access overview page]<img src="../images/iam/hero.jpg" alt="Identity and Access Centre overview page" loading="lazy"></div>
-  <figcaption>Fig. 1 — The Identity &amp; Access Centre</figcaption>
-</figure>
 
 <section class="facts">
   <div>
@@ -88,16 +91,6 @@
   <p>IAM has to reconcile more concepts than almost any other module — identities, groups, accounts, roles, permission sets, policies, workloads, identity providers, trust, delegation, conditions and governance — while customers still relied on a fragmented legacy model.</p>
 </section>
 
-<section class="grid-2 gap-fig">
-  <figure>
-    <div class="ph r-43">[AWS IAM audit — screen-by-screen]<img src="../images/iam/aws-audit.png" alt="Screen-by-screen audit of AWS IAM" loading="lazy"></div>
-    <figcaption>Fig. 2 — Auditing the closest reference, since engineering had committed to an AWS-like approach.</figcaption>
-  </figure>
-  <figure>
-    <div class="ph r-43">[Legacy access model, mapped]<img src="../images/iam/legacy-model.png" alt="Map of the legacy access model across three systems" loading="lazy"></div>
-    <figcaption>Fig. 3 — The before state: identity split across three systems, with Super Admin outside the scoping model entirely.</figcaption>
-  </figure>
-</section>
 
 <section class="narrow sec">
   <h2>The problem: one mental model for everything</h2>
@@ -126,10 +119,6 @@
   <p>No Cell means no console access, regardless of role. That Account → Tenant → Cell hierarchy is a genuine divergence from both AWS and GCP.</p>
 </section>
 
-<figure class="gap-fig">
-  <div class="ph r-wide">[User creation through role assignment]<img src="../images/iam/user-to-role-flow.gif" alt="User creation through role assignment flow" loading="lazy"></div>
-  <figcaption>Fig. 4 — From adding a user to assigning a role.</figcaption>
-</figure>
 
 <section class="narrow sec tight">
   <h2>Improvement 2: Decisions worked through, not imposed</h2>
@@ -140,20 +129,6 @@
   <p>Once the Cloudscape design system was mandated, I shifted to AI-directed, surgical prototyping, which respected the platform's micro-frontend boundaries.</p>
 </section>
 
-<section class="grid-3 gap-fig">
-  <figure>
-    <div class="ph r-34">[Trust vs Delegation]<img src="../images/iam/trust-vs-delegation.gif" alt="Trust and Delegation as two separate flows" loading="lazy"></div>
-    <figcaption>Fig. 5 — Trust and Delegation</figcaption>
-  </figure>
-  <figure>
-    <div class="ph r-34">[Conditions flow]<img src="../images/iam/conditions-flow.gif" alt="Creating and associating conditions" loading="lazy"></div>
-    <figcaption>Fig. 6 — Conditions</figcaption>
-  </figure>
-  <figure>
-    <div class="ph r-34">[Access explained: why access was denied]<img src="../images/iam/access-analyzer.jpg" alt="Explanation of why access was denied" loading="lazy"></div>
-    <figcaption>Fig. 7 — Decision trace</figcaption>
-  </figure>
-</section>
 
 <section class="narrow sec">
   <span class="kicker">Bottlenecks</span>
@@ -204,6 +179,15 @@
 </a>
 
 </main>
+<footer class="site-foot">
+  <span>Sunny Kumar · Senior Lead Product Designer</span>
+  <nav aria-label="Contact">
+    <a href="mailto:sany.sharma09@gmail.com">sany.sharma09@gmail.com</a>
+    <a href="https://www.linkedin.com/in/sunny-kumar-44a5b41a/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="../assets/Sunny-Kumar-Resume.pdf">Resume (PDF)</a>
+  </nav>
+</footer>
+
 <script src="../js/site.js"></script>
 </body>
 </html>
