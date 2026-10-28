@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cloud, minus the chaos — Sunny Kumar</title>
-<meta name="description" content="Case study: leading design for Airtel Cloud, turning six tools built by four teams into one coherent platform.">
+<meta name="description" content="Case study: leading design for Airtel Cloud, turning six tools built by five teams into one coherent platform.">
 <meta property="og:title" content="Cloud, minus the chaos — Sunny Kumar">
-<meta property="og:description" content="Case study: leading design for Airtel Cloud, turning six tools built by four teams into one coherent platform.">
+<meta property="og:description" content="Case study: leading design for Airtel Cloud, turning six tools built by five teams into one coherent platform.">
 <meta property="og:url" content="https://www.sunnykumar.work/work/cloud-platform.html">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://www.sunnykumar.work/images/og.png">
@@ -35,10 +35,10 @@
     <div class="tldr">
       <h2 id="tldr">TL;DR</h2>
       <div class="tldr-body">
-        <p class="tldr-lede">I led design for Airtel Cloud end to end, using AI tools to speed up execution, and turned six tools built by four separate teams into one coherent platform — with no formal authority over any of them.</p>
+        <p class="tldr-lede">I led design for Airtel Cloud end to end, using AI tools to speed up execution, and turned six tools built by five separate teams into one coherent platform — with no formal authority over any of them.</p>
         <div class="stats">
           <div class="stat"><b>6</b><span>products, one platform story</span></div>
-          <div class="stat"><b>4</b><span>delivery teams, aligned without a mandate</span></div>
+          <div class="stat"><b>5</b><span>delivery teams, aligned without a mandate</span></div>
           <div class="stat"><b>18 → 35</b><span>enterprise clients, launch to October 2026</span></div>
         </div>
         <ul>
@@ -92,7 +92,7 @@
 <section class="narrow sec">
   <h2>Why the Cloud platform?</h2>
   <p>Airtel launched Cloud with 18 enterprise clients and a target of 50 by 2027, with contract value expected to grow roughly tenfold. The bet was to launch on time and let real usage decide what to build next. By October 2026 it had 35 clients.</p>
-  <p>No single team controlled the product. An external agency built the core console, a security vendor owned key management with a spec and no design, a partner team owned security posture (CSPM), and two internal teams built Cost Analyser and CloudFerry migration on their own. Every improvement had to be earned, not mandated.</p>
+  <p>No single team controlled the product. An external agency built the core console, a security vendor owned key management with a spec and no design, a partner team owned security posture (CSPM), and two internal teams built Cost Analyser and CloudFerry migration on their own. That is normal for an enterprise platform: each product is led by its own domain experts with their own engineers. It still works that way; another team is now building IAM and the micro-frontend shell, and will take on Observability next. So every improvement had to be earned, not mandated.</p>
 </section>
 
 <section class="grid-2 gap-fig">
@@ -175,7 +175,7 @@
   <h2>Influence without authority</h2>
   <p>Most of what slowed this down sat outside design. What got in the way, and how I worked around it:</p>
   <div>
-    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>No authority over any of the four teams building the product</b><p>I led with evidence — audits, benchmarks and prototypes — so teams adopted the design because it was right, not because they were told to.</p></div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>No authority over any of the five teams building the product</b><p>I led with evidence — audits, benchmarks and prototypes — so teams adopted the design because it was right, not because they were told to.</p></div>
     <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>The agency had already built on its own design system</b><p>Migrating it wasn't possible within the go-to-market timeline, so I started a shared component library that future builds can adopt directly.</p></div>
     <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Key management arrived as a technical spec with no design</b><p>I designed the whole interaction model from the spec, rather than waiting for someone else to interpret it.</p></div>
     <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Support ran through a pipeline with a different owner at almost every step</b><p>Mapping the lifecycle first showed a better form wouldn't fix it; it needed a cross-system journey.</p></div>
