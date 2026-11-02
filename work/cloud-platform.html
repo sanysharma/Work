@@ -37,13 +37,13 @@
       <div class="tldr-body">
         <p class="tldr-lede">I led design for Airtel Cloud end to end, using AI tools to speed up execution, and turned six tools built by five separate teams into one coherent platform — with no formal authority over any of them.</p>
         <div class="stats">
-          <div class="stat"><b>6</b><span>products, one platform story</span></div>
+          <div class="stat"><b>~30%</b><span>fewer support tickets after I redesigned how customers get help</span></div>
           <div class="stat"><b>5</b><span>delivery teams, aligned without a mandate</span></div>
           <div class="stat"><b>18 → 35</b><span>enterprise clients, launch to October 2026</span></div>
         </div>
         <ul>
           <li><strong>Researched it myself</strong> — field-level audits, benchmarks against AWS, Azure and GCP, and stakeholder workshops.</li>
-          <li><strong>Shipped</strong> the Price Calculator, a service-documentation template and a rebuilt Assurance; my KMS prototype was adopted into the live platform.</li>
+          <li><strong>Shipped</strong> a rebuilt Assurance, the Price Calculator, a service-documentation template every service now uses, and a shared component library every team builds with; my KMS prototype was adopted into the live platform.</li>
           <li><strong>Changed course</strong> from forcing one unified experience to templated consistency — the call that shaped the outcome most.</li>
         </ul>
         <p class="impact-note">Status: launched August 2025 · design handed over April–May 2026</p>
@@ -91,7 +91,7 @@
 
 <section class="narrow sec">
   <h2>Why the Cloud platform?</h2>
-  <p>Airtel launched Cloud with 18 enterprise clients and a target of 50 by 2027, with contract value expected to grow roughly tenfold. The bet was to launch on time and let real usage decide what to build next. By October 2026 it had 35 clients.</p>
+  <p>Airtel launched Cloud with 18 enterprise clients and a target of 50 by 2027, with contract value expected to grow about tenfold, to ₹180 crore (sales forecast). The bet was to launch on time and let real usage decide what to build next. By October 2026 it had 35 clients.</p>
   <p>No single team controlled the product. An external agency built the core console, a security vendor owned key management with a spec and no design, a partner team owned security posture (CSPM), and two internal teams built Cost Analyser and CloudFerry migration on their own. That is normal for an enterprise platform: each product is led by its own domain experts with their own engineers. It still works that way; another team is now building IAM and the micro-frontend shell, and will take on Observability next. So every improvement had to be earned, not mandated.</p>
 </section>
 
@@ -119,12 +119,30 @@
     <li>At least 80% success at discovering the right service</li>
     <li>10% fewer support tickets caused by usability problems</li>
   </ul>
+  <div class="table-wrap" style="margin-top:8px">
+    <table>
+      <thead><tr><th>Goal</th><th>Target</th><th>Early result</th></tr></thead>
+      <tbody>
+        <tr><td>Fewer support tickets</td><td>10% fewer</td><td>~30% fewer after the support redesign</td></tr>
+        <tr><td>Task success, support (Assurance)</td><td>—</td><td>~80%</td></tr>
+        <tr><td>Task success, core console</td><td>85%</td><td>~70%. Not there yet; most remaining issues sit in global search and navigation, which depend on services not yet live</td></tr>
+        <tr><td>Finding the right service</td><td>80%</td><td>Not measured yet</td></tr>
+      </tbody>
+    </table>
+  </div>
   <p style="margin-top: 8px;">My starting hypothesis was that unifying every tool into one experience would get us there. A study of how AWS, Azure and GCP structure their consoles showed the opposite: every major provider keeps tools deliberately separate, for permissions and cognitive load. I switched to a shared experience language — common patterns and components across tools that stay appropriately separate.</p>
 </section>
 
 <section class="narrow sec tight">
   <h2>Improvement 1: Assurance as self-service, not a ticket form</h2>
-  <p>Assurance, the support layer, shipped knowingly broken to protect the launch date. Six to eight months later I rebuilt it from a written proposal with five principles and three explored concepts. Guided fixes and an explainer video now come first; a pre-filled support form, with live help always available, is the last resort by design.</p>
+  <p>Assurance, the support layer, shipped knowingly broken to protect the launch date. Six to eight months later I rebuilt it from a written proposal with five principles and three explored concepts. The new flow replaced an out-of-the-box ServiceNow case form:</p>
+  <ol class="rounds">
+    <li><b>Describe the problem</b><span>A few details, not a long form.</span></li>
+    <li><b>Try a suggested fix</b><span>Solution steps and relevant articles pulled from the service documentation and SOPs.</span></li>
+    <li><b>Raise it if still stuck</b><span>Only then add the extra details the support team needs.</span></li>
+    <li><b>Track it</b><span>A ticket page shows which team is solving it and the dedicated support person, with follow-up questions on the same ticket.</span></li>
+  </ol>
+  <p><strong>Result:</strong> since launch, more than 30% of cases are solved without a ticket, and support tickets are down by about 30%, against a goal of 10%.</p>
 </section>
 
 <figure class="gap-fig" style="margin-bottom: 32px;">
@@ -148,7 +166,7 @@
   <p>The key management service (KMS) came from the vendor as a technical spec with no design. I designed the whole interaction model — including the Software, HSM, bring-your-own-key and hold-your-own-key choice — and the agency built the live integration to my prototype.</p>
   <p>For CSPM, I benchmarked the product against Azure Defender and Google Security Command Center across five personas, from security teams to executives. That reframed it from a reporting tool into decision support: what to fix first, and why.</p>
   <h3>Research &amp; testing</h3>
-  <p>Field-level testing before go-live found conflicting validation and undocumented limits, which the agency then re-prioritised. A year in, the deepest finding surfaced: access permissions were still being assembled by hand, which made identity the platform's real constraint.</p>
+  <p>Field-level testing before go-live found 65 issues, including conflicting validation and undocumented limits. 43 were fixed before launch and 7 after. The other 15 depend on services that aren't live yet, such as global search, unified navigation and redirects between services. A year in, the deepest finding surfaced: access permissions were still being assembled by hand, which made identity the platform's real constraint.</p>
 </section>
 
 <section class="grid-2x2 gap-fig">
@@ -176,7 +194,7 @@
   <p>Most of what slowed this down sat outside design. What got in the way, and how I worked around it:</p>
   <div>
     <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>No authority over any of the five teams building the product</b><p>I led with evidence — audits, benchmarks and prototypes — so teams adopted the design because it was right, not because they were told to.</p></div>
-    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>The agency had already built on its own design system</b><p>Migrating it wasn't possible within the go-to-market timeline, so I started a shared component library that future builds can adopt directly.</p></div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>The agency had already built on its own design system</b><p>Migrating it wasn't possible within the go-to-market timeline, so I started a shared component library. Every team now builds with it, and engineering turned it into a micro-frontend boilerplate so new services go live faster.</p></div>
     <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Key management arrived as a technical spec with no design</b><p>I designed the whole interaction model from the spec, rather than waiting for someone else to interpret it.</p></div>
     <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Support ran through a pipeline with a different owner at almost every step</b><p>Mapping the lifecycle first showed a better form wouldn't fix it; it needed a cross-system journey.</p></div>
     <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Impact metrics weren't instrumented at launch</b><p>Outcomes are listed as shipped vs in progress; usability and ticket numbers are being confirmed with product.</p></div>
@@ -193,7 +211,7 @@
       <tbody>
         <tr><td>Launched with a knowingly broken Assurance</td><td>A good support experience at launch</td><td>Protected the go-live date; rebuilt it once real usage showed where to invest</td></tr>
         <tr><td>Consistent design language, not one unified console</td><td>A single, seamless experience</td><td>Mature cloud platforms keep tools separate for permissions and cognitive load</td></tr>
-        <tr><td>Component library instead of migrating the existing build</td><td>Immediate visual consistency</td><td>Migration wasn't possible within the launch timeline; new builds stay consistent</td></tr>
+        <tr><td>Component library instead of migrating the existing build</td><td>Immediate visual consistency</td><td>Migration wasn't possible within the launch timeline; every team now uses the library</td></tr>
         <tr><td>Self-service first, support form last</td><td>The quickest route to raising a ticket</td><td>Most issues can be fixed with guidance; escalation stays one step away</td></tr>
         <tr><td>Shelved a finished Observability spec</td><td>Visible, demo-ready work</td><td>Identity and access was the platform's real constraint</td></tr>
         <tr><td>Three-phase roadmap, Phases 2–3 deferred</td><td>Fixing everything at once</td><td>Phase 1 could start in-house now, with the rest sequenced</td></tr>
@@ -206,11 +224,13 @@
   <span class="kicker">Impact</span>
   <h2>The impact</h2>
   <div class="metrics">
+    <div><b>~30%</b><span>fewer support tickets after the support redesign</span></div>
+    <div><b>30%+</b><span>of cases solved without raising a ticket</span></div>
+    <div><b>50 / 65</b><span>audit fixes shipped; the other 15 wait on services not yet live</span></div>
+    <div><b>32+</b><span>quotes generated with the Price Calculator</span></div>
     <div><b>18 → 35</b><span>enterprise clients, launch to Oct 2026 (product outcome)</span></div>
-    <div><b>65</b><span>fixes found in the pre-launch audit, sorted by what had to land before go-live</span></div>
-    <div><b>Aug ’25</b><span>Platform launch</span></div>
   </div>
-  <p>Shipped: the Price Calculator and service-documentation template, console hygiene fixes, a rebuilt Assurance, and a KMS prototype adopted into the live platform. CSPM, Cost Analyser and CloudFerry redesigns were in progress at handover. Observability was specced and deliberately shelved once identity became the priority.</p>
+  <p>Shipped: a rebuilt Assurance, the Price Calculator, a service-documentation template now used by every service and published openly, a shared component library every team uses, console fixes, and a KMS prototype adopted into the live platform. CSPM, Cost Analyser and CloudFerry redesigns were in progress at handover. Observability was specced and deliberately shelved once identity became the priority.</p>
   <p>What I'd do differently: push to sequence identity and access before launch, rather than discover the need a year in. The harder discipline here was saying no to my own finished work and my own starting strategy.</p>
 </section>
 
