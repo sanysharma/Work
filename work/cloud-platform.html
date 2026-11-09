@@ -74,46 +74,125 @@
   </div>
 </section>
 
-<section class="wide-sec">
-  <span class="kicker">Design process</span>
-  <h2>How I worked</h2>
-  <p class="intro">Each thread started with research fitted to the relationship it had to change — then a design the team that owned it could adopt.</p>
-  <ol class="process">
-    <li><b>Audit</b><span>Field-level testing of the agency's build before go-live</span></li>
-    <li><b>Benchmark</b><span>AWS, Azure and GCP consoles; CSPM against Azure Defender and Google SCC</span></li>
-    <li><b>Map</b><span>The full order-to-activation lifecycle and who owns each step</span></li>
-    <li><b>Align</b><span>Working sessions with infrastructure, the agency and ServiceNow</span></li>
-    <li><b>Concept</b><span>Written proposals and three explored concepts before committing</span></li>
-    <li><b>Hand over</b><span>Prototypes vendors build to; a phased roadmap for what's next</span></li>
-  </ol>
-</section>
-
-
 <section class="narrow sec">
   <h2>Why the Cloud platform?</h2>
   <p>Airtel launched Cloud with 18 enterprise clients and a target of 50 by 2027, with contract value expected to grow about tenfold, to ₹180 crore (sales forecast). The bet was to launch on time and let real usage decide what to build next. By October 2026 it had 35 clients.</p>
   <p>No single team controlled the product. An external agency built the core console, a security vendor owned key management with a spec and no design, a partner team owned security posture (CSPM), and two internal teams built Cost Analyser and CloudFerry migration on their own. That is normal for an enterprise platform: each product is led by its own domain experts with their own engineers. It still works that way; another team is now building IAM and the micro-frontend shell, and will take on Observability next. So every improvement had to be earned, not mandated.</p>
 </section>
 
-<section class="grid-2 gap-fig">
-  <figure>
-    <div class="ph r-43 contain white"><img src="../images/cloud/user-lifecycle.jpg" alt="Map of the cloud order-to-activation lifecycle" loading="lazy"></div>
-    <figcaption>Fig. 2 — The order-to-activation lifecycle I mapped before designing support: thirteen steps, a different owner at almost every one.</figcaption>
-  </figure>
-  <figure>
-    <div class="ph r-43 contain white"><img src="../images/cloud/prelaunch-audit.jpg" alt="Pre-launch audit summary: 65 fixes identified, split by priority" loading="lazy"></div>
-    <figcaption>Fig. 3 — The pre-launch audit of the agency's build: 65 fixes identified, split into must-fix before the POC and before go-live.</figcaption>
-  </figure>
-</section>
-
 <section class="narrow sec">
   <h2>The problem: a platform that couldn't explain itself</h2>
   <p>The biggest usability risk wasn't a missing feature. It was inconsistency on the fields customers touch first, a security tool that could show everything but couldn't say what to fix first, and a support flow that pretended one team owned a journey that crossed five.</p>
-  <blockquote>“I started this project sure that everything should be unified. Research proved me wrong.”</blockquote>
+  <p class="pull">I started this project sure that everything should be unified. Research proved me wrong.</p>
 </section>
 
 <section class="narrow sec">
-  <h2>Project goals</h2>
+  <span class="kicker">The decision that shaped everything</span>
+  <h2>A shared design language, not one console</h2>
+  <dl class="decision">
+    <div><dt>What triggered it</dt><dd>Six tools built by five teams felt like six products. My first instinct was to pull them into one unified experience.</dd></div>
+    <div><dt>Evidence</dt><dd>A study of how AWS, Azure and GCP structure their consoles: every major provider keeps tools deliberately separate, for permissions and cognitive load. The pre-launch audit (65 issues) and the order-to-activation map (13 steps, a different owner at almost every one) showed the real problems were inconsistency and hand-offs, not the number of screens.</dd></div>
+    <div><dt>Options</dt><dd>
+      <ul class="opts">
+        <li><b>One unified console</b><span>My starting hypothesis. It needed every team to rebuild around one interface, against how mature platforms handle permissions.</span></li>
+        <li class="chosen"><b>A shared design language across separate tools</b><span>Common components, one documentation template and one way to get help, adopted by each team in its own build.</span></li>
+      </ul></dd></div>
+    <div><dt>My part</dt><dd>The research, the written proposal, the component library and documentation template, and prototypes each team could build to.</dd></div>
+    <div><dt>Who had to agree</dt><dd>Product, and each of the five delivery teams, none of which reported to me: the external agency, the security vendor, the partner team and two internal teams.</dd></div>
+    <div><dt>What changed</dt><dd>Every team builds with the shared component library, and engineering turned it into a micro-frontend boilerplate for new services. Every service uses the documentation template. The vendor built KMS to my prototype.</dd></div>
+    <div><dt>Status</dt><dd><span class="st st-live">Adopted by every team</span> <span class="st st-wip">Global search and navigation wait on services not yet live</span></dd></div>
+  </dl>
+</section>
+
+<figure class="gap-fig">
+  <div class="ba" role="img" aria-label="Before: six tools from five teams, each with its own patterns, documentation and support route. After: the same separate tools sharing one component library, one documentation template and one help flow; global search and navigation still in progress.">
+    <div class="ba-col">
+      <span class="ba-k">Before · six tools, five teams</span>
+      <div class="ba-tools"><span>Core console<small>external agency</small></span><span>Key management<small>security vendor</small></span><span>Security posture<small>partner team</small></span><span>Cost Analyser<small>internal team</small></span><span>CloudFerry<small>internal team</small></span><span>Support<small>generic case form</small></span></div>
+      <p>Each with its own patterns and documentation. Getting help meant a generic case form that crossed five owners.</p>
+    </div>
+    <div class="ba-arrow" aria-hidden="true">→</div>
+    <div class="ba-col after">
+      <span class="ba-k">After · same tools, one language</span>
+      <ol class="ba-flow"><li>Shared components</li><li>One docs template</li><li>One help flow</li></ol>
+      <p>Tools stay separate where permissions need it, but look, read and get help the same way. Global search and unified navigation come next, once the services they depend on are live.</p>
+    </div>
+  </div>
+  <figcaption>Fig. 2 — Diagram, not a screenshot: what changed between the tools, and what didn't.</figcaption>
+</figure>
+
+<section class="narrow sec tight"><span class="kicker">What the research showed</span><h2>Inconsistency and hand-offs, not missing features</h2></section>
+<section class="grid-2 gap-fig">
+  <figure>
+    <div class="ph r-43 contain white"><img src="../images/cloud/user-lifecycle.jpg" alt="Map of the cloud order-to-activation lifecycle" loading="lazy"></div>
+    <figcaption>Fig. 3 — The order-to-activation lifecycle I mapped before designing support: thirteen steps, a different owner at almost every one.</figcaption>
+  </figure>
+  <figure>
+    <div class="ph r-43 contain white"><img src="../images/cloud/prelaunch-audit.jpg" alt="Pre-launch audit summary: 65 fixes identified, split by priority" loading="lazy"></div>
+    <figcaption>Fig. 4 — The pre-launch audit of the agency's build: 65 fixes identified, split into must-fix before the POC and before go-live.</figcaption>
+  </figure>
+</section>
+
+<section class="narrow sec tight">
+  <span class="kicker">The decision in practice · 1</span>
+  <h2>Support that solves problems before a ticket</h2>
+  <p>Assurance, the support layer, shipped knowingly broken to protect the launch date. Six to eight months later I rebuilt it from a written proposal with five principles and three explored concepts. The new flow replaced an out-of-the-box ServiceNow case form:</p>
+  <ol class="rounds">
+    <li><b>Describe the problem</b><span>A few details, not a long form.</span></li>
+    <li><b>Try a suggested fix</b><span>Solution steps and relevant articles pulled from the service documentation and SOPs.</span></li>
+    <li><b>Raise it if still stuck</b><span>Only then add the extra details the support team needs.</span></li>
+    <li><b>Track it</b><span>A ticket page shows which team is solving it and the dedicated support person, with follow-up questions on the same ticket.</span></li>
+  </ol>
+  <p><strong>Result:</strong> since launch, more than 30% of cases are solved without a ticket, and support tickets are down by about 30%, against a goal of 10%.</p>
+</section>
+
+<figure class="gap-fig" style="margin-bottom: 32px;">
+  <div class="ph r-wide contain white"><img src="../images/cloud/assurance-principles.jpg" alt="Assurance design principles and explored concepts" loading="lazy"></div>
+  <figcaption>Fig. 5 — Five design principles and the concepts explored before committing to one.</figcaption>
+</figure>
+
+<section class="grid-2 gap-fig">
+  <figure>
+    <div class="ph r-43 top"><img src="../images/cloud/assurance-funnel.jpg" alt="Support home: how can we help you, with guided options" loading="lazy"></div>
+    <figcaption>Fig. 6 — Support starts with "How can we help?" and guided fixes, not a ticket form.</figcaption>
+  </figure>
+  <figure>
+    <div class="ph r-43 top"><img src="../images/cloud/assurance-guided-video.jpg" alt="Guided video to resolve a server outage before raising a ticket" loading="lazy"></div>
+    <figcaption>Fig. 7 — A guided video for common issues; the support form is the last step, pre-filled.</figcaption>
+  </figure>
+</section>
+
+<section class="narrow sec tight">
+  <span class="kicker">The decision in practice · 2</span>
+  <h2>Key management from a spec, and security that prioritises</h2>
+  <p>The key management service (KMS) came from the vendor as a technical spec with no design. I designed the whole interaction model — including the Software, HSM, bring-your-own-key and hold-your-own-key choice — and the agency built the live integration to my prototype.</p>
+  <p>For CSPM, I benchmarked the product against Azure Defender and Google Security Command Center across five personas, from security teams to executives. That reframed it from a reporting tool into decision support: what to fix first, and why.</p>
+  <h3>Research &amp; testing</h3>
+  <p>Field-level testing before go-live found 65 issues, including conflicting validation and undocumented limits. 43 were fixed before launch and 7 after. The other 15 depend on services that aren't live yet, such as global search, unified navigation and redirects between services.</p>
+</section>
+
+<section class="grid-2x2 gap-fig">
+  <figure>
+    <div class="ph r-43 top"><img src="../images/cloud/kms-key-types.jpg" alt="KMS screen choosing between Software, HSM, BYOK and HYOK keys" loading="lazy"></div>
+    <figcaption>Fig. 8 — Key management, designed from the vendor's spec: choosing a key source.</figcaption>
+  </figure>
+  <figure>
+    <div class="ph r-43 contain white"><img src="../images/cloud/cspm-personas.jpg" alt="Five CSPM personas: security, DevOps, compliance, executives, incident responders" loading="lazy"></div>
+    <figcaption>Fig. 9 — The five personas CSPM had to serve, each with a different job to be done.</figcaption>
+  </figure>
+  <figure>
+    <div class="ph r-43 top"><img src="../images/cloud/cspm-findings-after.jpg" alt="Redesigned CSPM findings page" loading="lazy"></div>
+    <figcaption>Fig. 10 — CSPM findings, prioritised for action.</figcaption>
+  </figure>
+  <figure>
+    <div class="ph r-43 top"><img src="../images/cloud/cost-analyser.jpg" alt="Cost Analyser with rebuilt navigation" loading="lazy"></div>
+    <figcaption>Fig. 11 — Cost Analyser with its rebuilt information architecture.</figcaption>
+  </figure>
+</section>
+
+<section class="narrow sec">
+  <span class="kicker">How we know</span>
+  <h2>Goals and early results</h2>
   <ul>
     <li>At least 85% usability success on core platform tasks</li>
     <li>At least 80% success at discovering the right service</li>
@@ -130,62 +209,7 @@
       </tbody>
     </table>
   </div>
-  <p style="margin-top: 8px;">My starting hypothesis was that unifying every tool into one experience would get us there. A study of how AWS, Azure and GCP structure their consoles showed the opposite: every major provider keeps tools deliberately separate, for permissions and cognitive load. I switched to a shared experience language — common patterns and components across tools that stay appropriately separate.</p>
-</section>
-
-<section class="narrow sec tight">
-  <h2>Improvement 1: Assurance as self-service, not a ticket form</h2>
-  <p>Assurance, the support layer, shipped knowingly broken to protect the launch date. Six to eight months later I rebuilt it from a written proposal with five principles and three explored concepts. The new flow replaced an out-of-the-box ServiceNow case form:</p>
-  <ol class="rounds">
-    <li><b>Describe the problem</b><span>A few details, not a long form.</span></li>
-    <li><b>Try a suggested fix</b><span>Solution steps and relevant articles pulled from the service documentation and SOPs.</span></li>
-    <li><b>Raise it if still stuck</b><span>Only then add the extra details the support team needs.</span></li>
-    <li><b>Track it</b><span>A ticket page shows which team is solving it and the dedicated support person, with follow-up questions on the same ticket.</span></li>
-  </ol>
-  <p><strong>Result:</strong> since launch, more than 30% of cases are solved without a ticket, and support tickets are down by about 30%, against a goal of 10%.</p>
-</section>
-
-<figure class="gap-fig" style="margin-bottom: 32px;">
-  <div class="ph r-wide contain white"><img src="../images/cloud/assurance-principles.jpg" alt="Assurance design principles and explored concepts" loading="lazy"></div>
-  <figcaption>Fig. 4 — Five design principles and the concepts explored before committing to one.</figcaption>
-</figure>
-
-<section class="grid-2 gap-fig">
-  <figure>
-    <div class="ph r-43 top"><img src="../images/cloud/assurance-funnel.jpg" alt="Support home: how can we help you, with guided options" loading="lazy"></div>
-    <figcaption>Fig. 5 — Support starts with "How can we help?" and guided fixes, not a ticket form.</figcaption>
-  </figure>
-  <figure>
-    <div class="ph r-43 top"><img src="../images/cloud/assurance-guided-video.jpg" alt="Guided video to resolve a server outage before raising a ticket" loading="lazy"></div>
-    <figcaption>Fig. 6 — A guided video for common issues; the support form is the last step, pre-filled.</figcaption>
-  </figure>
-</section>
-
-<section class="narrow sec tight">
-  <h2>Improvement 2: Key management from a spec, and security that prioritises</h2>
-  <p>The key management service (KMS) came from the vendor as a technical spec with no design. I designed the whole interaction model — including the Software, HSM, bring-your-own-key and hold-your-own-key choice — and the agency built the live integration to my prototype.</p>
-  <p>For CSPM, I benchmarked the product against Azure Defender and Google Security Command Center across five personas, from security teams to executives. That reframed it from a reporting tool into decision support: what to fix first, and why.</p>
-  <h3>Research &amp; testing</h3>
-  <p>Field-level testing before go-live found 65 issues, including conflicting validation and undocumented limits. 43 were fixed before launch and 7 after. The other 15 depend on services that aren't live yet, such as global search, unified navigation and redirects between services. A year in, the deepest finding surfaced: access permissions were still being assembled by hand, which made identity the platform's real constraint.</p>
-</section>
-
-<section class="grid-2x2 gap-fig">
-  <figure>
-    <div class="ph r-43 top"><img src="../images/cloud/kms-key-types.jpg" alt="KMS screen choosing between Software, HSM, BYOK and HYOK keys" loading="lazy"></div>
-    <figcaption>Fig. 7 — Key management, designed from the vendor's spec: choosing a key source.</figcaption>
-  </figure>
-  <figure>
-    <div class="ph r-43 contain white"><img src="../images/cloud/cspm-personas.jpg" alt="Five CSPM personas: security, DevOps, compliance, executives, incident responders" loading="lazy"></div>
-    <figcaption>Fig. 8 — The five personas CSPM had to serve, each with a different job to be done.</figcaption>
-  </figure>
-  <figure>
-    <div class="ph r-43 top"><img src="../images/cloud/cspm-findings-after.jpg" alt="Redesigned CSPM findings page" loading="lazy"></div>
-    <figcaption>Fig. 9 — CSPM findings, prioritised for action.</figcaption>
-  </figure>
-  <figure>
-    <div class="ph r-43 top"><img src="../images/cloud/cost-analyser.jpg" alt="Cost Analyser with rebuilt navigation" loading="lazy"></div>
-    <figcaption>Fig. 10 — Cost Analyser with its rebuilt information architecture.</figcaption>
-  </figure>
+  <p class="example-note">Early figures from support data and task-success checks since launch. Metrics weren't instrumented at launch, so there is no older baseline for task success.</p>
 </section>
 
 <section class="narrow sec">
@@ -197,7 +221,7 @@
     <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>The agency had already built on its own design system</b><p>Migrating it wasn't possible within the go-to-market timeline, so I started a shared component library. Every team now builds with it, and engineering turned it into a micro-frontend boilerplate so new services go live faster.</p></div>
     <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Key management arrived as a technical spec with no design</b><p>I designed the whole interaction model from the spec, rather than waiting for someone else to interpret it.</p></div>
     <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Support ran through a pipeline with a different owner at almost every step</b><p>Mapping the lifecycle first showed a better form wouldn't fix it; it needed a cross-system journey.</p></div>
-    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Impact metrics weren't instrumented at launch</b><p>Outcomes are listed as shipped vs in progress; usability and ticket numbers are being confirmed with product.</p></div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Impact metrics weren't instrumented at launch</b><p>Early figures come from support data and task-success checks after launch. Console task success (~70%) is still below the 85% goal.</p></div>
   </div>
 </section>
 
@@ -230,7 +254,34 @@
     <div><b>32+</b><span>quotes generated with the Price Calculator</span></div>
     <div><b>18 → 35</b><span>enterprise clients, launch to Oct 2026 (product outcome)</span></div>
   </div>
-  <p>Shipped: a rebuilt Assurance, the Price Calculator, a service-documentation template now used by every service and published openly, a shared component library every team uses, console fixes, and a KMS prototype adopted into the live platform. CSPM, Cost Analyser and CloudFerry redesigns were in progress at handover. Observability was specced and deliberately shelved once identity became the priority.</p>
+  
+  
+</section>
+
+<section class="narrow sec">
+  <h2>What shipped, and what didn't</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Work</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Assurance: the new help and ticket flow</td><td><span class="st st-live">Live since Jan–Feb 2026</span></td></tr>
+        <tr><td>Key management (KMS), built to my prototype</td><td><span class="st st-live">Live</span></td></tr>
+        <tr><td>Price Calculator</td><td><span class="st st-live">Live · 32+ quotes</span></td></tr>
+        <tr><td>Service documentation template</td><td><span class="st st-live">Used by every service</span></td></tr>
+        <tr><td>Shared component library</td><td><span class="st st-live">Used by every team</span></td></tr>
+        <tr><td>Pre-launch audit fixes</td><td><span class="st st-live">50 of 65 shipped</span> <span class="st st-wip">15 waiting</span></td></tr>
+        <tr><td>CSPM, Cost Analyser and CloudFerry redesigns</td><td><span class="st st-wip">In progress at handover</span></td></tr>
+        <tr><td>Global search, unified navigation, redirects</td><td><span class="st st-wip">Wait on services not yet live</span></td></tr>
+        <tr><td>Observability</td><td><span class="st st-idea">Specced, then paused for identity and access</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="narrow sec">
+  <span class="kicker">What I learned</span>
+  <h2>The identity lesson</h2>
+  <p>A year in, the deepest finding surfaced: access permissions were still being assembled by hand, which made identity the platform's real constraint. I shelved a finished Observability spec to work on it, and it became the next case study.</p>
   <p>What I'd do differently: push to sequence identity and access before launch, rather than discover the need a year in. The harder discipline here was saying no to my own finished work and my own starting strategy.</p>
 </section>
 

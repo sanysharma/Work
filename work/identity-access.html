@@ -38,8 +38,8 @@
         <p class="tldr-lede">Deals were stalling because Airtel Cloud couldn't answer one question: who can access what? I'm designing its in-house identity and access model — starting from definitions, not screens.</p>
         <div class="stats">
           <div class="stat"><b>4</b><span>steps: Provision, Define, Assign, Assume</span></div>
-          <div class="stat"><b>3</b><span>research threads run in parallel</span></div>
-          <div class="stat"><b>0</b><span>PRDs to start from</span></div>
+          <div class="stat"><b>3</b><span>levels of scope: Account → Tenant → Cell</span></div>
+          <div class="stat"><b>Jan ’27</b><span>target launch, now in development</span></div>
         </div>
         <ul>
           <li><strong>Defined before drawing</strong> — separated Permission, Role, Permission Set and Policy, then Trust from Delegation.</li>
@@ -95,7 +95,7 @@
 <section class="narrow sec">
   <h2>The problem: one mental model for everything</h2>
   <p>The challenge was never a single concept. It was building one coherent model across all of them, from a standing start, with no PRD. Three research threads fed it: an audit of AWS IAM, a multi-cloud IAM practitioner inside Airtel who pushed for a provider-agnostic model, and a walkthrough of the legacy system it would replace.</p>
-  <blockquote>“Before drawing a single screen, I wrote definitions.”</blockquote>
+  <p class="pull">Before drawing a single screen, I wrote definitions.</p>
 </section>
 
 <section class="narrow sec">
@@ -109,8 +109,38 @@
 </section>
 
 <section class="narrow sec tight">
-  <h2>Improvement 1: A model before screens</h2>
-  <p>The core model became the spine of the whole module:</p>
+  <span class="kicker">The model · simple view</span>
+  <h2>Who can do what, and where</h2>
+  <p>Everything in the module hangs off two ideas: <strong>where</strong> someone can act, and <strong>what</strong> they can do there. Getting these right first meant screens could change without the concepts changing underneath them.</p>
+</section>
+<figure class="gap-fig">
+  <div class="model-fig" role="img" aria-label="Conceptual model. Where: Account contains Tenants, a Tenant contains Cells, and the Cell is the access gate. What: permissions are bundled with policies into permission sets, attached to roles that can carry conditions, assigned to users and groups for specific Cells, and assumed to act.">
+    <span class="model-k">Where · scope</span>
+    <div class="scope-row">
+      <div class="scope-box"><b>Account</b><span>The top level of the hierarchy</span></div><span class="arr" aria-hidden="true">→</span>
+      <div class="scope-box"><b>Tenant</b><span>Run by a Tenant Admin</span></div><span class="arr" aria-hidden="true">→</span>
+      <div class="scope-box gate"><b>Cell · the gate</b><span>No Cell, no console access, whatever the role</span></div>
+    </div>
+    <span class="model-k">What · access</span>
+    <div class="build-row">
+      <div><b>Permission</b><span>One allowed action</span></div>
+      <div><b>Permission set</b><span>Permissions with policies bundled in</span></div>
+      <div><b>Role</b><span>What a person can take on, with optional conditions</span></div>
+      <div><b>Users &amp; groups</b><span>Get roles for specific Cells</span></div>
+    </div>
+    <span class="model-k">Kept apart on purpose</span>
+    <div class="build-row">
+      <div><b>Trust</b><span>Its own flow</span></div>
+      <div><b>Delegation</b><span>Its own flow, not a variant of trust</span></div>
+    </div>
+  </div>
+  <figcaption>Fig. 1 — Diagram, not a screenshot: the concepts I defined and agreed before any screen.</figcaption>
+</figure>
+
+<section class="narrow sec tight">
+  <span class="kicker">The model · in use</span>
+  <h2>Four steps, from set-up to action</h2>
+  <p>The same concepts, in the order an organisation actually uses them:</p>
   <div class="steps">
     <div><b>Provision</b><span>Super Admin creates a Tenant Admin and dedicates a Cell</span></div>
     <div><b>Define</b><span>Roles, permission sets and conditions describe what's allowed</span></div>
@@ -120,14 +150,43 @@
   <p>No Cell means no console access, regardless of role. That Account → Tenant → Cell hierarchy is a genuine divergence from both AWS and GCP.</p>
 </section>
 
+<section class="narrow sec">
+  <span class="kicker">One request, end to end</span>
+  <h2>Why was I denied?</h2>
+  <p class="example-note">An illustrative example built on the model. The people and names are made up; the order of checks and the explanation screen come from the design.</p>
+  <p><strong>The request:</strong> Priya, a developer in Tenant A, tries to stop a server in <strong>Cell 2</strong>. She has the Developer role, but it's assigned to her for <strong>Cell 1</strong> only.</p>
+  <ol class="scenario">
+    <li><div><b>Who is asking?</b><span>She's signed in and belongs to the Developers group.</span></div><span class="res pass">Pass</span></li>
+    <li><div><b>Can she act in this Cell?</b><span>She holds no role in Cell 2. The Cell is the gate, so the check stops here.</span></div><span class="res fail">Stop</span></li>
+    <li><div><b>Has she taken on a role that allows it?</b><span>Not reached.</span></div><span class="res">—</span></li>
+    <li><div><b>Does the role's permission set include stopping a server, and do its conditions pass?</b><span>Not reached.</span></div><span class="res">—</span></li>
+  </ol>
+  <div class="verdict">
+    <b>Denied, with a reason</b>
+    <p>Priya sees why: she has no role in Cell 2, she does have the Developer role in Cell 1, and her Tenant Admin can assign one. Her admin sees the same trace, check by check.</p>
+  </div>
+  <p>The trace is the point. Access in the legacy model was assembled by hand, so nobody could explain a refusal. Here every decision can be explained in the order it was made.</p>
+</section>
+
 
 <section class="narrow sec tight">
-  <h2>Improvement 2: Decisions worked through, not imposed</h2>
+  <span class="kicker">Decisions</span>
+  <h2>Worked through, not imposed</h2>
   <p><strong>Conditions.</strong> AWS sets conditions inline; product wanted a separate module. I put five questions to the product manager; his answer was cognitive load, since one condition can apply to many roles, and he was open to inline authoring too. We kept both paths.</p>
   <p><strong>Trust and Delegation.</strong> My first design treated them as one module. When product flagged that Delegation was being treated as a variant, I split them into two separate flows.</p>
   <p><strong>Catching my own mistake.</strong> I proposed a tree to show a user's accounts and cells, then realised it breaks when search must show matches together, and moved to expandable rows before anyone else flagged it.</p>
   <h3>Working method</h3>
   <p>Once the Cloudscape design system was mandated, I shifted to AI-directed, surgical prototyping, which respected the platform's micro-frontend boundaries.</p>
+</section>
+
+<section class="narrow sec">
+  <span class="kicker">Making it buildable</span>
+  <h2>From model to something engineering can build</h2>
+  <ul>
+    <li><strong>A working prototype, not a spec.</strong> Built on the mandated Cloudscape system, with permission sets, roles and grants finalised in it. Engineering builds directly from it.</li>
+    <li><strong>Agreed names.</strong> The definitions became the shared vocabulary for product and engineering, so each screen maps to one concept.</li>
+    <li><strong>Measurement from day one.</strong> I asked engineering to track about 30 events across login, users and groups, roles, taking on a role, temporary access and errors, so the module can be measured once it's live.</li>
+  </ul>
 </section>
 
 
@@ -163,15 +222,29 @@
 </section>
 
 <section class="narrow sec">
-  <span class="kicker">Impact</span>
-  <h2>The impact</h2>
-  <div class="metrics">
-    <div><b>Done</b><span>Login, role selection, user creation</span></div>
-    <div><b>WIP</b><span>Permissions &amp; access-control flows</span></div>
-    <div><b>Jan ’27</b><span>Target launch</span></div>
+  <span class="kicker">Status</span>
+  <h2>Where each part stands</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Part</th><th>Stage</th></tr></thead>
+      <tbody>
+        <tr><td>Model, definitions and information architecture</td><td><span class="st st-live">Agreed with product and engineering</span></td></tr>
+        <tr><td>Login, role selection, user creation</td><td><span class="st st-live">Design done</span></td></tr>
+        <tr><td>Permission sets, roles and grants</td><td><span class="st st-live">Finalised in prototype</span> <span class="st st-wip">In development</span></td></tr>
+        <tr><td>Permissions and access-control flows</td><td><span class="st st-wip">Design in progress</span></td></tr>
+        <tr><td>Event tracking (about 30 events)</td><td><span class="st st-wip">Requested</span></td></tr>
+        <tr><td>Formal product review</td><td><span class="st st-wip">Pending</span></td></tr>
+        <tr><td>Launch</td><td><span class="st st-idea">Target January 2027</span></td></tr>
+      </tbody>
+    </table>
   </div>
-  <p>Not yet live. Engineering is building on a prototype with finalised permission sets, roles and grants; the formal product review is pending. I keep "decided in review" and "shipped" as separate claims.</p>
-  <p>What I learned: once my hands-on scope shrank, most of the leverage came from review, decisions and AI-directed execution. The job isn't avoiding AI-assisted thinking — it's knowing precisely which parts of the output are yours.</p>
+  <p>Nothing here is live yet. I keep "decided in review" and "shipped" as separate claims.</p>
+</section>
+
+<section class="narrow sec">
+  <span class="kicker">What I learned</span>
+  <h2>Knowing which parts are mine</h2>
+  <p>Once my hands-on scope shrank, most of the leverage came from review, decisions and AI-directed execution. The job isn't avoiding AI-assisted thinking. It's knowing precisely which parts of the output are yours.</p>
 </section>
 
 <a class="next" href="ai-campaign-manager.html#top">
