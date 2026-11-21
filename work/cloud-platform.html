@@ -87,7 +87,7 @@
   <h2>Why the Cloud platform?</h2>
   <p>Airtel launched Cloud with 18 enterprise clients and a target of 50 by 2027, with contract value expected to grow about tenfold, to ₹180 crore (sales forecast). The bet was to launch on time and let real usage decide what to build next. By October 2026 it had 35 clients.</p>
   <p>No single team controlled the product. A partner designed and built the core console, key management and the first support flow. An external team built posture monitoring. Internal developers built Cost Analyser and CloudFerry migration. That's normal for an enterprise platform: each product is led by its own experts with their own engineers. So every improvement had to be earned, not mandated.</p>
-  <p>Airtel is now bringing the platform in-house. An internal team built a shared micro-frontend: every new service is built on it, and existing tools move onto it over time.</p>
+  <p>Airtel is now bringing the platform in-house. An internal team built a shared micro-frontend from the component library: every new service is built on it, and existing tools move onto it over time.</p>
 </section>
 
 <section class="narrow sec">
@@ -231,7 +231,7 @@
       </ul></dd></div>
     <div><dt>My part</dt><dd>The research and proposal, the common top bar and service catalogue, the shared component library, and the documentation template.</dd></div>
     <div><dt>Who had to agree</dt><dd>Product, the partner, the external and internal teams building each tool, and the engineering team that built the shared micro-frontend.</dd></div>
-    <div><dt>What changed</dt><dd>The top bar and catalogue are live across 40+ services, and every service has documentation on the template. The component library became the micro-frontend every new service is built on. For a medium-sized service such as bare-metal storage, the front end and API set-up took about 10 days once the backend was ready.</dd></div>
+    <div><dt>What changed</dt><dd>The top bar and catalogue are live across 40+ services, and every service has documentation on the template. The component library became the micro-frontend every new service is built on. Developers used to build each service's front end from scratch; with the shared boilerplate, which they reuse and adapt per service, front-end time and effort dropped by roughly 30–50%. A medium-sized service such as bare-metal storage took about 10 days for front end and API set-up once the backend was ready.</dd></div>
     <div><dt>Status</dt><dd><span class="st st-live">Live across 40+ services</span> <span class="st st-wip">Existing tools moving onto the shared front end</span></dd></div>
   </dl>
 </section>
@@ -325,7 +325,8 @@
     <div><b>~30%</b><span>fewer support tickets after the Assurance redesign</span></div>
     <div><b>50 / 65</b><span>audit fixes shipped; the other 15 wait on services not yet live</span></div>
     <div><b>40+</b><span>live services in one top bar and catalogue, each with documentation on the template</span></div>
-    <div><b>~10 days</b><span>front end and API set-up for a medium service on the shared micro-frontend, once the backend was ready</span></div>
+    <div><b>30–50%</b><span>less front-end time and effort per new service on the shared micro-frontend, versus building from scratch (rough estimate)</span></div>
+    <div><b>~10 days</b><span>front end and API set-up for a medium service, once the backend was ready</span></div>
     <div><b>32+</b><span>quotes generated with the Price Calculator</span></div>
     <div><b>18 → 35</b><span>enterprise clients, launch to Oct 2026 (product outcome)</span></div>
   </div>
@@ -343,7 +344,7 @@
         <tr><td>Price Calculator</td><td><span class="st st-live">Live · 32+ quotes</span></td></tr>
         <tr><td>Common top bar and service catalogue</td><td><span class="st st-live">Live</span></td></tr>
         <tr><td>Service documentation template</td><td><span class="st st-live">40+ services</span></td></tr>
-        <tr><td>Shared component library → micro-frontend</td><td><span class="st st-live">Every new service</span> <span class="st st-wip">Existing tools moving over</span></td></tr>
+        <tr><td>Shared component library → micro-frontend</td><td><span class="st st-live">Every new service · 30–50% less front-end effort</span> <span class="st st-wip">Existing tools moving over</span></td></tr>
         <tr><td>Posture monitoring, Cost Analyser, CloudFerry</td><td><span class="st st-wip">Recommendations with their teams</span></td></tr>
         <tr><td>Identity and access management</td><td><span class="st st-wip">In development · target Jan 2027</span></td></tr>
         <tr><td>Observability</td><td><span class="st st-wip">In design</span></td></tr>
