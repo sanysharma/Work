@@ -13,102 +13,614 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.sunnykumar.work/">
 <meta name="theme-color" content="#FBFAF7">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='16' fill='%234A6CEB'/><text x='16' y='21' font-family='sans-serif' font-size='13' font-weight='800' text-anchor='middle' fill='white'>SK</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Cstyle%3E%0A%20%20%20%20.tile%20%7B%20fill%3A%20%231A1A1A%3B%20%7D%0A%20%20%20%20.inner%20%7B%20fill%3A%20%23FBFAF7%3B%20%7D%0A%20%20%20%20.line%20%7B%20fill%3A%20none%3B%20stroke%3A%20%23FBFAF7%3B%20stroke-width%3A%203%3B%20%7D%0A%20%20%20%20.handle%20%7B%20fill%3A%20%231A1A1A%3B%20stroke%3A%20%23FBFAF7%3B%20stroke-width%3A%202.6%3B%20%7D%0A%20%20%20%20%40media%20%28prefers-color-scheme%3A%20dark%29%20%7B%0A%20%20%20%20%20%20.tile%2C%20.handle%20%7B%20fill%3A%20%23FBFAF7%3B%20%7D%0A%20%20%20%20%20%20.inner%20%7B%20fill%3A%20%231A1A1A%3B%20%7D%0A%20%20%20%20%20%20.line%2C%20.handle%20%7B%20stroke%3A%20%231A1A1A%3B%20%7D%0A%20%20%20%20%7D%0A%20%20%3C/style%3E%0A%20%20%3Crect%20class%3D%22tile%22%20x%3D%222%22%20y%3D%222%22%20width%3D%2260%22%20height%3D%2260%22%20rx%3D%2215%22/%3E%0A%20%20%3Crect%20class%3D%22line%22%20x%3D%2216%22%20y%3D%2216%22%20width%3D%2232%22%20height%3D%2232%22/%3E%0A%20%20%3Crect%20class%3D%22handle%22%20x%3D%2212.5%22%20y%3D%2212.5%22%20width%3D%227%22%20height%3D%227%22/%3E%0A%20%20%3Crect%20class%3D%22handle%22%20x%3D%2244.5%22%20y%3D%2212.5%22%20width%3D%227%22%20height%3D%227%22/%3E%0A%20%20%3Crect%20class%3D%22handle%22%20x%3D%2244.5%22%20y%3D%2244.5%22%20width%3D%227%22%20height%3D%227%22/%3E%0A%20%20%3Crect%20class%3D%22handle%22%20x%3D%2212.5%22%20y%3D%2244.5%22%20width%3D%227%22%20height%3D%227%22/%3E%0A%20%20%3Cpath%20class%3D%22inner%22%20d%3D%22M32%2021%20Q34%2030%2043%2032%20Q34%2034%2032%2043%20Q30%2034%2021%2032%20Q30%2030%2032%2021%20Z%22/%3E%0A%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css">
-</head>
-<body class="landing">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Theme: "cursor to prompt". The logo's selection box (cursor, direct manipulation) around an AI spark (prompt).
+   Colour: logo ink + paper, a selection blue for cursor moments, a violet for prompt / AI moments.
+   Type: Bricolage Grotesque for display and text, IBM Plex Mono for console and prompt details.
+   Layout: an enterprise-console frame (title bar, icon rail, status bar) around
+   three hash-routed pages — home (hero, selected work, collaboration), work (case studies + side projects), about (story, CV, contact). */
+:root{
+  --bg:#FBFAF7; --panel:#FFFFFF; --panel-2:#F3F2EE; --line:#E0DDD6; --line-2:#C8C4BB;
+  --fg:#1A1A1A; --muted:#5B5953; --faint:#ECEAE5;
+  --blue:#2A5BE0; --teal:#2A5BE0; --violet:#6A45E0;
+  --live:#1E7A4A; --wip:#8A5A00;
+  --glow:rgba(42,91,224,.08);
+  --sans:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  --bar:44px; --rail:56px; --status:40px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141414; --panel:#1B1B1B; --panel-2:#212121; --line:#2C2C2C; --line-2:#3B3B3B;
+  --fg:#FBFAF7; --muted:#A6A39C; --faint:#232323;
+  --blue:#7FA2FF; --teal:#7FA2FF; --violet:#AE94FF;
+  --live:#5BC88C; --wip:#E2B34F; --glow:rgba(127,162,255,.09); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141414; --panel:#1B1B1B; --panel-2:#212121; --line:#2C2C2C; --line-2:#3B3B3B;
+  --fg:#FBFAF7; --muted:#A6A39C; --faint:#232323;
+  --blue:#7FA2FF; --teal:#7FA2FF; --violet:#AE94FF;
+  --live:#5BC88C; --wip:#E2B34F; --glow:rgba(127,162,255,.09); color-scheme:dark}
 
-<nav class="pills" aria-label="Main">
-  <a class="fl" href="about.html">About</a>
-  <a class="fl dark" href="assets/Sunny-Kumar-Resume.pdf">Resume</a>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+
+/* ambient glow, like a console spotlight */
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(60vw 50vh at 12% 0%,var(--glow),transparent 70%),radial-gradient(50vw 50vh at 100% 100%,var(--glow),transparent 70%)}
+
+/* ---------- console chrome ---------- */
+.titlebar{position:fixed;z-index:30;top:env(safe-area-inset-top,0px);left:0;right:0;height:var(--bar);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);font-family:var(--mono);font-size:13px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand b{font-weight:500}
+.brand span{color:var(--blue)}
+.tb-links{display:flex;gap:6px}
+.tb-links a{text-decoration:none;padding:6px 10px;border-radius:8px;border:1px solid transparent;min-height:32px;display:inline-flex;align-items:center}
+.tb-links a:hover{border-color:var(--line-2)}
+.tb-links a.solid{background:var(--fg);color:var(--bg)}
+.theme{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 10px;border-radius:8px;border:1px solid var(--line-2);background:transparent;color:var(--fg);font:13px var(--mono);cursor:pointer}
+.theme:hover{background:var(--faint)}
+.theme svg{width:15px;height:15px}.theme .moon{display:none}
+.is-dark .theme .sun{display:inline}.is-dark .theme .moon{display:none}
+:root:not(.is-dark) .theme .sun{display:none}:root:not(.is-dark) .theme .moon{display:inline}
+
+.rail{position:fixed;z-index:25;left:0;top:calc(var(--bar) + env(safe-area-inset-top,0px));bottom:var(--status);width:var(--rail);
+  border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;padding:16px 0;background:var(--bg)}
+.rail a{width:36px;height:36px;display:grid;place-items:center;border-radius:9px;color:var(--muted);text-decoration:none;position:relative}
+.rail a:hover{color:var(--fg);background:var(--faint)}
+.rail a.on{color:var(--fg);background:var(--faint)}
+.rail a.on::before{content:"";position:absolute;left:-10px;top:8px;bottom:8px;width:2px;border-radius:2px;background:var(--blue)}
+.rail svg{width:18px;height:18px}
+.rail a span{position:absolute;left:46px;white-space:nowrap;font:12px var(--mono);background:var(--fg);color:var(--bg);padding:3px 8px;border-radius:6px;opacity:0;pointer-events:none;transform:translateX(-4px);transition:.15s}
+.rail a:hover span,.rail a:focus-visible span{opacity:1;transform:none}
+
+.status{position:fixed;z-index:30;left:0;right:0;bottom:0;min-height:calc(var(--status) + env(safe-area-inset-bottom,0px));
+  padding:0 max(16px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(16px,env(safe-area-inset-left,0px));
+  display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--line);
+  background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font:12.5px var(--mono);color:var(--muted)}
+.crumb{display:flex;align-items:center;gap:8px;color:var(--fg)}
+.crumb i{font-style:normal;color:var(--muted)}
+.st-mid{display:flex;gap:20px}
+.st-mid .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--live);margin-right:7px;vertical-align:1px;box-shadow:0 0 0 3px color-mix(in srgb,var(--live) 25%,transparent)}
+.talk{color:var(--fg);text-decoration:none;border:1px solid var(--line-2);padding:5px 12px;border-radius:8px;white-space:nowrap}
+.talk:hover{background:var(--faint)}
+
+/* ---------- page ---------- */
+main{position:relative;z-index:1;padding-top:calc(var(--bar) + env(safe-area-inset-top,0px));padding-bottom:calc(var(--status) + env(safe-area-inset-bottom,0px))}
+.contact p{color:var(--muted);margin:0;max-width:50ch}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:900px){main{padding-left:var(--rail)} .wrap{padding-left:48px;padding-right:48px}}
+
+.eyebrow{font:12.5px var(--mono);letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
+.hero{min-height:clamp(520px,82vh,860px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:22px;padding-block:72px 40px}
+.hero h1{margin:0;font-weight:500;font-size:clamp(40px,6.4vw,92px);line-height:1.02;letter-spacing:-.035em;max-width:14ch;text-wrap:balance}
+
+.hero h1 .w{display:inline-block;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{transform:translateY(.35em)}to{transform:none}}
+.hero p.lede{margin:0;max-width:56ch;color:var(--muted);font-size:clamp(16px,1.3vw,19px)}
+.who{font:13px var(--mono);color:var(--fg);display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px}
+.who span{color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:10px;border:1px solid var(--line-2);background:var(--panel);text-decoration:none;font-size:15px;cursor:pointer;color:var(--fg);font-family:var(--sans)}
+.btn:hover{border-color:var(--fg)}
+.btn.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+/* connector line between hero and list */
+.connector{position:relative;height:120px;display:flex;justify-content:center}
+.connector::before{content:"";width:1px;height:100%;background:linear-gradient(var(--line-2),var(--blue));transform-origin:top;transform:scaleY(var(--grow,1))}
+
+/* ---------- work list ---------- */
+.work{position:relative;padding-bottom:40px}
+.bgword{position:sticky;top:calc(var(--bar) + 4vh);height:0;overflow:visible;pointer-events:none;z-index:0}
+.bgword span{display:block;font-weight:800;font-size:clamp(140px,24vw,360px);line-height:.8;letter-spacing:-.06em;color:var(--faint);white-space:nowrap;transform:translateX(var(--shift,0px));user-select:none}
+.work-head{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:end;gap:16px;margin:0 0 18px}
+.work-head h2{margin:0;font-weight:500;font-size:clamp(26px,2.6vw,36px);letter-spacing:-.02em}
+
+.list{position:relative;z-index:1;display:flex;flex-direction:column;gap:14px;list-style:none;margin:0;padding:0}
+
+.row{--hue:var(--blue);display:grid;grid-template-columns:44px minmax(0,1fr) minmax(0,360px);gap:20px 28px;align-items:start;
+  padding:30px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--panel) 85%,transparent);
+  text-decoration:none;position:relative;overflow:hidden;transition:border-color .3s,background .3s,opacity .25s linear;opacity:var(--dim,1)}
+.row[data-hue=violet]{--hue:var(--violet)} .row[data-hue=teal]{--hue:var(--teal)} .row[data-hue=blue]{--hue:var(--blue)}
+.row::after{content:"";position:absolute;inset:auto 0 0 0;height:2px;background:var(--hue);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.num{font:13px var(--mono);color:var(--muted);padding-top:12px;transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .25s}
+.row-main{display:flex;flex-direction:column;gap:14px;min-width:0;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.row-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.row-title{font-weight:500;font-size:clamp(30px,3.6vw,50px);line-height:1.04;letter-spacing:-.03em;text-wrap:balance}
+.row-title em{font-style:normal;font-weight:300;color:var(--muted)}
+.row-sub{color:var(--muted);max-width:56ch;font-size:16px;line-height:1.5}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font:12px var(--mono);padding:3px 10px;border-radius:999px;border:1px solid var(--line-2);color:var(--muted)}
+.yr{font:13px var(--mono);color:var(--muted);display:flex;align-items:center;gap:8px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.arrow{display:inline-block;color:var(--hue);opacity:0;transform:translate(-6px,6px);transition:.35s cubic-bezier(.2,.7,.2,1)}
+.impact{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;margin-top:4px;padding-top:14px;border-top:1px dashed var(--line-2)}
+.impact .k{width:100%;font:11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.impact .m{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;min-width:0}
+.impact b{font-weight:600;font-size:clamp(26px,2.4vw,34px);line-height:1.1;letter-spacing:-.03em;color:var(--hue);font-variant-numeric:tabular-nums}
+.impact i{font-style:normal;font-size:15px;line-height:1.4;color:var(--muted)}
+.impact.goal b{color:var(--fg);font-weight:500}
+.media{display:flex;min-width:0;align-self:stretch}
+.shot{display:block;position:relative;flex:1;min-height:0;height:100%;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--panel-2);
+  transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .4s;transform-origin:60% 60%}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.shot.light{background:#fff}.shot.light img{object-fit:contain;padding:12px}
+.shot.model{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:22px;background:color-mix(in srgb,var(--blue) 6%,var(--panel))}
+.shot.model .steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.shot.model .steps span{font:500 14px var(--sans);text-align:center;padding:11px 6px;border-radius:9px;border:1.5px solid var(--blue);color:var(--blue);background:var(--panel)}
+.shot.model .scope{font:12.5px var(--mono);text-align:center;color:var(--muted)}
+.shot.model .scope b{color:var(--blue);font-weight:500}
+.shot.signal{display:flex;flex-direction:column;justify-content:center;gap:12px;padding:24px;background:color-mix(in srgb,var(--violet) 7%,var(--panel))}
+.sig-k{font:11px var(--mono);letter-spacing:.1em;color:var(--violet)}
+.shot.signal b{font-weight:500;font-size:22px;line-height:1.2;letter-spacing:-.02em;color:var(--fg)}
+.sig-l{display:flex;flex-direction:column;gap:7px}.sig-l i{height:7px;border-radius:4px;background:var(--line-2)}.sig-l i:nth-child(2){width:80%}.sig-l i:nth-child(3){width:55%}
+.st{font:11.5px var(--mono)} .st.live{color:var(--live)} .st.wip{color:var(--wip)}
+.st.on-shot{position:absolute;left:10px;bottom:10px;z-index:1;padding:4px 9px;border-radius:999px;background:var(--panel);border:1px solid currentColor;line-height:1.3}
+.shot.model .scope{margin-bottom:22px}.shot.signal{padding-bottom:44px}
+.read{display:none;font:13px var(--mono);color:var(--hue)}
+@media (hover:hover){
+  .row:hover,.row:focus-visible{border-color:color-mix(in srgb,var(--hue) 55%,var(--line));background:color-mix(in srgb,var(--hue) 5%,var(--panel))}
+  .row:hover::after,.row:focus-visible::after{transform:scaleX(1)}
+  .row:hover .num,.row:focus-visible .num{transform:translateX(-14px);opacity:0}
+  .row:hover .row-main,.row:focus-visible .row-main{transform:translateX(-30px)}
+  .row:hover .arrow,.row:focus-visible .arrow{opacity:1;transform:none}
+  .row:hover .shot,.row:focus-visible .shot{transform:rotate(-2deg) scale(1.03);box-shadow:0 18px 40px rgba(10,12,20,.18)}
+}
+@media (hover:none){.read{display:inline}}
+@media (max-width:1080px){.row{grid-template-columns:44px minmax(0,1fr)}.media{grid-column:2}.shot{height:auto;aspect-ratio:16/9}}
+@media (max-width:640px){.impact{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---------- contact ---------- */
+.contact{padding-block:140px 120px;text-align:center;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:18px}
+.contact h2{margin:0;font-weight:500;font-size:clamp(34px,4.6vw,64px);line-height:1.04;letter-spacing:-.03em;max-width:16ch;text-wrap:balance}
+
+.avatar{width:96px;height:96px;border-radius:24px;border:1px solid var(--line-2);background:var(--panel);display:grid;place-items:center;transform:rotate(-4deg)}
+.mark.big{width:52px;height:52px;border-width:2.5px;background:linear-gradient(90deg,var(--fg) 50%,transparent 50%),radial-gradient(circle,var(--fg) 1.6px,transparent 2px) 0 0/7px 7px}
+.site-foot{border-top:1px solid var(--line);padding-block:48px 32px;position:relative;z-index:1}
+.foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px}
+.foot-grid nav{display:flex;flex-direction:column;gap:8px}
+.foot-grid nav a{text-decoration:none;color:var(--fg);width:fit-content}
+.foot-grid nav a:hover{text-decoration:underline;text-underline-offset:.2em}
+.foot-end{display:flex;flex-direction:column;gap:8px;font:12.5px var(--mono);color:var(--muted)}
+.brand-lg{font:500 20px var(--mono);color:var(--fg)}
+.mailrow{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;border:1px solid var(--line-2);border-radius:12px;padding:6px 6px 6px 16px;background:var(--panel);font:15px var(--mono)}
+.mailrow output{user-select:all}
+.copy{min-height:36px;padding:0 14px;border-radius:8px;border:0;background:var(--fg);color:var(--bg);font:500 14px var(--sans);cursor:pointer}
+
+
+/* ---------- pages ---------- */
+.hero.short{min-height:clamp(380px,56vh,620px)}
+.work-head .more{font:13px var(--mono);color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
+.work-head .more:hover{border-color:var(--fg)}
+.work-head.second{margin-top:72px}
+.row.static{cursor:default}
+.shot.mail{display:flex;flex-direction:column;justify-content:center;gap:12px;padding:22px 22px 48px;background:color-mix(in srgb,var(--teal) 7%,var(--panel))}
+.shot.mail .sig-k{color:var(--teal)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font:12px var(--mono);padding:4px 9px;border-radius:7px;border:1px solid var(--line-2);background:var(--panel);color:var(--fg)}
+.tb-links a.pg.on{border-color:var(--line-2);background:var(--faint)}
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:48px;align-items:start;padding-bottom:96px}
+@media (max-width:980px){.about-grid{grid-template-columns:1fr}.about-side{order:-1}}
+.about-main{display:flex;flex-direction:column;gap:18px;min-width:0;max-width:68ch}
+.about-main p.big{margin:0;font-weight:400;font-size:clamp(21px,1.9vw,26px);line-height:1.4;letter-spacing:-.015em}
+.sub{margin:36px 0 4px;font:500 12.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.principles{margin:0;padding:0;list-style:none;counter-reset:p;display:flex;flex-direction:column;gap:14px}
+.principles li{counter-increment:p;position:relative;padding-left:44px;color:var(--muted)}
+.principles li::before{content:counter(p,decimal-leading-zero);position:absolute;left:0;top:3px;font:13px var(--mono);color:var(--blue)}
+.principles b,.plain b{color:var(--fg);font-weight:600}
+.plain{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;color:var(--muted)}
+.cvlist{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.cvlist li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.cvlist i{font:13px var(--mono);font-style:normal;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.about-side{position:sticky;top:calc(var(--bar) + 24px)}
+.about-side .win{border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden}
+.about-side .bar{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;border-bottom:1px solid var(--line);background:var(--panel-2);font:12px var(--mono);color:var(--muted)}
+.about-side .ctrl{display:flex;gap:6px}.about-side .ctrl i{width:8px;height:8px;border-radius:50%;border:1px solid var(--line-2)}
+.about-side .body{padding:22px;display:flex;flex-direction:column;gap:12px}
+.about-side h2{margin:0;font-weight:500;font-size:28px;letter-spacing:-.02em}
+.about-side p{margin:0;color:var(--muted);font-size:15px}
+.about-side .mailrow{display:flex;justify-content:space-between;padding:6px 6px 6px 12px;font-size:13.5px;flex-wrap:nowrap;min-width:0}
+.about-side .mailrow output{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.about-side .btn{justify-content:center}
+
+
+/* cursor: selection box with corner handles (same drawing as the logo) */
+.sel{position:relative;display:inline-block;padding:0 .14em;margin:0 .04em;border:1.5px solid var(--blue);color:var(--fg);
+  background:color-mix(in srgb,var(--blue) 7%,transparent);line-height:1.05}
+.sel .hd{position:absolute;width:9px;height:9px;background:var(--bg);border:1.5px solid var(--blue)}
+.sel .tl{left:-5px;top:-5px}.sel .tr{right:-5px;top:-5px}.sel .bl{left:-5px;bottom:-5px}.sel .br{right:-5px;bottom:-5px}
+h2 .sel .hd{width:7px;height:7px}h2 .sel .tl{left:-4px;top:-4px}h2 .sel .tr{right:-4px;top:-4px}h2 .sel .bl{left:-4px;bottom:-4px}h2 .sel .br{right:-4px;bottom:-4px}
+/* prompt: blinking caret */
+.caret{display:inline-block;width:.55em;height:1.05em;margin-left:3px;vertical-align:-.18em;background:var(--violet);animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+/* logo */
+.logo{width:26px;height:26px;display:block}
+.logo .tile{fill:var(--fg);transform-box:fill-box;transform-origin:center;animation:lg-tile .5s cubic-bezier(.34,1.4,.64,1) .2s both}
+.logo .s{fill:none;stroke:var(--bg);stroke-width:3;stroke-dasharray:32;animation:lg-draw .28s linear both}
+.logo .s1{animation-delay:.8s}.logo .s2{animation-delay:1.1s}.logo .s3{animation-delay:1.4s}.logo .s4{animation-delay:1.7s}
+.logo .h{fill:var(--fg);stroke:var(--bg);stroke-width:2.6;transform-box:fill-box;transform-origin:center;animation:lg-pop .24s cubic-bezier(.34,1.56,.64,1) both}
+.logo .h1{animation-delay:.62s}.logo .h2{animation-delay:1.06s}.logo .h3{animation-delay:1.36s}.logo .h4{animation-delay:1.66s}
+.logo .sp{fill:var(--bg);transform-box:fill-box;transform-origin:center;animation:lg-spark .6s ease-out 2s both}
+.brand:hover .logo .sp{animation:lg-spark .6s ease-out both}
+@keyframes lg-tile{from{transform:scale(.5)}to{transform:scale(1)}}
+@keyframes lg-draw{from{stroke-dashoffset:32}to{stroke-dashoffset:0}}
+@keyframes lg-pop{from{transform:scale(0)}to{transform:scale(1)}}
+@keyframes lg-spark{0%{transform:scale(0) rotate(-120deg)}70%{transform:scale(1.2) rotate(8deg)}100%{transform:scale(1) rotate(0)}}
+@media (prefers-reduced-motion:reduce){.logo *,.caret{animation:none!important}}
+/* title bar: logo left, name centred, actions right */
+.titlebar{display:grid;grid-template-columns:1fr auto 1fr}
+.tb-name{justify-self:center;font:500 14px var(--mono);letter-spacing:.01em;text-decoration:none;display:inline-flex;align-items:center}
+.tb-links{justify-self:end}
+/* home: about nudge + contact */
+.home-about{padding-block:140px 110px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;position:relative;z-index:1}
+.home-about h2{margin:0;font-weight:500;font-size:clamp(34px,4.6vw,64px);line-height:1.08;letter-spacing:-.03em;text-wrap:balance}
+.home-about p{margin:0;max-width:56ch;color:var(--muted)}
+.home-about .more{font:14px var(--mono);color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
+.home-about .more:hover{border-color:var(--fg)}
+.contact-strip{margin-top:28px;width:100%;max-width:880px;display:grid;grid-template-columns:minmax(0,2.1fr) repeat(2,minmax(0,1fr));gap:10px}
+.copy{white-space:nowrap}
+.contact-strip .mailrow{justify-content:space-between;flex-wrap:nowrap;min-width:0;width:100%}
+.contact-strip .mailrow output{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.contact-strip .btn{justify-content:center;width:100%}
+@media (max-width:700px){.contact-strip{grid-template-columns:1fr 1fr}.contact-strip .mailrow{grid-column:1/-1}}
+.prompt-k{font:12.5px var(--mono);color:var(--violet)}
+/* phones: page nav moves into the status bar */
+.mnav{display:none;gap:4px}
+.mnav a{width:34px;height:30px;display:grid;place-items:center;border-radius:8px;color:var(--muted)}
+.mnav a.on{color:var(--fg);background:var(--faint)}
+.mnav svg{width:17px;height:17px}
+@media (max-width:899px){.mnav{display:flex}}
+
+@media (max-width:899px){
+  .rail{display:none}
+  .st-mid .hide-sm{display:none}
+  .row{grid-template-columns:minmax(0,1fr);padding:22px 18px;gap:16px}
+  .media{grid-column:auto;order:-1}
+  .num{padding-top:0}
+  .row-top{flex-direction:column;gap:6px}
+  .arrow{display:none}
+}
+@media (max-width:560px){.st-mid{display:none}.theme .tl{display:none}.tb-links a{padding:6px 8px}.tb-links{gap:4px}.tb-links .x{display:none}.tb-name{font-size:13px}}
+@media (prefers-reduced-motion:reduce){
+  .hero h1 .w{animation:none}
+  .row,.num,.row-main,.arrow,.row::after,.shot{transition:none}
+  .peek{display:none}
+}
+</style>
+
+<div class="glow" aria-hidden="true"></div>
+<script>try{var t=localStorage.getItem('sk-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+</head>
+<body>
+<header class="titlebar">
+  <a class="brand" href="#home" aria-label="Sunny Kumar, home"><svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect class="tile" x="2" y="2" width="60" height="60" rx="15"/><path class="s s1" d="M16 16 H48"/><path class="s s2" d="M48 16 V48"/><path class="s s3" d="M48 48 H16"/><path class="s s4" d="M16 48 V16"/><rect class="h h1" x="12.5" y="12.5" width="7" height="7"/><rect class="h h2" x="44.5" y="12.5" width="7" height="7"/><rect class="h h3" x="44.5" y="44.5" width="7" height="7"/><rect class="h h4" x="12.5" y="44.5" width="7" height="7"/><path class="sp" d="M32 21 Q34 30 43 32 Q34 34 32 43 Q30 34 21 32 Q30 30 32 21 Z"/></svg></a>
+  <a class="tb-name" href="#home">Sunny Kumar<span class="caret" aria-hidden="true"></span></a>
+  <nav class="tb-links" aria-label="Site">
+    <button class="theme" type="button" id="theme" aria-label="Switch to dark mode"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><span class="tl">dark</span></button>
+    <a class="solid" href="assets/Sunny-Kumar-Resume.pdf" target="_blank" rel="noopener">resume<span class="x">.pdf</span></a>
+  </nav>
+</header>
+
+<nav class="rail" aria-label="Pages">
+  <a href="#home" data-nav="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>home</span></a>
+  <a href="#work" data-nav="work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg><span>work</span></a>
+  <a href="#about" data-nav="about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>about</span></a>
 </nav>
 
-<main class="home">
+<main id="top">
 
-  <header class="intro">
-    <p class="who">Sunny Kumar · Senior Lead Product Designer, Airtel</p>
-    <h1>I design enterprise platforms that make complex systems easier to operate.</h1>
-    <p class="intro-body">Fifteen years in design, the last three leading platform work at Airtel. I start from definitions and evidence, align product and engineering teams I don't manage, and design AI features that keep a person in control.</p>
-    <p class="meta-line">Based in India · Open to relocation · Lead and Principal Product Design roles</p>
-    <div class="actions">
-      <a class="btn primary" href="#work">See the work</a>
-      <a class="btn" href="assets/Sunny-Kumar-Resume.pdf">Resume (PDF)</a>
-      <a class="btn" href="mailto:sany.sharma09@gmail.com">Email</a>
-      <a class="btn" href="https://www.linkedin.com/in/sunny-kumar-44a5b41a/" target="_blank" rel="noopener">LinkedIn</a>
+  <!-- ================= HOME ================= -->
+  <div class="view" data-view="home">
+    <div class="wrap">
+      <section class="hero" aria-labelledby="h-home">
+        <span class="eyebrow">Work</span>
+        <h1 id="h-home"><span class="w">I design enterprise platforms that make complex systems</span> <span class="w" style="animation-delay:.12s"><span class="sel">easier to operate.<i class="hd tl"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd br"></i></span></span></h1>
+        <p class="lede">Fifteen years in design, the last three leading platform work at Airtel. I start from definitions and evidence, align product and engineering teams I don't manage, and design AI features that keep a person in control.</p>
+      </section>
+      <div class="connector" aria-hidden="true"></div>
+      <section class="work" aria-labelledby="h-sel">
+        <div class="bgword" aria-hidden="true"><span>platforms</span></div>
+        <div class="work-head"><h2 id="h-sel">Selected <span class="sel">work<i class="hd tl"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd br"></i></span></h2><a class="more" href="#work">All work, incl. side projects →</a></div>
+        <ol class="list">
+        <li><a class="row" data-hue="violet" href="work/ai-campaign-manager.html">
+          <span class="num">01</span>
+          <span class="row-main">
+            <span class="row-top"><span class="row-title">Campaigns, <em>now with a brain</em></span><span class="yr">2023 – now <span class="arrow" aria-hidden="true">↗</span></span></span>
+            <span class="row-sub">Five campaign tools became one platform, UCLM. Then we added AI that plans campaigns while a person approves every one.</span>
+            <span class="tags"><span>platform consolidation</span><span>workflow design</span><span>ai with human approval</span></span>
+            <span class="impact" aria-label="Impact"><span class="k">Impact</span>
+              <span class="m"><b>&lt;5 min</b><i>to build a campaign, down from 30+</i></span>
+            </span>
+          </span>
+          <span class="media"><span class="shot light"><img src="images/campaign/model-convergence.svg" alt="Diagram: the AI modules feed one campaign plan that a person reviews" loading="lazy"><span class="st on-shot live">Phase 1 live · Time Affinity AI live</span></span></span>
+        </a></li>
+<li><a class="row" data-hue="teal" href="work/cloud-platform.html">
+          <span class="num">02</span>
+          <span class="row-main">
+            <span class="row-top"><span class="row-title">Cloud, <em>minus the chaos</em></span><span class="yr">2025 – 2026 <span class="arrow" aria-hidden="true">↗</span></span></span>
+            <span class="row-sub">An enterprise cloud console built by five separate teams, made to feel like one product, without authority over any of them.</span>
+            <span class="tags"><span>cross-team influence</span><span>design consistency</span><span>prioritisation</span></span>
+            <span class="impact" aria-label="Impact"><span class="k">Impact</span>
+              <span class="m"><b>~30%</b><i>fewer support tickets after my support redesign</i></span>
+            </span>
+          </span>
+          <span class="media"><span class="shot"><img src="images/cloud/hero-poster.jpg" alt="Proposed Airtel Cloud overview dashboard" loading="lazy"><span class="st on-shot live">Launched Aug 2025</span></span></span>
+        </a></li>
+<li><a class="row" data-hue="blue" href="work/identity-access.html">
+          <span class="num">03</span>
+          <span class="row-main">
+            <span class="row-top"><span class="row-title">Access, <em>without the headache</em></span><span class="yr">2026 – now <span class="arrow" aria-hidden="true">↗</span></span></span>
+            <span class="row-sub">Identity and access management for Airtel Cloud, designed from definitions up with no PRD to start from.</span>
+            <span class="tags"><span>domain modelling</span><span>information architecture</span><span>access and trust</span></span>
+            <span class="impact goal" aria-label="Expected impact"><span class="k">Goal · not live yet</span>
+              <span class="m"><b>Unblock deals</b><i>that stalled without IAM</i></span>
+            </span>
+          </span>
+          <span class="media"><span class="shot model" role="img" aria-label="The access model: Provision, Define, Assign, Assume; scoped Account to Tenant to Cell"><span class="steps"><span>Provision</span><span>Define</span><span>Assign</span><span>Assume</span></span><span class="scope">Account → Tenant → <b>Cell</b></span><span class="st on-shot wip">In development · target Jan 2027</span></span></span>
+        </a></li>
+        </ol>
+      </section>
+      <section class="home-about" aria-labelledby="h-ab">
+        <span class="eyebrow">About</span>
+        <h2 id="h-ab">Hands-on designer, <span class="sel">platform thinker.<i class="hd tl"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd br"></i></span></h2>
+        <p>Senior Lead Product Designer at Airtel. I lead two designers across messaging, marketing tech, IoT and Cloud, and I use AI to build faster while a person stays in control.</p>
+        <a class="more" href="#about">More about me →</a>
+        <div class="contact-strip">
+          <div class="mailrow"><output>sany.sharma09@gmail.com</output><button class="copy" type="button">Copy email</button></div>
+          <a class="btn" href="https://www.linkedin.com/in/sunny-kumar-44a5b41a/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn primary" href="assets/Sunny-Kumar-Resume.pdf" target="_blank" rel="noopener">Resume (PDF) ↗</a>
+        </div>
+      </section>
     </div>
-  </header>
+  </div>
 
-  <section class="proof" aria-labelledby="proof-h">
-    <h2 id="proof-h" class="proof-label">Early outcomes from platforms I led design for</h2>
-    <ul>
-      <li><b>15 Cr</b><span>messages sent through UCLM, Airtel's unified campaign platform, in its first month</span></li>
-      <li><b>30+ → &lt;5 min</b><span>time to build a campaign, old campaign manager vs UCLM: 80%+ faster</span></li>
-      <li><b>₹7 Cr</b><span>initial revenue for the UCLM SaaS platform</span></li>
-      <li><b>~30%</b><span>fewer support tickets after I redesigned Airtel Cloud's support flow</span></li>
-    </ul>
-    <p class="proof-note">Product results, delivered with product and engineering teams. Each case study separates my part from the team's.</p>
-  </section>
+  <!-- ================= WORK ================= -->
+  <div class="view" data-view="work" hidden>
+    <div class="wrap">
+      <section class="hero short" aria-labelledby="h-work">
+        <span class="eyebrow">Work</span>
+        <h1 id="h-work"><span class="w">A collection of my</span> <span class="w" style="animation-delay:.12s"><span class="sel">selected work<i class="hd tl"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd br"></i></span></span></h1>
+        <p class="lede">Three case studies from enterprise platforms at Airtel, and the side projects I build to learn AI in public.</p>
+      </section>
+      <div class="connector" aria-hidden="true"></div>
+      <section class="work" aria-labelledby="h-cases">
+        <div class="bgword" aria-hidden="true"><span>work</span></div>
+        <div class="work-head"><h2 id="h-cases">Case <span class="sel">studies<i class="hd tl"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd br"></i></span></h2><span class="eyebrow">01 — 03</span></div>
+        <ol class="list">
+        <li><a class="row" data-hue="violet" href="work/ai-campaign-manager.html">
+          <span class="num">01</span>
+          <span class="row-main">
+            <span class="row-top"><span class="row-title">Campaigns, <em>now with a brain</em></span><span class="yr">2023 – now <span class="arrow" aria-hidden="true">↗</span></span></span>
+            <span class="row-sub">Five campaign tools became one platform, UCLM. Then we added AI that plans campaigns while a person approves every one.</span>
+            <span class="tags"><span>platform consolidation</span><span>workflow design</span><span>ai with human approval</span></span>
+            <span class="impact" aria-label="Impact"><span class="k">Impact</span>
+              <span class="m"><b>&lt;5 min</b><i>to build a campaign, down from 30+</i></span>
+            </span>
+          </span>
+          <span class="media"><span class="shot light"><img src="images/campaign/model-convergence.svg" alt="Diagram: the AI modules feed one campaign plan that a person reviews" loading="lazy"><span class="st on-shot live">Phase 1 live · Time Affinity AI live</span></span></span>
+        </a></li>
+<li><a class="row" data-hue="teal" href="work/cloud-platform.html">
+          <span class="num">02</span>
+          <span class="row-main">
+            <span class="row-top"><span class="row-title">Cloud, <em>minus the chaos</em></span><span class="yr">2025 – 2026 <span class="arrow" aria-hidden="true">↗</span></span></span>
+            <span class="row-sub">An enterprise cloud console built by five separate teams, made to feel like one product, without authority over any of them.</span>
+            <span class="tags"><span>cross-team influence</span><span>design consistency</span><span>prioritisation</span></span>
+            <span class="impact" aria-label="Impact"><span class="k">Impact</span>
+              <span class="m"><b>~30%</b><i>fewer support tickets after my support redesign</i></span>
+            </span>
+          </span>
+          <span class="media"><span class="shot"><img src="images/cloud/hero-poster.jpg" alt="Proposed Airtel Cloud overview dashboard" loading="lazy"><span class="st on-shot live">Launched Aug 2025</span></span></span>
+        </a></li>
+<li><a class="row" data-hue="blue" href="work/identity-access.html">
+          <span class="num">03</span>
+          <span class="row-main">
+            <span class="row-top"><span class="row-title">Access, <em>without the headache</em></span><span class="yr">2026 – now <span class="arrow" aria-hidden="true">↗</span></span></span>
+            <span class="row-sub">Identity and access management for Airtel Cloud, designed from definitions up with no PRD to start from.</span>
+            <span class="tags"><span>domain modelling</span><span>information architecture</span><span>access and trust</span></span>
+            <span class="impact goal" aria-label="Expected impact"><span class="k">Goal · not live yet</span>
+              <span class="m"><b>Unblock deals</b><i>that stalled without IAM</i></span>
+            </span>
+          </span>
+          <span class="media"><span class="shot model" role="img" aria-label="The access model: Provision, Define, Assign, Assume; scoped Account to Tenant to Cell"><span class="steps"><span>Provision</span><span>Define</span><span>Assign</span><span>Assume</span></span><span class="scope">Account → Tenant → <b>Cell</b></span><span class="st on-shot wip">In development · target Jan 2027</span></span></span>
+        </a></li>
+        </ol>
+        <div class="work-head second"><h2 id="h-side">Side <span class="sel">projects<i class="hd tl"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd br"></i></span></h2><span class="eyebrow">04 — 05</span></div>
+        <ol class="list" aria-labelledby="h-side">
+        <li><a class="row" data-hue="violet" href="https://sanysharma.github.io/AI-Signal/" target="_blank" rel="noopener">
+          <span class="num">04</span>
+          <span class="row-main">
+            <span class="row-top"><span class="row-title">AI Signal <em>· side project</em></span><span class="yr">2026 <span class="arrow" aria-hidden="true">↗</span></span></span>
+            <span class="row-sub">A free daily brief on AI for designers. Built and shipped on my own, with AI doing the heavy lifting and editorial rules as the design.</span>
+            <span class="tags"><span>shipped solo</span><span>ai workflow</span></span>
+            <span class="impact" aria-label="Impact"><span class="k">Impact</span>
+              <span class="m"><b>Daily</b><i>published automatically, ₹0 to run</i></span>
+            </span>
+          </span>
+          <span class="media"><span class="shot signal" role="img" aria-label="AI Signal masthead"><span class="sig-k">AI SIGNAL · TODAY</span><b>What changed in AI for designers, in five minutes.</b><span class="sig-l"><i></i><i></i><i></i></span><span class="st on-shot live">Live</span></span></span>
+        </a></li>
+        <li><article class="row static" data-hue="teal">
+          <span class="num">05</span>
+          <span class="row-main">
+            <span class="row-top"><span class="row-title">Email agent <em>· side project</em></span><span class="yr">2026</span></span>
+            <span class="row-sub">An AI agent, built as a Gemini Gem, that writes on-guideline emails for Airtel Cloud from the company's emailer guidelines, and asks when a detail is unclear.</span>
+            <span class="tags"><span>prompt design</span><span>ai agent</span></span>
+            <span class="impact" aria-label="Impact"><span class="k">Impact</span>
+              <span class="m"><b>In use</b><i>by the business and accounts teams</i></span>
+            </span>
+          </span>
+          <span class="media"><span class="shot mail" role="img" aria-label="Email types the agent writes"><span class="sig-k">EMAIL TYPES</span><span class="chips"><span>Welcome</span><span>Order</span><span>Feature rollout</span><span>Maintenance</span><span>Billing</span><span>Incident</span><span>Password</span><span>New tenant / cell</span><span>Service enabled</span></span><span class="st on-shot live">In use · case study coming</span></span></span>
+        </article></li>
+        </ol>
+      </section>
+    </div>
+  </div>
 
-  <section id="work" class="work-list" aria-labelledby="work-h">
-    <h2 id="work-h" class="proof-label">Selected work</h2>
+  <!-- ================= ABOUT ================= -->
+  <div class="view" data-view="about" hidden>
+    <div class="wrap">
+      <section class="hero short" aria-labelledby="h-about">
+        <span class="eyebrow">About</span>
+        <h1 id="h-about"><span class="w">Hands-on designer,</span> <span class="w" style="animation-delay:.12s"><span class="sel">platform thinker.<i class="hd tl"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd br"></i></span></span></h1>
+        <p class="lede">I'm a Senior Lead Product Designer at Airtel. I lead design for UCLM, Airtel's unified campaign platform, and its first AI features, and I'm designing identity and access management for Airtel Cloud, whose design I led through its launch in August 2025.</p>
+      </section>
 
-    <a class="work" href="work/ai-campaign-manager.html">
-      <div class="work-text">
-        <span class="work-meta">01 · Airtel · Oct 2023 – now · <span class="status live">Phase 1 live</span> <span class="status live">Time Affinity AI live</span></span>
-        <span class="t t-sans">Campaigns, now with a brain</span>
-        <span class="work-sub">Five campaign tools became one platform, UCLM. Then we added AI that plans campaigns while a person approves every one.</span>
-        <span class="tags"><span>Platform consolidation</span><span>Workflow design</span><span>AI with human approval</span></span>
-        <span class="cta">Read case study <span aria-hidden="true">→</span></span>
+      <div class="about-grid">
+        <section class="about-main" aria-label="About Sunny">
+          <p class="big">I'm hands-on in the work and lead two designers across four product lines: messaging (CPaaS), marketing tech, IoT and Cloud. Much of my influence is with people I don't manage: product managers, engineers, vendors and business teams who build to a design because the evidence and the prototype make the case.</p>
+
+          <h2 class="sub">How I work</h2>
+          <ol class="principles">
+            <li><b>Definitions before screens.</b> On identity and access I agreed what each concept is called and how it relates before drawing anything, so screens could change without the model changing.</li>
+            <li><b>Evidence over opinion, including my own.</b> On Cloud I started sure everything should be unified. A study of AWS, Azure and GCP proved me wrong, and I changed course.</li>
+            <li><b>Outcomes over output.</b> The campaign platform moved once someone paid for it. I design for the business case as well as the user.</li>
+            <li><b>Humans approve, AI executes.</b> I use AI tools to prototype and build faster, and I design AI features so a person sets the goal and signs off the result.</li>
+          </ol>
+
+          <h2 class="sub">My team's work</h2>
+          <ul class="plain">
+            <li><b>Campaigns.</b> A designer on my team owned UCLM Phase 2 design end to end: Flow Builder, maker-checker approvals, dynamic roles, new channels and dashboards.</li>
+            <li><b>Business name display.</b> Designed by a designer on my team: ₹4.6 crore in its first three months, 8,253 active customers.</li>
+            <li><b>Cloud.</b> Enterprise clients grew from 18 at launch to 35 by October 2026.</li>
+            <li><b>IoT.</b> We support the platform's design requests day to day and are working on a UX overhaul.</li>
+          </ul>
+
+          <h2 class="sub">Experience</h2>
+          <ul class="cvlist">
+            <li><span>Airtel Digital — Senior Lead Product Designer</span><i>2023 – now</i></li>
+            <li><span>HDFC Bank — AVP, UX/UI Designer</span><i>2021 – 23</i></li>
+            <li><span>Tata CLiQ — Product Designer</span><i>2019 – 21</i></li>
+            <li><span>ExBorders — Visual &amp; UI Designer</span><i>2017 – 19</i></li>
+            <li><span>Brandwidth &amp; FH MKTG — Visual Designer</span><i>2013 – 17</i></li>
+            <li><span>Arvind Mills — Visual &amp; Retail Merchandiser</span><i>2011 – 13</i></li>
+          </ul>
+
+          <h2 class="sub">Education</h2>
+          <ul class="cvlist">
+            <li><span>IDC School of Design, IIT Bombay — Human-Computer Interaction Design</span><i>2018</i></li>
+            <li><span>Interaction Design Foundation — User Experience: The Beginner's Guide</span><i>2017</i></li>
+            <li><span>NIFT Mumbai — Bachelor of Design, Communication Design</span><i>2011</i></li>
+          </ul>
+
+          <h2 class="sub">Community</h2>
+          <ul class="cvlist">
+            <li><span>Toastmasters — Active member</span><i>now</i></li>
+            <li><span>Toastmasters — VP Education</span><i>2023 – 24</i></li>
+          </ul>
+        </section>
+
+        <aside class="about-side" id="contact" aria-labelledby="h-contact">
+          <div class="win">
+            <div class="bar"><span>contact</span><span class="ctrl" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <div class="body">
+              <h2 id="h-contact">Let's talk</h2>
+              <p>Open to Lead and Principal Product Design roles. Based in India, open to relocation.</p>
+              <div class="mailrow"><output>sany.sharma09@gmail.com</output><button class="copy" type="button">Copy</button></div>
+              <a class="btn" href="https://www.linkedin.com/in/sunny-kumar-44a5b41a/" target="_blank" rel="noopener">LinkedIn ↗</a>
+              <a class="btn primary" href="assets/Sunny-Kumar-Resume.pdf" target="_blank" rel="noopener">Resume (PDF) ↗</a>
+            </div>
+          </div>
+        </aside>
       </div>
-      <span class="work-visual diagram-tile"><img src="images/campaign/model-convergence.svg" alt="" loading="lazy"><span class="vis-cap">How the AI modules feed one human-reviewed plan</span></span>
-    </a>
+    </div>
+  </div>
 
-    <a class="work" href="work/cloud-platform.html">
-      <div class="work-text">
-        <span class="work-meta">02 · Airtel Cloud · 2025 – 2026 · <span class="status live">Launched Aug 2025 · 18 → 35 clients</span></span>
-        <span class="t t-serif">Cloud, <i>minus the chaos</i></span>
-        <span class="work-sub">An enterprise cloud console built by separate teams, made to feel like one product, without authority over any of them.</span>
-        <span class="tags"><span>Cross-team influence</span><span>Design consistency</span><span>Prioritisation</span></span>
-        <span class="cta">Read case study <span aria-hidden="true">→</span></span>
-      </div>
-      <span class="work-visual"><img src="images/cloud/hero-poster.jpg" alt="" loading="lazy"><span class="vis-cap">Proposed Cloud overview dashboard</span></span>
-    </a>
-
-    <a class="work" href="work/identity-access.html">
-      <div class="work-text">
-        <span class="work-meta">03 · Airtel Cloud · 2026 – now · <span class="status wip">In development, target Jan 2027</span></span>
-        <span class="t t-sans">Access, without the headache</span>
-        <span class="work-sub">Identity and access management for Airtel Cloud, designed from definitions up with no PRD to start from.</span>
-        <span class="tags"><span>Domain modelling</span><span>Information architecture</span><span>Access and trust</span></span>
-        <span class="cta">Read case study <span aria-hidden="true">→</span></span>
-      </div>
-      <span class="work-visual model-tile" aria-hidden="true">
-        <span class="model-steps"><span>Provision</span><span>Define</span><span>Assign</span><span>Assume</span></span>
-        <span class="model-scope">Account → Tenant → <b>Cell</b></span>
-        <span class="vis-cap">The access model at the core of the design</span>
-      </span>
-    </a>
-  </section>
-
-  <section class="side" aria-labelledby="side-h">
-    <h2 id="side-h" class="proof-label">Side project</h2>
-    <p><a href="https://sanysharma.github.io/AI-Signal/" target="_blank" rel="noopener">AI Signal</a>, a free daily brief on AI for designers. Built and shipped on my own, with AI doing the heavy lifting and editorial rules as the design.</p>
-  </section>
-
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <nav aria-label="Footer"><span class="eyebrow">Pages</span><a href="#home">Home</a><a href="#work">Work</a><a href="#about">About and contact</a><a href="assets/Sunny-Kumar-Resume.pdf" target="_blank" rel="noopener">Resume ↗</a></nav>
+      <nav aria-label="Elsewhere"><span class="eyebrow">Elsewhere</span><a href="https://www.linkedin.com/in/sunny-kumar-44a5b41a/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://sanysharma.github.io/AI-Signal/" target="_blank" rel="noopener">AI Signal ↗</a><a href="https://github.com/sanysharma" target="_blank" rel="noopener">GitHub ↗</a></nav>
+      <div class="foot-end"><span class="brand-lg">Sunny Kumar<span class="caret" aria-hidden="true"></span></span><span>© 2026 Sunny Kumar</span></div>
+    </div>
+  </footer>
 </main>
 
-<footer class="site-foot">
-  <span>Sunny Kumar · Senior Lead Product Designer</span>
-  <nav aria-label="Contact">
-    <a href="mailto:sany.sharma09@gmail.com">sany.sharma09@gmail.com</a>
-    <a href="https://www.linkedin.com/in/sunny-kumar-44a5b41a/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="assets/Sunny-Kumar-Resume.pdf">Resume (PDF)</a>
+<footer class="status">
+  <span class="crumb"><i>~</i>/<span id="crumb">home</span></span>
+  <span class="st-mid"><span><span class="dot" aria-hidden="true"></span>Open to roles</span><span class="hide-sm">Based in India</span><span class="hide-sm">Local time <span id="clock">--:--</span> IST</span></span>
+  <nav class="mnav" aria-label="Pages">
+  <a aria-label="Home" href="#home" data-nav="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></a>
+  <a aria-label="Work" href="#work" data-nav="work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></a>
+  <a aria-label="About" href="#about" data-nav="about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></a>
   </nav>
+  <a class="talk" href="#about">let's-talk →</a>
 </footer>
 
-<script src="js/site.js"></script>
+<script>
+(function(){
+  // light / dark switch (follows the system until the viewer picks)
+  var root=document.documentElement, tbtn=document.getElementById('theme'), tl=tbtn.querySelector('.tl');
+  function isDark(){ var t=root.getAttribute('data-theme'); return t ? t==='dark' : matchMedia('(prefers-color-scheme: dark)').matches; }
+  function paint(){ var d=isDark(); root.classList.toggle('is-dark',d); tl.textContent=d?'light':'dark'; tbtn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode'); }
+  try{ var saved=localStorage.getItem('sk-theme'); if(saved) root.setAttribute('data-theme',saved); }catch(e){}
+  paint();
+  tbtn.addEventListener('click',function(){ var next=isDark()?'light':'dark'; root.setAttribute('data-theme',next); try{localStorage.setItem('sk-theme',next);}catch(e){} paint(); });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',paint);
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // local time in India
+  var clock = document.getElementById('clock');
+  function tick(){ try{ clock.textContent = new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'}).format(new Date()); }catch(e){} }
+  tick(); setInterval(tick, 30000);
+
+  // copy email (every copy button copies the address beside it)
+  [].forEach.call(document.querySelectorAll('.copy'), function(btn){
+    var out = btn.parentNode.querySelector('output'), label = btn.textContent;
+    btn.addEventListener('click', function(){
+      function sel(){ var r=document.createRange(); r.selectNodeContents(out); var g=getSelection(); g.removeAllRanges(); g.addRange(r); btn.textContent='Selected'; }
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(out.textContent).then(function(){ btn.textContent='Copied'; setTimeout(function(){btn.textContent=label;},1800); }, sel);
+      } else sel();
+    });
+  });
+
+  // pages: home, work, about (hash routing so each can be linked)
+  var views = [].slice.call(document.querySelectorAll('.view'));
+  var navs = [].slice.call(document.querySelectorAll('[data-nav]'));
+  var crumb = document.getElementById('crumb');
+  var current = null, rows = [], conn = null, word = null;
+  function show(){
+    var k = (location.hash || '').slice(1);
+    if (['home','work','about'].indexOf(k) < 0) k = 'home';
+    views.forEach(function(v){ v.hidden = v.dataset.view !== k; });
+    navs.forEach(function(a){ var on = a.dataset.nav === k; a.classList.toggle('on', on); if (on) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+    crumb.textContent = k;
+    current = document.querySelector('.view[data-view="'+k+'"]');
+    rows = [].slice.call(current.querySelectorAll('.row'));
+    conn = current.querySelector('.connector'); word = current.querySelector('.bgword span');
+    window.scrollTo(0,0); onScroll();
+  }
+
+  // scroll: connector growth, background word drift, row focus dimming
+  var dimOn = !reduce && matchMedia('(min-width:900px)').matches;
+  var ticking = false;
+  function onScroll(){
+    ticking = false;
+    var vh = innerHeight, y = scrollY;
+    if (!reduce){
+      if (conn){ var cr = conn.getBoundingClientRect(); conn.style.setProperty('--grow', Math.max(.05, Math.min(1, (vh - cr.top) / (vh*.6))).toFixed(3)); }
+      if (word) word.style.setProperty('--shift', (-y*0.25 + 200).toFixed(1)+'px');
+    }
+    if (dimOn){
+      rows.forEach(function(r){
+        var b = r.getBoundingClientRect(), c = b.top + b.height/2, d = Math.abs(c - vh*0.5)/(vh*0.5);
+        r.style.setProperty('--dim', Math.max(.38, 1 - Math.max(0, d-.35)*0.9).toFixed(2));
+      });
+    }
+  }
+  addEventListener('scroll', function(){ if(!ticking){ ticking=true; requestAnimationFrame(onScroll);} }, {passive:true});
+  addEventListener('resize', onScroll);
+  addEventListener('hashchange', show);
+  show();
+})();
+</script>
 </body>
 </html>
