@@ -75,7 +75,7 @@
   </div>
   <div>
     <span class="label">My role</span>
-    <p>Design lead for Airtel Cloud, from the pre-launch audit to today. I own the research and design decisions, work hands-on, and use AI tools for much of the execution.</p>
+    <p>Design lead across 40+ independently owned services, from the pre-launch audit to today. Hands-on, with AI tools for much of the execution.</p>
   </div>
   <div>
     <span class="label">Title · Timeline</span>
@@ -84,22 +84,27 @@
 </section>
 
 <section class="narrow sec">
-  <h2>Why the Cloud platform?</h2>
-  <p>Airtel launched Cloud with 18 enterprise clients and a target of 50 by 2027, with contract value expected to grow about tenfold, to ₹180 crore (sales forecast). The bet was to launch on time and let real usage decide what to build next. By October 2026 it had 35 clients.</p>
-  <p>No single team controlled the product. A partner designed and built the core console, key management and the first support flow. An external team built posture monitoring. Internal developers built Cost Analyser and CloudFerry migration. That's normal for an enterprise platform: each product is led by its own experts with their own engineers. So every improvement had to be earned, not mandated.</p>
-  <p>Airtel is now bringing the platform in-house. An internal team built a shared micro-frontend from the component library: every new service is built on it, and existing tools move onto it over time.</p>
+  <span class="kicker">Context and the challenge</span>
+  <h2>A platform built by many teams, sold as one</h2>
+  <p><strong>The ambition.</strong> Airtel launched Cloud in August 2025 with 18 enterprise clients and a target of 50 by 2027, with contract value expected to grow about tenfold, to ₹180 crore (sales forecast). The bet was to launch on time and let real usage decide what to build next.</p>
+  <p><strong>The fragmentation.</strong> No single team controlled the product. A partner designed and built the core console, key management and the first support flow. An external team built posture monitoring. Internal developers built Cost Analyser and CloudFerry migration. That's normal for an enterprise platform, where each product is led by its own experts with their own engineers, but it meant every tool felt like its own product, and every improvement had to be earned, not mandated.</p>
+  <p><strong>The challenge.</strong> The biggest usability risk wasn't a missing feature. It was inconsistency on the fields customers touch first, a security tool that could show everything but couldn't say what to fix first, and a support flow that pretended one team owned a journey that crossed several.</p>
+  <p><strong>The transition.</strong> Airtel is now bringing the platform in-house: new services are built by internal teams on a shared front end, and existing tools move onto it over time.</p>
 </section>
 
 <section class="narrow sec">
-  <h2>The problem: a platform that couldn't explain itself</h2>
-  <p>The biggest usability risk wasn't a missing feature. It was inconsistency on the fields customers touch first, a security tool that could show everything but couldn't say what to fix first, and a support flow that pretended one team owned a journey that crossed several.</p>
-  <p class="pull">I started this project sure that everything should be unified. Research proved me wrong, and showed what to unify instead.</p>
+  <span class="kicker">My role and contribution</span>
+  <h2>Leading design across services I didn't own</h2>
+  <p>I led the design direction for Airtel Cloud across multiple independently owned services. My direct contribution included UX audits, research, journey mapping, interaction design, information architecture, design patterns and product experience definition.</p>
+  <p>Where services were owned by partner or internal teams, I influenced their direction through evidence, prototypes and design recommendations. Product and engineering teams retained ownership of implementation, platform architecture and delivery.</p>
+  <p>As the platform matured, I moved from influencing existing services to establishing the shared experience foundation and leading design for new capabilities.</p>
+  <p class="example-note">Worked with: the Cloud product manager; the partner's design and engineering team; the external posture-monitoring team; internal developers on Cost Analyser, CloudFerry and Price Calculator; the internal team that built the shared micro-frontend; and my own design team.</p>
 </section>
 
 <section class="wide-sec">
-  <span class="kicker">The story in four acts</span>
+  <span class="kicker">The journey in four parts</span>
   <h2>From auditing it to owning it</h2>
-  <p class="intro">My role changed as the platform did: from reviewing a partner's build, to improving each tool on its team's terms, to designing the shared frame and new services myself.</p>
+  <p class="intro">My role changed as the platform did: from reviewing a partner's build, to improving each tool on its team's terms, to designing the shared foundation and new services myself.</p>
   <ol class="parts-nav">
     <li><a href="#act-1"><b>1 · Inherit</b><span>Audit a platform I didn't design</span><i class="st st-live">50 of 65 fixes shipped</i></a></li>
     <li><a href="#act-2"><b>2 · Influence</b><span>Improve eight tools on their owners' terms</span><i class="st st-live">~30% fewer tickets</i></a></li>
@@ -115,7 +120,8 @@
   <p class="part-lede">The partner had designed and built the console. My first job was to find what would hurt customers, and get it fixed through them.</p>
 </section>
 <section class="narrow sec tight">
-  <p>I tested the console field by field before go-live. The audit found 65 issues, including conflicting validation and undocumented limits. The partner fixed 43 before launch and 7 after. The other 15 depend on services that aren't live yet, such as global search and redirects between services.</p>
+  <p>I tested the console field by field before go-live. The audit found 65 issues, including conflicting validation and undocumented limits. I prioritised them by what would block a customer first: must-fix before the proof of concept, then before go-live, then later.</p>
+  <p>The partner fixed 43 before launch and 7 after. The other 15 depend on services that aren't live yet, such as global search and redirects between services.</p>
 </section>
 <figure class="gap-fig">
 
@@ -187,13 +193,12 @@
 
 <section class="narrow sec tight">
   <span class="kicker">From scratch, and by evaluation</span>
-  <h2>Key management, security posture and cost</h2>
+  <h2>Key management and security posture</h2>
   <p><strong>Key management (KMS)</strong> started as raw information with no design. I benchmarked other cloud providers and drafted the first flow, including the choice between Software, HSM, bring-your-own-key and hold-your-own-key. The partner later adopted that flow inside the platform.</p>
-  <p><strong>Posture monitoring (CSPM)</strong> was built by an external team. My detailed evaluation, benchmarked against Azure Defender and Google Security Command Center across five personas, identified where the experience fell short, and reframed it from a reporting tool into decision support: what to fix first, and why.</p>
-  <p><strong>Cost Analyser and CloudFerry</strong> were built by internal developers, who came to me for UX improvements and new ideas once their tools existed. The improvements are live in both.</p>
+  <p><strong>Posture monitoring (CSPM)</strong> was built by an external team. My detailed evaluation, benchmarked against Azure Defender and Google Security Command Center across five personas, identified where the experience fell short, and reframed it from a reporting tool into decision support: what to fix first, and why. The fixes shipped in the live tool.</p>
 </section>
 
-<section class="grid-2x2 gap-fig">
+<section class="grid-2 gap-fig">
   <figure>
     <div class="ph r-43 top"><img src="../images/cloud/kms-key-types.jpg" alt="KMS screen choosing between Software, HSM, BYOK and HYOK keys" loading="lazy"></div>
     <figcaption>Fig. 7 — Key management, designed from the vendor's spec: choosing a key source.</figcaption>
@@ -202,15 +207,21 @@
     <div class="ph r-43 contain white"><img src="../images/cloud/cspm-personas.jpg" alt="Five CSPM personas: security, DevOps, compliance, executives, incident responders" loading="lazy"></div>
     <figcaption>Fig. 8 — The five personas CSPM had to serve, each with a different job to be done.</figcaption>
   </figure>
-  <figure>
-    <div class="ph r-43 top"><img src="../images/cloud/cspm-findings-after.jpg" alt="Redesigned CSPM findings page" loading="lazy"></div>
-    <figcaption>Fig. 9 — CSPM findings, prioritised for action: the change from my evaluation, now live.</figcaption>
-  </figure>
-  <figure>
-    <div class="ph r-43 top"><img src="../images/cloud/cost-analyser.jpg" alt="Cost Analyser with rebuilt navigation" loading="lazy"></div>
-    <figcaption>Fig. 10 — Cost Analyser, with the information architecture I proposed, now live.</figcaption>
-  </figure>
 </section>
+<figure class="gap-fig">
+  <div class="ph r-wide top"><img src="../images/cloud/cspm-findings-after.jpg" alt="Redesigned CSPM findings page" loading="lazy"></div>
+  <figcaption>Fig. 9 — CSPM findings, prioritised for action: the change from my evaluation, now live.</figcaption>
+</figure>
+
+<section class="narrow sec tight">
+  <span class="kicker">Supporting examples</span>
+  <h2>Cost Analyser and CloudFerry</h2>
+  <p>Both were built by internal developers, who came to me for UX improvements and new ideas once their tools existed. For Cost Analyser I benchmarked other cloud providers and proposed a new information architecture; for CloudFerry, improvements to the migration flow. The improvements are live in both.</p>
+</section>
+<figure class="gap-fig">
+  <div class="ph r-wide top"><img src="../images/cloud/cost-analyser.jpg" alt="Cost Analyser with rebuilt navigation" loading="lazy"></div>
+  <figcaption>Fig. 10 — Cost Analyser, with the information architecture I proposed, now live.</figcaption>
+</figure>
 
 <section class="part-head" id="act-3">
   <span class="part-n">Act 3</span>
@@ -220,10 +231,14 @@
 </section>
 
 <section class="narrow sec">
-  <span class="kicker">The decision that shaped everything</span>
-  <h2>Unify the frame, not the tools</h2>
+  <span class="kicker">The strategic decision</span>
+  <h2>Unify the experience, not the products</h2>
+  <p>My initial hypothesis was to bring all Cloud services into one unified console. But the platform's ownership model, permission boundaries and the way specialist teams operated made that approach impractical.</p>
+  <p>Through competitive analysis, the platform audit and mapping the customer journey, I identified that the real problem wasn't the existence of separate tools. It was the inconsistent experience between them.</p>
+  <p>I proposed a shared platform foundation instead: common navigation, service discovery, documentation, support patterns and reusable components, while allowing individual services to retain their own workflows and permissions.</p>
+  <p>This gave Airtel a scalable experience model without forcing every product team to rebuild its application.</p>
   <dl class="decision">
-    <div><dt>What triggered it</dt><dd>Tools from different teams felt like different products. My first instinct was to pull them all into one unified console.</dd></div>
+    <div><dt>Hypothesis</dt><dd>Tools from different teams felt like different products, so pull them all into one unified console.</dd></div>
     <div><dt>Evidence</dt><dd>A study of how AWS, Azure and GCP structure their consoles: every major provider keeps tools deliberately separate, for permissions and cognitive load. The audit and the order-to-activation map showed the real problems were inconsistency and hand-offs, not the number of screens.</dd></div>
     <div><dt>Options</dt><dd>
       <ul class="opts">
@@ -232,9 +247,16 @@
       </ul></dd></div>
     <div><dt>My part</dt><dd>The research and proposal, the common top bar and a service catalogue grouped the way the major cloud providers group theirs, the shared component library, and the documentation template.</dd></div>
     <div><dt>Who had to agree</dt><dd>Product, the partner, the external and internal teams building each tool, and the engineering team that built the shared micro-frontend.</dd></div>
-    <div><dt>What changed</dt><dd>The top bar and catalogue are live across 40+ services, with single sign-on; finding and opening a service dropped from about 47 seconds to about 13 seconds, and every service has documentation on the template. The component library became the micro-frontend every new service is built on. Developers used to build each service's front end from scratch; with the shared boilerplate and the components I designed for it, which they reuse and adapt per service, front-end time and effort dropped by roughly 30–50%, by the front-end developer's estimate. A medium-sized service such as bare-metal storage took about 10 days for front end and API set-up once the backend was ready.</dd></div>
+    <div><dt>What changed</dt><dd>The top bar and catalogue are live across 40+ services, with single sign-on, and every service has documentation on the template. The component library became the shared front end every new service is built on.</dd></div>
     <div><dt>Status</dt><dd><span class="st st-live">Live across 40+ services</span> <span class="st st-wip">Existing tools moving onto the shared front end</span></dd></div>
   </dl>
+</section>
+
+<section class="narrow sec tight">
+  <span class="kicker">Shared components</span>
+  <h2>From a component library to the shared front end</h2>
+  <p>The partner had already built on its own design system, and migrating it wasn't possible within the launch timeline. So I started a shared component library alongside it. Every team now builds with it.</p>
+  <p>An internal engineering team then turned it into a micro-frontend boilerplate. Developers used to build each service's front end from scratch; now they reuse the boilerplate and the components I designed for it, adapting them per service. Front-end time and effort dropped by roughly 30–50%, by the front-end developer's estimate. A medium-sized service such as bare-metal storage took about 10 days for front end and API set-up once the backend was ready.</p>
 </section>
 
 <section class="narrow sec tight">
@@ -269,79 +291,77 @@
   <p class="part-lede">With the frame in place, I now design new services end to end with the product manager, instead of fixing them after they ship.</p>
 </section>
 <section class="narrow sec tight">
-  <p><strong>Identity and access management</strong> is the first Cloud system Airtel is building in-house, and the platform's real constraint: access had been assembled by hand. I'm designing it from definitions up, with no PRD to start from. It's the next case study.</p>
-  <p><strong>Observability</strong> is next: I had specced it once, put it on hold so identity could come first, and am now designing it from scratch. More services will follow on the same frame.</p>
+  <span class="kicker">Identity and access · in development</span>
+  <h2>From inherited access management to a defined identity model</h2>
+  <p>Access across Airtel Cloud had evolved through manually assembled permissions and service-specific access arrangements.</p>
+  <p>Rather than treating IAM as another settings interface, I approached it as a foundational platform capability.</p>
+  <p>Working with the product manager, I translated the access requirements into a structured model covering identity, trust, delegation, permissions, conditions and the final access decision.</p>
+  <p>This established the design foundation for consistent access management across tenants, cells, services and user roles.</p>
+  <p>The experience is currently in development, with engineering implementation and validation still in progress. <a href="identity-access.html#top">The full IAM case study →</a></p>
 </section>
 
-<section class="narrow sec">
-  <span class="kicker">How we know</span>
-  <h2>Goals and early results</h2>
-  <ul>
-    <li>At least 85% usability success on core platform tasks</li>
-    <li>At least 80% success at discovering the right service</li>
-    <li>10% fewer support tickets caused by usability problems</li>
-  </ul>
-  <div class="table-wrap" style="margin-top:8px">
-    <table>
-      <thead><tr><th>Goal</th><th>Target</th><th>Early result</th></tr></thead>
-      <tbody>
-        <tr><td>Fewer support tickets</td><td>10% fewer</td><td>~30% fewer after the support redesign: April–May 2026 vs the months before it launched, all clients</td></tr>
-        <tr><td>Task success, core console</td><td>85%</td><td>~70% in a moderated test with 8 internal users provisioning VMs and storage, with time, queries and errors recorded. Not there yet; most remaining issues sit in global search and navigation, which depend on services not yet live</td></tr>
-        <tr><td>Finding and opening the right service</td><td>80% success</td><td>Time to find and open a service: ~47 s → ~13 s on average. Success rate not measured separately yet</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="example-note">Ticket figures come from support data across all clients, comparing April–May 2026 with the months before the new Assurance launched in March 2026. Task success comes from the first moderated test since launch, with 8 internal users; there is no older baseline because metrics weren't instrumented at launch.</p>
+<section class="narrow sec tight">
+  <span class="kicker">Observability · in design</span>
+  <h2>Sequencing: identity first, then Observability</h2>
+  <p>I had specced Observability once, then put it on hold so identity and access could come first: every new capability depends on knowing who can see and do what. It's now being designed again from scratch, on the same shared foundation. More services will follow.</p>
+  <p><span class="st st-wip">IAM in development · target Jan 2027</span> <span class="st st-wip">Observability in design</span></p>
 </section>
 
-<section class="narrow sec">
-  <span class="kicker">Bottlenecks</span>
-  <h2>Influence without authority</h2>
-  <p>Most of what slowed this down sat outside design. What got in the way, and how I worked around it:</p>
-  <div>
-    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>No authority over the teams building the product</b><p>I led with evidence — audits, benchmarks and prototypes — so teams adopted the design because it was right, not because they were told to.</p></div>
-    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>The agency had already built on its own design system</b><p>Migrating it wasn't possible within the go-to-market timeline, so I started a shared component library. Every team now builds with it, and engineering turned it into a micro-frontend boilerplate so new services go live faster.</p></div>
-    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Key management arrived as raw information, with no design</b><p>I benchmarked other cloud providers and drafted the first flow myself, rather than waiting for someone else to interpret it.</p></div>
-    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Support ran through a pipeline with a different owner at almost every step</b><p>Mapping the lifecycle first showed a better form wouldn't fix it; it needed a cross-system journey.</p></div>
-    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Impact metrics weren't instrumented at launch</b><p>Early figures come from support data and task-success checks after launch. Console task success (~70%) is still below the 85% goal.</p></div>
-  </div>
+<section class="part-head" id="impact">
+  <span class="part-n">Impact</span>
+  <h2>Impact and measurement</h2>
+  <p class="part-lede">Every number below has a source, a period and a method. Where a number is an estimate or a small sample, it says so.</p>
 </section>
 
-<section class="wide-sec">
-  <span class="kicker">Trade-offs</span>
-  <h2>What I gave up, on purpose</h2>
-  <p class="intro">Most of the important calls on Cloud were about what not to do.</p>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Decision</th><th>What I gave up</th><th>Why</th></tr></thead>
-      <tbody>
-        <tr><td>Launched with a knowingly broken Assurance</td><td>A good support experience at launch</td><td>Protected the go-live date; rebuilt it once real usage showed where to invest</td></tr>
-        <tr><td>Unify the frame, not the tools</td><td>One seamless console</td><td>Mature cloud platforms keep tools separate for permissions and cognitive load; a shared top bar, catalogue and design system make them feel like one product</td></tr>
-        <tr><td>Component library instead of migrating the existing build</td><td>Immediate visual consistency</td><td>Migration wasn't possible within the launch timeline; every team now uses the library</td></tr>
-        <tr><td>Self-service first, support form last</td><td>The quickest route to raising a ticket</td><td>Most issues can be fixed with guidance; escalation stays one step away</td></tr>
-        <tr><td>Put a finished Observability spec on hold</td><td>Visible, demo-ready work</td><td>Identity and access was the platform's real constraint; Observability is now being designed again</td></tr>
-        <tr><td>Three-phase roadmap, Phases 2–3 deferred</td><td>Fixing everything at once</td><td>Phase 1 could start in-house now, with the rest sequenced</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="narrow sec">
-  <span class="kicker">Impact</span>
-  <h2>The impact</h2>
+<section class="narrow sec tight">
   <div class="metrics">
     <div><b>~30%</b><span>fewer support tickets after the Assurance redesign</span></div>
     <div><b>~73%</b><span>of people who need help open a suggested article first; only those it doesn't solve raise a ticket</span></div>
     <div><b>47 s → 13 s</b><span>average time to find and open a service, with the catalogue and single sign-on</span></div>
     <div><b>30–50%</b><span>less front-end effort per new service, built from components I designed (front-end developer's estimate)</span></div>
     <div><b>50 / 65</b><span>audit fixes shipped; the other 15 wait on services not yet live</span></div>
-    <div><b>18 → 35</b><span>enterprise clients, launch to Oct 2026 (product outcome)</span></div>
+    <div><b>~70%</b><span>task success on the core console, against an 85% goal</span></div>
   </div>
-  <p class="example-note">How we measured: tickets from support data across all clients, April–May 2026 compared with the months before the new Assurance launched in March 2026; article opens from the same support data and period. The 47-second baseline comes from a moderated test with 8 users on the old version. Task success comes from a moderated test with 8 internal users. The 30–50% is the front-end developer's estimate.</p>
+</section>
+
+<section class="narrow sec tight">
+  <h3>Goals against early results</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Goal</th><th>Target</th><th>Early result</th></tr></thead>
+      <tbody>
+        <tr><td>Fewer support tickets</td><td>10% fewer</td><td>~30% fewer after the support redesign</td></tr>
+        <tr><td>Task success, core console</td><td>85%</td><td>~70%. Not there yet; most remaining issues sit in global search and navigation, which depend on services not yet live</td></tr>
+        <tr><td>Finding and opening the right service</td><td>80% success</td><td>Time: ~47 s → ~13 s. Success rate not measured separately yet</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>How we measured</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th>Source and method</th><th>Period</th></tr></thead>
+      <tbody>
+        <tr><td>Support tickets, ~30%</td><td>Support data, all clients, compared with the months before the new Assurance launched</td><td>April–May 2026 (launched March 2026)</td></tr>
+        <tr><td>Article opens, ~73%</td><td>The same support data</td><td>April–May 2026</td></tr>
+        <tr><td>Find and open, 47 s → 13 s</td><td>Moderated test, 8 users, old version vs new</td><td>Old version vs live catalogue</td></tr>
+        <tr><td>Task success, ~70%</td><td>Moderated test, 8 internal users provisioning VMs and storage, with time, queries and errors recorded</td><td>First test since launch</td></tr>
+        <tr><td>Front-end effort, 30–50%</td><td>Front-end developer's estimate</td><td>New services on the shared front end</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Limitations</h3>
+  <ul>
+    <li>Metrics weren't instrumented at launch, so there is no older baseline for task success.</li>
+    <li>The usability tests are small (8 users each), and the task-success test used internal users.</li>
+    <li>The ticket comparison covers two months after launch; it isn't yet a long-term trend.</li>
+    <li>The front-end saving is an engineering estimate, not a measured time study.</li>
+  </ul>
+  <h3>Business context</h3>
+  <p>Enterprise clients grew from 18 at launch to 35 by October 2026, against a target of 50 by 2027, with contract value forecast by sales to reach ₹180 crore. That is a product outcome shaped by many teams, not a design metric, so I show it as context rather than claim it.</p>
 </section>
 
 <section class="narrow sec">
-  <h2>What shipped, and what's next</h2>
+  <h3>What shipped, and what's next</h3>
   <div class="table-wrap">
     <table>
       <thead><tr><th>Work</th><th>Status</th></tr></thead>
@@ -349,11 +369,11 @@
         <tr><td>Pre-launch audit fixes</td><td><span class="st st-live">50 of 65 shipped</span> <span class="st st-wip">15 waiting on other services</span></td></tr>
         <tr><td>Assurance: the new help and ticket flow</td><td><span class="st st-live">Live since March 2026</span></td></tr>
         <tr><td>Key management, from my first draft</td><td><span class="st st-live">Live</span></td></tr>
+        <tr><td>Posture monitoring, Cost Analyser, CloudFerry improvements</td><td><span class="st st-live">Live</span></td></tr>
         <tr><td>Price Calculator</td><td><span class="st st-live">Live</span></td></tr>
         <tr><td>Common top bar and service catalogue</td><td><span class="st st-live">Live</span></td></tr>
         <tr><td>Service documentation template</td><td><span class="st st-live">40+ services</span></td></tr>
-        <tr><td>Shared component library → micro-frontend</td><td><span class="st st-live">Every new service · 30–50% less front-end effort</span> <span class="st st-wip">Existing tools moving over</span></td></tr>
-        <tr><td>Posture monitoring, Cost Analyser, CloudFerry</td><td><span class="st st-live">Live</span></td></tr>
+        <tr><td>Shared component library → micro-frontend</td><td><span class="st st-live">Every new service</span> <span class="st st-wip">Existing tools moving over</span></td></tr>
         <tr><td>Identity and access management</td><td><span class="st st-wip">In development · target Jan 2027</span></td></tr>
         <tr><td>Observability</td><td><span class="st st-wip">In design</span></td></tr>
       </tbody>
@@ -361,11 +381,42 @@
   </div>
 </section>
 
+<section class="part-head" id="leadership">
+  <span class="part-n">Reflection</span>
+  <h2>Leadership, trade-offs and learning</h2>
+  <p class="part-lede">I had authority over none of the teams building this. Most of the work was making the case.</p>
+</section>
+
+<section class="narrow sec tight">
+  <h3>How I influenced without authority</h3>
+  <div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Evidence over opinion</b><p>Audits, benchmarks against AWS, Azure and GCP, and prototypes, so teams adopted a design because it was right, not because they were told to.</p></div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>A first draft instead of a brief</b><p>Key management arrived as raw information with no design. I drafted the first flow myself, rather than waiting for someone else to interpret it.</p></div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Map the system before the screen</b><p>Support ran through a pipeline with a different owner at almost every step. Mapping it first showed a better form wouldn't fix it.</p></div>
+    <div class="bottleneck"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg><b>Build alongside, not instead of</b><p>Rather than demand a migration the timeline couldn't take, I started a shared component library next to the partner's design system. It became the shared front end.</p></div>
+  </div>
+</section>
+
+<section class="wide-sec">
+  <h3>What I gave up, on purpose</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Decision</th><th>What I gave up</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Launched with a knowingly broken Assurance</td><td>A good support experience at launch</td><td>Protected the go-live date; rebuilt it once real usage showed where to invest</td></tr>
+        <tr><td>Unify the experience, not the products</td><td>One seamless console</td><td>Ownership, permissions and specialist teams made it impractical; a shared foundation makes the tools feel like one product</td></tr>
+        <tr><td>Component library instead of migrating the existing build</td><td>Immediate visual consistency</td><td>Migration wasn't possible within the launch timeline; every team now uses the library</td></tr>
+        <tr><td>Self-service first, support form last</td><td>The quickest route to raising a ticket</td><td>Most issues can be fixed with guidance; escalation stays one step away</td></tr>
+        <tr><td>Put a finished Observability spec on hold</td><td>Visible, demo-ready work</td><td>Identity and access was the platform's real constraint</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
 <section class="narrow sec">
-  <span class="kicker">What I learned</span>
-  <h2>Unify what people touch, not what teams build</h2>
-  <p>Forcing every tool into one console would have fought how each team works and how cloud permissions behave. Unifying the frame (navigation, documentation, help and components) gave customers one product without asking every team to rebuild.</p>
-  <p>What I'd do differently: push to sequence identity and access before launch, rather than discover the need a year in. The harder discipline was saying no to my own finished work and my own starting strategy.</p>
+  <h3>What I learned</h3>
+  <p><strong>Unify what people touch, not what teams build.</strong> Forcing every tool into one console would have fought how each team works and how cloud permissions behave. Unifying the foundation (navigation, discovery, documentation, help and components) gave customers one product without asking every team to rebuild.</p>
+  <p><strong>What I'd do differently:</strong> push to sequence identity and access before launch, rather than discover the need a year in, and agree the success metrics and instrumentation with product before launch, so early results have a real baseline. The harder discipline was saying no to my own finished work and my own starting strategy.</p>
 </section>
 
 <a class="next" href="identity-access.html#top">
