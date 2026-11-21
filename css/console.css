@@ -164,3 +164,7 @@ img.diagram { border-color: var(--hair); background: #fff; }  /* diagrams are dr
 .next .big i { position: relative; display: inline-block; padding: 0 .12em; border: 1.5px solid var(--ink); background: color-mix(in srgb, var(--ink) 7%, transparent); line-height: 1.05; }
 
 @media (prefers-reduced-motion: reduce) { .logo *, .caret { animation: none !important; } }
+
+/* full product screenshots */
+.shot-fig { max-width: 920px; margin: 0 auto; }
+.shot-fig img { width: 100%; height: auto; border: 1px solid var(--hair); border-radius: 14px; background: #fff; }

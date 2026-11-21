@@ -112,10 +112,15 @@
     <div class="c">
       <h3>From ops-dependent to mostly self-serve</h3>
       <p>When I started, IQ Reach wasn't self-serve: onboarding, payments, requests and even understanding results ran through Airtel's ops and sales teams. Clients couldn't see how their campaigns performed — their top request. Rather than pitch a rebuild, I proposed we climb one rung at a time: <strong>reporting</strong> for every channel first, then <strong>self-serve</strong> (wallet, digital KYC, a request centre), then <strong>retention</strong> (milestones and price slabs that reward volume), then <strong>scale</strong> (agentic and live-agent features, simpler campaign steps, an overview dashboard). Over time, most of what clients needed became something they could do on their own.</p>
+      <p><strong>My first project was reporting.</strong> Clients could send campaigns but had no way to monitor or analyse them, so every question about results went to Airtel's teams. I designed the reporting dashboard, starting with SMS: how many messages were sent and delivered, why the rest failed, how long delivery took, and which errors happened most, with filters by date and message type and an export for the error list.</p>
       <p>I took on the most logic-heavy flows myself: campaign creation, reporting, media and template centres, and DND and blacklist settings.</p>
       <p><strong>The order came from data.</strong> When I joined, a 2023 customer-journey analysis of IQ Reach, built from funnel data and Hotjar session recordings, showed where customers were getting stuck. Only <strong>9 in every 100</strong> customers who signed up ever launched a campaign. That set the order of the first fixes.</p>
     </div>
   </article>
+  <figure class="shot-fig">
+    <img src="../images/campaign/iq-sms-reporting.jpg" alt="IQ Reach SMS reporting dashboard: date range and message-type filters, total messages and DLT-submitted counts, a delivery-status donut with delivered, in progress and not delivered, failures split into scrubbing, system and customer errors, then business insights with delivery latency, SMS parts and a ranked list of delivery errors with download" loading="lazy" width="1366" height="1611">
+    <figcaption>Fig. 1 — My first IQ project: the SMS reporting dashboard (design with sample data). Delivery status at a glance, failures split into scrubbing, system and customer errors, then latency, message parts and the most common delivery errors.</figcaption>
+  </figure>
   <figure>
     <div class="chart-card">
       <h3>IQ Reach customers by the furthest stage they reached, 2023</h3>
@@ -126,7 +131,7 @@
         <li title="Super users: 3% of customers"><span class="bl">Super users: 3+ campaigns, ₹1,000+ recharged</span><span class="track"><span class="fill" style="--v:3%"></span></span><span class="val">3%</span></li>
       </ol>
     </div>
-    <figcaption>Fig. 1 — The 2023 customer-journey analysis. 91% of customers never launched a campaign.</figcaption>
+    <figcaption>Fig. 2 — The 2023 customer-journey analysis. 91% of customers never launched a campaign.</figcaption>
   </figure>
   <div class="table-wrap">
     <table>
@@ -182,7 +187,7 @@
       <p>One place to plan, build, send and measure across channels. Building a campaign: 30+ minutes → under 5.</p>
     </div>
   </div>
-  <figcaption>Fig. 2 — Diagram, not a screenshot: the five tools a marketer needed before, and the single lifecycle UCLM replaced them with.</figcaption>
+  <figcaption>Fig. 3 — Diagram, not a screenshot: the five tools a marketer needed before, and the single lifecycle UCLM replaced them with.</figcaption>
 </figure>
 <!-- RESEARCH -->
 <section class="wide-sec">
@@ -287,7 +292,7 @@
         <li title="October 2026, month to date: 109 campaigns"><span class="bl">October, month to date</span><span class="track"><span class="fill" style="--v:83.8%"></span></span><span class="val">109</span></li>
       </ol>
     </div>
-    <figcaption>Fig. 3 — Campaigns per month since Phase 1 launched. October counts run to mid-month.</figcaption>
+    <figcaption>Fig. 4 — Campaigns per month since Phase 1 launched. October counts run to mid-month.</figcaption>
   </figure>
   <div class="table-wrap" style="margin-top: 32px;">
     <table>
@@ -344,11 +349,11 @@
   </article>
   <figure>
     <img class="diagram" src="../images/campaign/model-convergence.svg" alt="Five factors — relevance, historical performance, business rules, content conflicts and guardrails — feed Content AI; with Time Affinity, Audience and Channel decisions they feed Agentic AI orchestration, which routes through human review before execution" loading="lazy">
-    <figcaption>Fig. 4 — How the modules connect: each answers one question, and all of them feed one orchestration layer that a person reviews.</figcaption>
+    <figcaption>Fig. 5 — How the modules connect: each answers one question, and all of them feed one orchestration layer that a person reviews.</figcaption>
   </figure>
   <figure>
     <img class="diagram" src="../images/campaign/five-layer-architecture.svg" alt="Time Affinity architecture: data layer, prediction layer, reasoning and explainability layer, output API and execution layer, with campaign results feeding back into the data" loading="lazy">
-    <figcaption>Fig. 5 — Time Affinity in five layers. The reasoning layer is what lets a marketer see why a time was chosen.</figcaption>
+    <figcaption>Fig. 6 — Time Affinity in five layers. The reasoning layer is what lets a marketer see why a time was chosen.</figcaption>
   </figure>
 <article class="chapter">
     <div class="n"><span class="label">Agentic</span></div>
@@ -359,7 +364,7 @@
   </article>
   <figure>
     <img class="diagram" src="../images/campaign/agentic-maturity.svg" alt="Module AI agents converge into a conversational Agentic AI gated by human review and launch, maturing toward an autonomous agent that monitors performance and relaunches improved campaigns" loading="lazy">
-    <figcaption>Fig. 6 — From module agents to a conversational agent (in progress) and, later, an autonomous one. Human review is the gate at every stage.</figcaption>
+    <figcaption>Fig. 7 — From module agents to a conversational agent (in progress) and, later, an autonomous one. Human review is the gate at every stage.</figcaption>
   </figure>
 </section>
 <section class="wide-sec">
@@ -381,7 +386,7 @@
 <div class="gap-fig">
   <figure>
     <img class="diagram" src="../images/campaign/design-process.svg" alt="Design loop: an open forum diverges into explorations on AI autonomy, transparency and input model; product pulls toward the strongest engine, design toward a flow the growth manager can use; they converge, are benchmarked against MoEngage and CleverTap, and become a refined flow that the next module repeats" loading="lazy">
-    <figcaption>Fig. 7 — The diverge–converge loop on every AI module. Product pulled toward the strongest engine, design toward a flow growth managers could use; the tension resolved at "converge", not before.</figcaption>
+    <figcaption>Fig. 8 — The diverge–converge loop on every AI module. Product pulled toward the strongest engine, design toward a flow growth managers could use; the tension resolved at "converge", not before.</figcaption>
   </figure>
 </div>
 
@@ -398,7 +403,7 @@
 <div class="gap-fig">
   <figure>
     <img class="diagram" src="../images/campaign/leadership-map.svg" alt="Leadership map: the lead designer delegates Time Affinity and Content AI to two designers with weekly reviews, and works directly with engineering, product and AI lead, business teams and competitive benchmarking" loading="lazy">
-    <figcaption>Fig. 8 — Leading from the centre: two designers own modules; I hold the connecting layer and every stakeholder relationship.</figcaption>
+    <figcaption>Fig. 9 — Leading from the centre: two designers own modules; I hold the connecting layer and every stakeholder relationship.</figcaption>
   </figure>
 </div>
 
