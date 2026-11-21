@@ -46,7 +46,7 @@
         <p class="tldr-lede">Airtel Cloud was built by a partner and several separate teams, so every tool felt like its own product. I've led its design from the pre-launch audit to today: fixing what partners built, improving tools for the teams who asked, and designing the shared frame and new services as Airtel brings the platform in-house.</p>
         <div class="stats">
           <div class="stat"><b>~30%</b><span>fewer support tickets after I redesigned how customers get help</span></div>
-          <div class="stat"><b>30–50%</b><span>less front-end effort per new service on the shared front end (rough estimate)</span></div>
+          <div class="stat"><b>30–50%</b><span>less front-end effort per new service, built from components I designed (developer's estimate)</span></div>
           <div class="stat"><b>1.3 min → 13 s</b><span>to find and open any of 40+ live services, with the service catalogue and single sign-on</span></div>
         </div>
         <ul>
@@ -165,7 +165,7 @@
     <li><b>Raise it if still stuck</b><span>Only then add the extra details the support team needs.</span></li>
     <li><b>Track it</b><span>A ticket page shows which team is solving it and the dedicated support person, with follow-up questions on the same ticket.</span></li>
   </ol>
-  <p><strong>Result:</strong> support tickets are down by about 30% since launch, against a goal of 10%. The suggested help is doing the work: around 73% of people who go on to raise a ticket open a suggested article first.</p>
+  <p><strong>Result:</strong> around 73% of people who need help now open a suggested article first, and only those it doesn't solve go on to raise a ticket. Support tickets are down by about 30% since launch, against a goal of 10%.</p>
 </section>
 
 <figure class="gap-fig" style="margin-bottom: 32px;">
@@ -231,7 +231,7 @@
       </ul></dd></div>
     <div><dt>My part</dt><dd>The research and proposal, the common top bar and a service catalogue grouped the way the major cloud providers group theirs, the shared component library, and the documentation template.</dd></div>
     <div><dt>Who had to agree</dt><dd>Product, the partner, the external and internal teams building each tool, and the engineering team that built the shared micro-frontend.</dd></div>
-    <div><dt>What changed</dt><dd>The top bar and catalogue are live across 40+ services, with single sign-on; finding and opening a service dropped from about 1.3 minutes to about 13 seconds, and every service has documentation on the template. The component library became the micro-frontend every new service is built on. Developers used to build each service's front end from scratch; with the shared boilerplate, which they reuse and adapt per service, front-end time and effort dropped by roughly 30–50%. A medium-sized service such as bare-metal storage took about 10 days for front end and API set-up once the backend was ready.</dd></div>
+    <div><dt>What changed</dt><dd>The top bar and catalogue are live across 40+ services, with single sign-on; finding and opening a service dropped from about 1.3 minutes to about 13 seconds, and every service has documentation on the template. The component library became the micro-frontend every new service is built on. Developers used to build each service's front end from scratch; with the shared boilerplate and the components I designed for it, which they reuse and adapt per service, front-end time and effort dropped by roughly 30–50%, by the front-end developer's estimate. A medium-sized service such as bare-metal storage took about 10 days for front end and API set-up once the backend was ready.</dd></div>
     <div><dt>Status</dt><dd><span class="st st-live">Live across 40+ services</span> <span class="st st-wip">Existing tools moving onto the shared front end</span></dd></div>
   </dl>
 </section>
@@ -241,7 +241,7 @@
   <h2>A service catalogue that groups like the big clouds do</h2>
   <p>Live services used to be scattered, with no single place to find them. I designed the service catalogue in the common top bar, grouping services the way the major cloud providers do, so customers meet a structure they already know. The groups are built to take new services without a redesign.</p>
   <p>Every service is now linked from the catalogue, with single sign-on, so there's no separate login.</p>
-  <p><strong>Result:</strong> finding the right service and getting into it used to take about 1.3 minutes on average. It now takes about 13 seconds, roughly six times faster.</p>
+  <p><strong>Result:</strong> finding the right service and getting into it used to take about 1.3 minutes on average, measured in a moderated test with 8 users on the old version. It now takes about 13 seconds, roughly six times faster.</p>
 </section>
 
 <figure class="gap-fig">
@@ -286,12 +286,12 @@
       <tbody>
         <tr><td>Fewer support tickets</td><td>10% fewer</td><td>~30% fewer after the support redesign</td></tr>
         <tr><td>Task success, support (Assurance)</td><td>—</td><td>~80%</td></tr>
-        <tr><td>Task success, core console</td><td>85%</td><td>~70%. Not there yet; most remaining issues sit in global search and navigation, which depend on services not yet live</td></tr>
+        <tr><td>Task success, core console</td><td>85%</td><td>~70% in a moderated test with 8 internal users provisioning VMs and storage, with time, queries and errors recorded. Not there yet; most remaining issues sit in global search and navigation, which depend on services not yet live</td></tr>
         <tr><td>Finding and opening the right service</td><td>80% success</td><td>Time to find and open a service: ~1.3 min → ~13 s on average. Success rate not measured separately yet</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="example-note">Early figures from support data and task-success checks since launch. Metrics weren't instrumented at launch, so there is no older baseline for task success.</p>
+  <p class="example-note">Ticket figures come from support data since the Assurance launch. Task success comes from the first moderated test since launch, with 8 internal users; there is no older baseline because metrics weren't instrumented at launch.</p>
 </section>
 
 <section class="narrow sec">
@@ -331,15 +331,13 @@
   <h2>The impact</h2>
   <div class="metrics">
     <div><b>~30%</b><span>fewer support tickets after the Assurance redesign</span></div>
-    <div><b>50 / 65</b><span>audit fixes shipped; the other 15 wait on services not yet live</span></div>
-    <div><b>~73%</b><span>of people raising a ticket open a suggested article first</span></div>
+    <div><b>~73%</b><span>of people who need help open a suggested article first; only those it doesn't solve raise a ticket</span></div>
     <div><b>1.3 min → 13 s</b><span>average time to find and open a service, with the catalogue and single sign-on</span></div>
-    <div><b>40+</b><span>live services in one top bar and catalogue, each with documentation on the template</span></div>
-    <div><b>30–50%</b><span>less front-end time and effort per new service on the shared micro-frontend, versus building from scratch (rough estimate)</span></div>
-    <div><b>~10 days</b><span>front end and API set-up for a medium service, once the backend was ready</span></div>
-    <div><b>32+</b><span>quotes generated with the Price Calculator</span></div>
+    <div><b>30–50%</b><span>less front-end effort per new service, built from components I designed (front-end developer's estimate)</span></div>
+    <div><b>50 / 65</b><span>audit fixes shipped; the other 15 wait on services not yet live</span></div>
     <div><b>18 → 35</b><span>enterprise clients, launch to Oct 2026 (product outcome)</span></div>
   </div>
+  <p class="example-note">How we measured: tickets and article opens from support data since the Assurance launch. The 1.3-minute baseline comes from a moderated test with 8 users on the old version. Task success comes from a moderated test with 8 internal users. The 30–50% is the front-end developer's estimate.</p>
 </section>
 
 <section class="narrow sec">
@@ -351,7 +349,7 @@
         <tr><td>Pre-launch audit fixes</td><td><span class="st st-live">50 of 65 shipped</span> <span class="st st-wip">15 waiting on other services</span></td></tr>
         <tr><td>Assurance: the new help and ticket flow</td><td><span class="st st-live">Live since Jan–Feb 2026</span></td></tr>
         <tr><td>Key management, from my first draft</td><td><span class="st st-live">Live</span></td></tr>
-        <tr><td>Price Calculator</td><td><span class="st st-live">Live · 32+ quotes</span></td></tr>
+        <tr><td>Price Calculator</td><td><span class="st st-live">Live</span></td></tr>
         <tr><td>Common top bar and service catalogue</td><td><span class="st st-live">Live</span></td></tr>
         <tr><td>Service documentation template</td><td><span class="st st-live">40+ services</span></td></tr>
         <tr><td>Shared component library → micro-frontend</td><td><span class="st st-live">Every new service · 30–50% less front-end effort</span> <span class="st st-wip">Existing tools moving over</span></td></tr>
