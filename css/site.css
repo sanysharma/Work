@@ -290,3 +290,12 @@ img.diagram { width: 100%; height: auto; background: #fff; border: 1px solid #E6
   .band-inner { max-width: none; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
   .landing main { max-width: none; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
 }
+
+/* UCLM before/after diagram (inline SVG so it uses the site fonts) */
+.uclm-ba-wrap { background: #fff; border: 1px solid #E6E3DC; border-radius: 14px; overflow: hidden; }
+.uclm-ba { display: block; width: 100%; height: auto; }
+.uclm-ba-m { display: none; }
+@media (max-width: 700px) {
+  .uclm-ba-d { display: none; }
+  .uclm-ba-m { display: block; }
+}
