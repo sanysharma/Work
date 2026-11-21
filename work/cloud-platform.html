@@ -229,11 +229,18 @@
         <li><b>One unified console</b><span>My starting hypothesis. Every team would rebuild around one interface, against how mature platforms handle permissions.</span></li>
         <li class="chosen"><b>Separate tools inside one shared frame</b><span>One top bar and service catalogue to move between services, one design system, one documentation template and one way to get help.</span></li>
       </ul></dd></div>
-    <div><dt>My part</dt><dd>The research and proposal, the common top bar and service catalogue, the shared component library, and the documentation template.</dd></div>
+    <div><dt>My part</dt><dd>The research and proposal, the common top bar and a service catalogue grouped the way the major cloud providers group theirs, the shared component library, and the documentation template.</dd></div>
     <div><dt>Who had to agree</dt><dd>Product, the partner, the external and internal teams building each tool, and the engineering team that built the shared micro-frontend.</dd></div>
     <div><dt>What changed</dt><dd>The top bar and catalogue are live across 40+ services, and every service has documentation on the template. The component library became the micro-frontend every new service is built on. Developers used to build each service's front end from scratch; with the shared boilerplate, which they reuse and adapt per service, front-end time and effort dropped by roughly 30–50%. A medium-sized service such as bare-metal storage took about 10 days for front end and API set-up once the backend was ready.</dd></div>
     <div><dt>Status</dt><dd><span class="st st-live">Live across 40+ services</span> <span class="st st-wip">Existing tools moving onto the shared front end</span></dd></div>
   </dl>
+</section>
+
+<section class="narrow sec tight">
+  <span class="kicker">The frame in practice</span>
+  <h2>A service catalogue that groups like the big clouds do</h2>
+  <p>Live services used to be scattered, with no single place to find them. I designed the service catalogue in the common top bar, grouping services the way the major cloud providers do, so customers meet a structure they already know. The groups are built to take new services without a redesign.</p>
+  <p><strong>Result:</strong> customers now find any live service from the top bar in a few seconds. That's observed, not yet measured; a discovery test is the next step.</p>
 </section>
 
 <figure class="gap-fig">
@@ -279,7 +286,7 @@
         <tr><td>Fewer support tickets</td><td>10% fewer</td><td>~30% fewer after the support redesign</td></tr>
         <tr><td>Task success, support (Assurance)</td><td>—</td><td>~80%</td></tr>
         <tr><td>Task success, core console</td><td>85%</td><td>~70%. Not there yet; most remaining issues sit in global search and navigation, which depend on services not yet live</td></tr>
-        <tr><td>Finding the right service</td><td>80%</td><td>Not measured yet</td></tr>
+        <tr><td>Finding the right service</td><td>80%</td><td>Not measured yet. Since the catalogue, customers are observed finding services in a few seconds</td></tr>
       </tbody>
     </table>
   </div>
