@@ -1,7 +1,7 @@
 /* sunnykumar.work — console theme ("cursor to prompt")
    Loaded after site.css on case-study pages. Re-maps site.css tokens to the logo's ink + paper,
    a selection blue for cursor moments and a violet for prompt / AI moments, adds dark mode,
-   swaps the serif for the grotesque, uses IBM Plex Mono for console details, and adds the
+   swaps the serif for the grotesque, uses Helvetica Neue for console details, and adds the
    console frame (title bar, icon rail, status bar). */
 
 :root {
@@ -12,7 +12,7 @@
   --glow: rgba(42, 91, 224, .07);
   --sans: 'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --serif: var(--sans);
-  --mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --bar: 44px; --rail: 56px; --statusbar: 40px;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {

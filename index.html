@@ -16,11 +16,11 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Cstyle%3E%0A%20%20%20%20.tile%20%7B%20fill%3A%20%231A1A1A%3B%20%7D%0A%20%20%20%20.inner%20%7B%20fill%3A%20%23FBFAF7%3B%20%7D%0A%20%20%20%20.line%20%7B%20fill%3A%20none%3B%20stroke%3A%20%23FBFAF7%3B%20stroke-width%3A%203%3B%20%7D%0A%20%20%20%20.handle%20%7B%20fill%3A%20%231A1A1A%3B%20stroke%3A%20%23FBFAF7%3B%20stroke-width%3A%202.6%3B%20%7D%0A%20%20%20%20%40media%20%28prefers-color-scheme%3A%20dark%29%20%7B%0A%20%20%20%20%20%20.tile%2C%20.handle%20%7B%20fill%3A%20%23FBFAF7%3B%20%7D%0A%20%20%20%20%20%20.inner%20%7B%20fill%3A%20%231A1A1A%3B%20%7D%0A%20%20%20%20%20%20.line%2C%20.handle%20%7B%20stroke%3A%20%231A1A1A%3B%20%7D%0A%20%20%20%20%7D%0A%20%20%3C/style%3E%0A%20%20%3Crect%20class%3D%22tile%22%20x%3D%222%22%20y%3D%222%22%20width%3D%2260%22%20height%3D%2260%22%20rx%3D%2215%22/%3E%0A%20%20%3Crect%20class%3D%22line%22%20x%3D%2216%22%20y%3D%2216%22%20width%3D%2232%22%20height%3D%2232%22/%3E%0A%20%20%3Crect%20class%3D%22handle%22%20x%3D%2212.5%22%20y%3D%2212.5%22%20width%3D%227%22%20height%3D%227%22/%3E%0A%20%20%3Crect%20class%3D%22handle%22%20x%3D%2244.5%22%20y%3D%2212.5%22%20width%3D%227%22%20height%3D%227%22/%3E%0A%20%20%3Crect%20class%3D%22handle%22%20x%3D%2244.5%22%20y%3D%2244.5%22%20width%3D%227%22%20height%3D%227%22/%3E%0A%20%20%3Crect%20class%3D%22handle%22%20x%3D%2212.5%22%20y%3D%2244.5%22%20width%3D%227%22%20height%3D%227%22/%3E%0A%20%20%3Cpath%20class%3D%22inner%22%20d%3D%22M32%2021%20Q34%2030%2043%2032%20Q34%2034%2032%2043%20Q30%2034%2021%2032%20Q30%2030%2032%2021%20Z%22/%3E%0A%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet">
 <style>
 /* Theme: "cursor to prompt". The logo's selection box (cursor, direct manipulation) around an AI spark (prompt).
    Colour: logo ink + paper, a selection blue for cursor moments, a violet for prompt / AI moments.
-   Type: Bricolage Grotesque for display and text, IBM Plex Mono for console and prompt details.
+   Type: Bricolage Grotesque for display and text, Helvetica Neue for console and prompt details.
    Layout: an enterprise-console frame (title bar, icon rail, status bar) around
    three hash-routed pages — home (hero, selected work, collaboration), work (case studies + side projects), about (story, CV, contact). */
 :root{
@@ -30,7 +30,7 @@
   --live:#1E7A4A; --wip:#8A5A00;
   --glow:rgba(42,91,224,.08);
   --sans:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  --mono:'Helvetica Neue', Helvetica, Arial, sans-serif;
   --bar:44px; --rail:56px; --status:40px;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
