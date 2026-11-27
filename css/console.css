@@ -214,3 +214,22 @@ img.diagram { border-color: var(--hair); background: #fff; }  /* diagrams are dr
 .link-card:hover { border-color: var(--ink); }
 .link-card small { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
 .link-card b { font-weight: 600; font-size: 18px; } .link-card .go { color: var(--ink); font-size: 22px; }
+
+/* ---------- v6: scrollable screen frame ---------- */
+.scroll-fig { max-width: 920px; margin: 0 auto; }
+.sf-frame { position: relative; border: 1px solid var(--hair); border-radius: 14px; overflow: hidden; background: var(--panel); box-shadow: 0 1px 0 var(--hair), 0 18px 40px -24px rgba(0,0,0,.25); }
+.sf-bar { display: flex; align-items: center; gap: 12px; height: 38px; padding: 0 14px; border-bottom: 1px solid var(--hair); background: var(--panel-2); font: 12px var(--mono); color: var(--muted); position: relative; }
+.sf-bar .dots { display: inline-flex; gap: 6px; } .sf-bar .dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
+.sf-bar .sf-title { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sf-bar .sf-open { color: var(--ink); white-space: nowrap; }
+.sf-bar .sf-progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--ink); transition: width .1s linear; }
+.sf-view { height: min(68vh, 600px); overflow-y: auto; overflow-x: hidden; background: #fff; scrollbar-width: thin; scrollbar-color: var(--line) transparent; outline-offset: -3px; }
+.sf-view img { display: block; width: 100%; height: auto; }
+.sf-fade { pointer-events: none; position: absolute; left: 0; right: 0; bottom: 0; height: 90px; background: linear-gradient(to bottom, transparent, rgba(0,0,0,.10)); transition: opacity .3s; }
+.sf-hint { pointer-events: none; position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; background: var(--ink-text); color: var(--paper); font: 12.5px var(--mono); box-shadow: 0 6px 18px -6px rgba(0,0,0,.35); transition: opacity .3s, transform .3s; }
+.sf-hint svg { width: 14px; height: 14px; animation: sf-nudge 1.4s ease-in-out infinite; }
+@keyframes sf-nudge { 50% { transform: translateY(3px); } }
+.sf-frame.moved .sf-hint { opacity: 0; transform: translate(-50%, 6px); }
+.sf-frame.at-end .sf-fade { opacity: 0; }
+@media (max-width: 640px) { .sf-view { height: 380px; } .sf-bar .sf-title { font-size: 11px; } }
+@media (prefers-reduced-motion: reduce) { .sf-hint svg { animation: none; } }

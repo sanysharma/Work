@@ -20,3 +20,21 @@
   function tick() { try { clock.textContent = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' }).format(new Date()); } catch (e) {} }
   if (clock) { tick(); setInterval(tick, 30000); }
 })();
+
+// Scrollable screen frames: progress bar, hide the hint once moved, drop the fade at the end.
+(function () {
+  document.querySelectorAll('.sf-frame').forEach(function (frame) {
+    var view = frame.querySelector('.sf-view'), bar = frame.querySelector('.sf-progress');
+    if (!view) return;
+    function update() {
+      var max = view.scrollHeight - view.clientHeight, p = max > 0 ? view.scrollTop / max : 1;
+      if (bar) bar.style.width = (p * 100) + '%';
+      if (view.scrollTop > 8) frame.classList.add('moved');
+      frame.classList.toggle('at-end', p > 0.98);
+    }
+    view.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    var img = view.querySelector('img'); if (img && !img.complete) img.addEventListener('load', update);
+    update();
+  });
+})();
