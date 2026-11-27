@@ -212,8 +212,8 @@
 <!-- RESEARCH -->
 <section class="wide-sec">
   <span class="kicker">Research</span>
-  <h2>What 12 interviews told us</h2>
-  <p class="intro">Two rounds. <strong>Seven interviews</strong> on the existing audience-creation journey surfaced <strong>3 critical and 5 high-priority issues</strong>: a UI refresh would not fix them; they needed structural change. <strong>Five more</strong>, with the analytics team, the VMax team, business teams and MoEngage users, explored what combining the tools would take. Together with the 2023 funnel analysis, they shaped these priorities:</p>
+  <h2>What 17 research calls told us</h2>
+  <p class="intro">Two strands. <strong>Twelve test calls</strong> with people who use Audience Manager surfaced <strong>3 critical and 5 high-priority issues</strong>: a UI refresh would not fix them; they needed structural change. <strong>Five more</strong>, with the analytics team, the VMax team, business teams and MoEngage users, explored what combining the tools would take. Together with the 2023 funnel analysis, they shaped these priorities:</p>
   <div class="cards">
     <div class="card"><span class="num">01</span><h3>People dropped off while creating campaigns</h3><p>Too many steps, split across tools, before a campaign could go live.</p><span class="so">→ One guided campaign builder</span></div>
     <div class="card"><span class="num">02</span><h3>Choosing an audience was the least-liked step</h3><p>Rules were hard to build and harder to check before sending.</p><span class="so">→ Audience rebuilt as part of the campaign, not a separate tool</span></div>
@@ -223,6 +223,49 @@
     <div class="card"><span class="num">06</span><h3>Every task leaned on ops</h3><p>Onboarding, payments and requests ran through Airtel teams.</p><span class="so">→ Wallet, digital KYC and a request centre</span></div>
   </div>
 </section>
+<!-- AUDIENCE MANAGER TESTING -->
+<section class="narrow sec">
+  <span class="kicker">Usability testing · Audience Manager</span>
+  <h2>Testing the audience builder with the people who use it</h2>
+  <p>Choosing an audience was the least-liked step, so before rebuilding it inside UCLM I tested the redesigned rule builder with <strong>12 people who use Audience Manager</strong>. Each call had three parts:</p>
+  <ol class="rounds">
+    <li><b>Read the screen</b><span>Before any task: how people understood the builder's actions, labels and language.</span></li>
+    <li><b>Build with the prototype</b><span>Apply AND/OR and nested rules to a real targeting brief, then check the audience size and go back to an earlier count.</span></li>
+    <li><b>Compare</b><span>Pick between our builder and two other rule builders, and say why.</span></li>
+  </ol>
+</section>
+<figure class="gap-fig">
+  <div class="ph top white" style="aspect-ratio:1387/772"><img src="../images/campaign/am-rule-builder.jpg" alt="Prototype of the audience rule builder: Service type equals Mobility, AND a nested group of Line of business, Bundle plan and Location joined by OR, with an active-count panel and Show history" loading="lazy"></div>
+  <figcaption>Fig. 9 — The prototype participants tested: nested AND/OR rules on the left, the live audience count and its history on the right.</figcaption>
+</figure>
+<section class="narrow sec tight">
+  <h3>What the numbers showed</h3>
+  <div class="metrics">
+    <div><b>87.5%</b><span>built the nested targeting rules, but only 12.5% without any help</span></div>
+    <div><b>87.5%</b><span>checked and revisited the audience count; half needed a hint to find "Show history"</span></div>
+    <div><b>50%</b><span>chose our builder over two other rule builders</span></div>
+  </div>
+  <figure class="funnel-fig" style="margin:20px 0 8px">
+    <ul class="bars" aria-label="Which rule builder participants preferred">
+      <li><span class="bl">Screen B · our builder</span><span class="track"><span class="fill" style="--v:50%"></span></span><span class="val">50%</span></li>
+      <li><span class="bl">Screen A · clean, contextual inputs</span><span class="track"><span class="fill mute" style="--v:37.5%"></span></span><span class="val">37.5%</span></li>
+      <li><span class="bl">Screen C · chosen by advanced users</span><span class="track"><span class="fill mute" style="--v:12.5%"></span></span><span class="val">12.5%</span></li>
+    </ul>
+    <figcaption style="margin-top:14px">Fig. 10 — Competitive preference. People liked our builder for its cleanliness and visually clear, contextual inputs.</figcaption>
+  </figure>
+  <h3>What we learned</h3>
+  <ul>
+    <li><strong>A widening language gap.</strong> Terms like "operator", "group" and "attribute" meant different things in Commsplanner, Zion and MoEngage. Too many tools had produced too many terminologies and too many decisions. That is the case for one platform, in users' own words.</li>
+    <li><strong>Nesting made sense; the visuals needed work.</strong> People understood nesting, but wanted it clearer which rule a nest belongs to. Three levels of nesting blocked complex targeting; five would cover most of their cases.</li>
+    <li><strong>Define the data.</strong> People wanted a definition for each attribute, because "line of business" means different things to different teams.</li>
+    <li><strong>Show the count as you go.</strong> Seeing the audience size after every rule would help them judge reach, and people removed rules rather than find "Show history".</li>
+    <li><strong>Two kinds of user.</strong> One sets up the basic targeting before a campaign; the other handles advanced, layered targeting. Both had to be served by one builder.</li>
+    <li><strong>MoEngage loyalty is real.</strong> Most participants used and recommended MoEngage, so familiar patterns mattered as much as new ones. They also preferred dropdowns to drag and drop.</li>
+  </ul>
+  <blockquote>"Operator sounds like telecom operator."</blockquote>
+  <blockquote>"MoEngage only offers three nesting levels, which is a blocker for me. Five nesting levels solves most of our use cases."</blockquote>
+</section>
+
 <!-- BENCHMARK + ANALYSIS -->
 <section class="wide-sec">
   <div class="split">
@@ -253,7 +296,7 @@
   <h2>One lifecycle platform, not five better tools</h2>
   <dl class="decision">
     <div><dt>What triggered it</dt><dd>One campaign tool had been wanted for years, but engineering never saw enough impact to commit. Selling the concept to an internal client gave it a paying owner.</dd></div>
-    <div><dt>Evidence</dt><dd>The company's pre-read on fragmented operations; 7 audience-journey interviews (3 critical, 5 high-priority issues); 5 interviews on combining the tools; the 2023 funnel, where 9 in 100 sign-ups launched a campaign.</dd></div>
+    <div><dt>Evidence</dt><dd>The company's pre-read on fragmented operations; 12 Audience Manager test calls (3 critical, 5 high-priority issues); 5 interviews on combining the tools; the 2023 funnel, where 9 in 100 sign-ups launched a campaign.</dd></div>
     <div><dt>Options</dt><dd>
       <ul class="opts">
         <li><b>Keep improving each tool</b><span>What had happened for years. Every fix stayed inside one tool.</span></li>
@@ -312,7 +355,7 @@
         <li title="October 2026, month to date: 109 campaigns"><span class="bl">October, month to date</span><span class="track"><span class="fill" style="--v:83.8%"></span></span><span class="val">109</span></li>
       </ol>
     </div>
-    <figcaption>Fig. 9 — Campaigns per month since Phase 1 launched. October counts run to mid-month.</figcaption>
+    <figcaption>Fig. 11 — Campaigns per month since Phase 1 launched. October counts run to mid-month.</figcaption>
   </figure>
   <div class="table-wrap" style="margin-top: 32px;">
     <table>
@@ -369,11 +412,11 @@
   </article>
   <figure>
     <img class="diagram" src="../images/campaign/model-convergence.svg" alt="Five factors — relevance, historical performance, business rules, content conflicts and guardrails — feed Content AI; with Time Affinity, Audience and Channel decisions they feed Agentic AI orchestration, which routes through human review before execution" loading="lazy">
-    <figcaption>Fig. 10 — How the modules connect: each answers one question, and all of them feed one orchestration layer that a person reviews.</figcaption>
+    <figcaption>Fig. 12 — How the modules connect: each answers one question, and all of them feed one orchestration layer that a person reviews.</figcaption>
   </figure>
   <figure>
     <img class="diagram" src="../images/campaign/five-layer-architecture.svg" alt="Time Affinity architecture: data layer, prediction layer, reasoning and explainability layer, output API and execution layer, with campaign results feeding back into the data" loading="lazy">
-    <figcaption>Fig. 11 — Time Affinity in five layers. The reasoning layer is what lets a marketer see why a time was chosen.</figcaption>
+    <figcaption>Fig. 13 — Time Affinity in five layers. The reasoning layer is what lets a marketer see why a time was chosen.</figcaption>
   </figure>
 <article class="chapter">
     <div class="n"><span class="label">Agentic</span></div>
@@ -384,7 +427,7 @@
   </article>
   <figure>
     <img class="diagram" src="../images/campaign/agentic-maturity.svg" alt="Module AI agents converge into a conversational Agentic AI gated by human review and launch, maturing toward an autonomous agent that monitors performance and relaunches improved campaigns" loading="lazy">
-    <figcaption>Fig. 12 — From module agents to a conversational agent (in progress) and, later, an autonomous one. Human review is the gate at every stage.</figcaption>
+    <figcaption>Fig. 14 — From module agents to a conversational agent (in progress) and, later, an autonomous one. Human review is the gate at every stage.</figcaption>
   </figure>
 </section>
 <section class="wide-sec">
@@ -406,7 +449,7 @@
 <div class="gap-fig">
   <figure>
     <img class="diagram" src="../images/campaign/design-process.svg" alt="Design loop: an open forum diverges into explorations on AI autonomy, transparency and input model; product pulls toward the strongest engine, design toward a flow the growth manager can use; they converge, are benchmarked against MoEngage and CleverTap, and become a refined flow that the next module repeats" loading="lazy">
-    <figcaption>Fig. 13 — The diverge–converge loop on every AI module. Product pulled toward the strongest engine, design toward a flow growth managers could use; the tension resolved at "converge", not before.</figcaption>
+    <figcaption>Fig. 15 — The diverge–converge loop on every AI module. Product pulled toward the strongest engine, design toward a flow growth managers could use; the tension resolved at "converge", not before.</figcaption>
   </figure>
 </div>
 
@@ -423,7 +466,7 @@
 <div class="gap-fig">
   <figure>
     <img class="diagram" src="../images/campaign/leadership-map.svg" alt="Leadership map: the lead designer delegates Time Affinity and Content AI to two designers with weekly reviews, and works directly with engineering, product and AI lead, business teams and competitive benchmarking" loading="lazy">
-    <figcaption>Fig. 14 — Leading from the centre: two designers own modules; I hold the connecting layer and every stakeholder relationship.</figcaption>
+    <figcaption>Fig. 16 — Leading from the centre: two designers own modules; I hold the connecting layer and every stakeholder relationship.</figcaption>
   </figure>
 </div>
 
