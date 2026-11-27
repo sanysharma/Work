@@ -233,3 +233,15 @@ img.diagram { border-color: var(--hair); background: #fff; }  /* diagrams are dr
 .sf-frame.at-end .sf-fade { opacity: 0; }
 @media (max-width: 640px) { .sf-view { height: 380px; } .sf-bar .sf-title { font-size: 11px; } }
 @media (prefers-reduced-motion: reduce) { .sf-hint svg { animation: none; } }
+/* app-like frame: pinned top bar and side nav, only the content scrolls.
+   Set --iw (export width), --th (top bar height) and --nw (side nav width) in image pixels. */
+.sf-app { container-type: inline-size; }
+.sf-app img { display: block; width: 100%; height: auto; }
+.sf-app .sf-top { position: sticky; top: 0; z-index: 2; }
+.sf-app .sf-body { display: grid; grid-template-columns: calc(100cqw * var(--nw) / var(--iw)) 1fr; align-items: start; }
+.sf-app { --vh: min(78vh, 700px); height: var(--vh); }
+.sf-app .sf-nav { position: sticky; top: calc(100cqw * var(--th) / var(--iw)); z-index: 1; height: calc(var(--vh) - 100cqw * var(--th) / var(--iw));
+  display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; background-repeat: repeat-y; background-size: 100% auto; }
+.sf-app .sf-nav img { flex: 0 1 auto; min-height: 0; object-fit: cover; object-position: top; }
+.sf-app .sf-nav img:last-child { flex-shrink: 0; }
+@media (max-width: 640px) { .sf-app { --vh: 380px; } }
