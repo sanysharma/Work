@@ -248,3 +248,4 @@ img.diagram { border-color: var(--hair); background: #fff; }  /* diagrams are dr
 /* overview cards without links: no hover highlight */
 .parts-nav a:not([href]):hover { border-color: var(--hair); }
 .parts-nav li.main a:not([href]):hover { border-color: var(--ink); }
+.path .s { display: flex; flex-wrap: wrap; align-items: baseline; }
