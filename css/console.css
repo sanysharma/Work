@@ -245,3 +245,6 @@ img.diagram { border-color: var(--hair); background: #fff; }  /* diagrams are dr
 .sf-app .sf-nav img { flex: 0 1 auto; min-height: 0; object-fit: cover; object-position: top; }
 .sf-app .sf-nav img:last-child { flex-shrink: 0; }
 @media (max-width: 640px) { .sf-app { --vh: 380px; } }
+/* overview cards without links: no hover highlight */
+.parts-nav a:not([href]):hover { border-color: var(--hair); }
+.parts-nav li.main a:not([href]):hover { border-color: var(--ink); }
